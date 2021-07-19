@@ -10,6 +10,8 @@ use Encore\Admin\Show;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use App\Admin\Controllers\Constant;
+use App\Admin\Controllers\Util;
+
 
 class CategoryController extends AdminController
 {
@@ -89,9 +91,12 @@ class CategoryController extends AdminController
         ]);
         //$form->number('parent_id', __('Parent id'));
         $form->select('parent_id', __('Loại tin tức'))->options(Category::pluck('title','id'))->required()->setWidth(3, 2);
+        $form->hidden('slug');
         $form->number('order', __('Thứ tự'))->setWidth(3, 2)->min(0);
         $form->switch('show', __('Hiện'))->states(Constant::SWITCH_STATE);
-
+        $form->saving(function ($form) {
+            $form->slug = Util::createSlug($form->title, Category::get());
+        });
         return $form;
     }
 

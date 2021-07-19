@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/subscribe', 'HomeController@subscribe');
+Route::get('/vnpay_return', 'HomeController@vnpayReturn');

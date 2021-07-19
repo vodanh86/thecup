@@ -10,6 +10,10 @@ abstract class Constant
         'on'  => ['value' => 1, 'text' => '&nbsp;Hiện  ', 'color' => 'success'],
         'off' => ['value' => 0, 'text' => '&nbsp;&nbsp;Ẩn&nbsp;&nbsp;', 'color' => 'danger'],
     );
+    const ON_STATE = array(
+        'on'  => ['value' => 1, 'text' => '&nbsp;Có  ', 'color' => 'success'],
+        'off' => ['value' => 0, 'text' => '&nbsp;&nbsp;Không&nbsp;&nbsp;', 'color' => 'danger'],
+    );
     const YES_NO_STATUS = array(0 => 'Không', 1 => 'Có');
     const BANNER_POSITION = array(1 => 'Center', 3 => "Đơn vị sự nghiệp",
                                   4 => "Trường học", 0 => 'Slider',  

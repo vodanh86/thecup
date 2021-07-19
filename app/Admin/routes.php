@@ -18,4 +18,5 @@ Route::group([
     $router->resource('albums', AlbumController::class);
     $router->resource('podcasts', PodcastController::class);
     $router->resource('plans', PlanController::class);
+    $router->resource('payments', PaymentController::class);
 });

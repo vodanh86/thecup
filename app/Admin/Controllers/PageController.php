@@ -32,8 +32,9 @@ class PageController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
-        $grid->column('image', __('Image'))->image(url('/storage'), 50, 50);
+        $grid->column('image', __('Image'))->image(url(env("AWS_URL")), 50, 50);
         $grid->column('author_id', __('Author id'));
+        $grid->column('feature', __('Feature'));
         $grid->column('view', __('View'));
         $grid->column('category_id', __('Category id'));
         $grid->column('published_at', __('Published at'));
@@ -86,6 +87,8 @@ class PageController extends AdminController
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->number('view', __('View'))->default(0);
         $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2);
+        $form->switch('feature', __("Bài nổi bật"))->states(Constant::ON_STATE);
+        $form->switch('slide', __("Hiện lên slide"))->states(Constant::ON_STATE);
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
 
