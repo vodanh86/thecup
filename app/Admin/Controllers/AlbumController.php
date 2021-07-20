@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Album;
+use App\Models\Page;
 use App\Models\Category;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -87,12 +88,15 @@ class AlbumController extends AdminController
             $form->image('image', 'Ảnh');
         });
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
+        $form->hidden('slug');
         $form->number('view', __('View'))->default(0);
         $form->hidden('type')->default(1);
         $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
-
+        $form->saving(function ($form) {
+            $form->slug = Util::createSlug($form->title, Page::get());
+        });
         return $form;
     }
 }

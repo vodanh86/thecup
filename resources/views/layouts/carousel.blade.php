@@ -13,12 +13,14 @@ $pages = Page::where('status', 1)
         <div class="owl-carousel owl-theme">
             @foreach ($pages as $page)
             <div class="item">
-                <div class="overlay"></div>
-                <img class="item-img" src='{{url(env("AWS_URL")).$page->image}}' alt="">
-                <div class="item-category">{{Util::getCat($page->category_id)}}</div>
-                <div class="item-divider"></div>
-                <div class="item-title">{{$page->title}}
-                </div>
+                <a href="{{ url('/page/'.$page->slug) }}">
+                    <div class="overlay"></div>
+                    <img class="item-img" src='{{url(env("AWS_URL")).$page->image}}' alt="">
+                    <div class="item-category">{{Util::getCat($page->category_id)}}</div>
+                    <div class="item-divider"></div>
+                    <div class="item-title">{{$page->title}}
+                    </div>
+                </a>
             </div>
             @endforeach
         </div>

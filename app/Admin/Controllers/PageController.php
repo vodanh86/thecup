@@ -10,6 +10,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Models\AuthUser;
 use Encore\Admin\Facades\Admin;
+use App\Admin\Controllers\Util;
 
 class PageController extends AdminController
 {
@@ -41,7 +42,7 @@ class PageController extends AdminController
         $grid->column('status', __('Status'))->using(Constant::PAGE_STATUS);
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-
+        $grid->model()->where('type', 0);
         return $grid;
     }
 
@@ -83,14 +84,19 @@ class PageController extends AdminController
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
         $form->ckeditor('content', __('Content'))->required();
-        $form->image('image', __('Image'));
+        $form->image('image', __('Image'))->uniqueName();
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
+        $form->hidden('slug');
+        $form->hidden('type')->default(0);
         $form->number('view', __('View'))->default(0);
         $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->switch('feature', __("Bài nổi bật"))->states(Constant::ON_STATE);
         $form->switch('slide', __("Hiện lên slide"))->states(Constant::ON_STATE);
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
+        $form->saving(function ($form) {
+            $form->slug = Util::createSlug($form->title, Page::get());
+        });
 
         return $form;
     }

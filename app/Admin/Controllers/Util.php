@@ -3,6 +3,7 @@ namespace App\Admin\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Category;
+use Carbon\Carbon;
 
 final class Util {
 
@@ -33,6 +34,16 @@ final class Util {
         } 
         
         return $parentCat->title." - ".$cat->title;
+    }
+
+    static function vnDateFormat($orgDate){
+        $newDate = Carbon::parse($orgDate);  
+        return "Ngày $newDate->day tháng $newDate->month, $newDate->year";  
+    }
+
+    static function dateFormat($orgDate){
+        $newDate = Carbon::parse($orgDate);  
+        return $newDate->format('d/m/Y');
     }
 
 }

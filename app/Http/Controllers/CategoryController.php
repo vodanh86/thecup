@@ -17,14 +17,18 @@ class CategoryController extends Controller
 
     public function view($slug)
     {
-        $sort = $_GET['sort'];
         $cat = Category::where('slug', $slug)->first();
         $sortField = "created_at";
-        if(isset($sort) && $sort == "author"){
-            $sortField = "created_at";
+        if(array_key_exists('sort',$_GET)){
+            $sort = $_GET['sort'];
+            if($sort == "author"){
+                $sortField = "created_at";
+            }
+            $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(3);
+            return view('template.economy', ["cat" => $cat, "pages" => $pages, "sort" => $sort]);
         }
-        $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(1);
-        return view('template.economy', ["cat" => $cat, "pages" => $pages, "sort" => $sort]);
+        $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(3);
+        return view('template.economy', ["cat" => $cat, "pages" => $pages]);
     }
 
     public function vnpayReturn()

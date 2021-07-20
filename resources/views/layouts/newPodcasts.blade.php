@@ -1,9 +1,10 @@
 <?php 
-use App\Models\Podcast;
+use App\Models\Page;
 use App\Models\Category;
 use App\Admin\Controllers\Util;
 
-$podcasts = Podcast::where('status', 1)
+$pages = Page::where('status', 1)
+        ->where('type', 2)
         ->orderBy("created_at", 'DESC')
         ->limit(5)
         ->get();
@@ -11,18 +12,22 @@ $podcasts = Podcast::where('status', 1)
 ?>
 <div class="new-podcast-block">
     <p class="newest-block-title">podcast mới</p>
-    @foreach($podcasts as $podcast)
+    @foreach($pages as $page)
     <?php 
-    $cat = Category::find($podcast->category_id);
+    $cat = Category::find($page->category_id);
     ?>
     <div class="newest-post">
         <div class="row">
             <div class="col-3">
-                <img src="{{url(env('AWS_URL')).$podcast->image}}" width="87" alt="">
+                <a href="{{ url('/page/'.$page->slug) }}">
+                    <img src="{{url(env('AWS_URL')).$page->image}}" width="87" alt="">
+                </a>
             </div>
             <div class="col-9">
-                <p class="new-post-title">{{$podcast->title}}</p>
-                <p class="new-post-category">{{$cat->title}}</p>
+                <a href="{{ url('/page/'.$page->slug) }}">
+                    <p class="new-post-title">{{$page->title}}</p>
+                </a>
+                <p class="new-post-category">{{$page->title}}</p>
             </div>
         </div>
     </div>
