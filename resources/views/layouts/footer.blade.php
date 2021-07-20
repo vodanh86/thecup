@@ -1,3 +1,13 @@
+<?php 
+use App\Models\Category;
+
+$cats = Category::where('show', 1)
+        ->orderBy('order')
+        ->get()
+        ->groupBy('parent_id');
+
+$parentId = $cats[0][0]->id;
+?>
 <!--Footer-start-->
 <footer class="footer-holder">
     <div class="footer-upper">
@@ -9,71 +19,21 @@
                 </div>
                 <div class="col-md-9 fix-margin">
                     <div class="row row-cols-auto">
+                        @foreach($cats[$parentId] as $cat) 
                         <div class="col-4 col-md d-flex end">
-                            <a href="/thecup/template/economy.html">
+                            <a href="{{ url('/category/'.$cat->slug) }}">
                                 <div class="footer-content-box">
                                     <div class="footer-content-box-inner">
                                         <img class="content-box-icon material-icons"
-                                             src="/thecup/resources/img/icon/ic_economy.svg">
+                                             src="{{ url('/resources/img/'.$cat->image)}}">
                                         <div class="content-box-divider1"></div>
                                         <div class="content-box-divider2"></div>
-                                        <p class="content-box-cat-name">Kinh tế</p>
+                                        <p class="content-box-cat-name">{{$cat->title}}</p>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-4 col-md d-flex center">
-                            <a href="/thecup/template/life.html">
-                                <div class="footer-content-box">
-                                    <div class="footer-content-box-inner">
-                                        <img class="content-box-icon material-icons"
-                                             src="/thecup/resources/img/icon/ic_life.svg">
-                                        <div class="content-box-divider1"></div>
-                                        <div class="content-box-divider2"></div>
-                                        <p class="content-box-cat-name">Sống</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-md d-flex start">
-                            <a href="/thecup/template/economy.html">
-                                <div class="footer-content-box">
-                                    <div class="footer-content-box-inner">
-                                        <img class="content-box-icon material-icons"
-                                             src="/thecup/resources/img/icon/ic_tech.svg">
-                                        <div class="content-box-divider1"></div>
-                                        <div class="content-box-divider2"></div>
-                                        <p class="content-box-cat-name">Công nghệ</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md d-flex end">
-                            <a href="/thecup/template/economy.html">
-                                <div class="footer-content-box">
-                                    <div class="footer-content-box-inner">
-                                        <img class="content-box-icon material-icons"
-                                             src="/thecup/resources/img/icon/ic_art.svg">
-                                        <div class="content-box-divider1"></div>
-                                        <div class="content-box-divider2"></div>
-                                        <p class="content-box-cat-name">Nghệ thuật</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md d-flex start">
-                            <a href="/thecup/template/economy.html">
-                                <div class="footer-content-box">
-                                    <div class="footer-content-box-inner">
-                                        <img class="content-box-icon material-icons"
-                                             src="/thecup/resources/img/icon/ic_sport.svg">
-                                        <div class="content-box-divider1"></div>
-                                        <div class="content-box-divider2"></div>
-                                        <p class="content-box-cat-name">Thể thao</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -100,7 +60,7 @@
             <div class="the-cup-signature-holder d-flex">
                 <div class="the-cup-signature-left me-auto">
                     <a href="#" class="the-cup-logo">
-                        <img src="resources/img/logo-footer.svg" alt="">
+                        <img src="{{ url('/resources/img/logo-footer.svg')}}" alt="">
                     </a>
                     <a href="/thecup/template/contact.html" class="the-cup-footer-link">
                         <div class="text">Liên hệ</div>
@@ -120,14 +80,3 @@
     </div>
 </footer>
 <!--Footer-end-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"
-        integrity="sha512-+wqa4/aOL4vwhL637A4p+6epqhUHDqpEfYJa1+PlzlMf908CSOb3xtIeKwZWh5Q0Q/R2nYUKxH4vvcQg+k8KKQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/player.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/owlcarousel/owl.carousel.min.js"></script>
-<script src="https://kit.fontawesome.com/16985780f3.js" crossorigin="anonymous"></script>
-</body>
-</html>

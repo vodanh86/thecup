@@ -7,7 +7,7 @@ use app\User;
 
 class Podcast extends Model
 {
-    protected $table = 'podcasts';
+    protected $table = 'pages';
 
 	protected $hidden = [
     ];

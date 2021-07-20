@@ -40,7 +40,7 @@ class PodcastController extends AdminController
         $grid->column('status', __('Status'))->using(Constant::PAGE_STATUS);
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-
+        $grid->model()->where('type', 2);
         return $grid;
     }
 
@@ -86,9 +86,10 @@ class PodcastController extends AdminController
             $form->text('title', 'Nội dung');
             $form->file('link', 'Bài hát');
         });
+        $form->hidden('type')->default(2);
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->number('view', __('View'))->default(0);
-        $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2);
+        $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
 

@@ -86,7 +86,7 @@ class PageController extends AdminController
         $form->image('image', __('Image'));
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->number('view', __('View'))->default(0);
-        $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2);
+        $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->switch('feature', __("Bài nổi bật"))->states(Constant::ON_STATE);
         $form->switch('slide', __("Hiện lên slide"))->states(Constant::ON_STATE);
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));

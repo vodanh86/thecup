@@ -93,6 +93,7 @@ class CategoryController extends AdminController
         $form->select('parent_id', __('Loại tin tức'))->options(Category::pluck('title','id'))->required()->setWidth(3, 2);
         $form->hidden('slug');
         $form->number('order', __('Thứ tự'))->setWidth(3, 2)->min(0);
+        $form->image('image', __('Image'));
         $form->switch('show', __('Hiện'))->states(Constant::SWITCH_STATE);
         $form->saving(function ($form) {
             $form->slug = Util::createSlug($form->title, Category::get());

@@ -1,4 +1,5 @@
 @include('layouts.header')
+<body class="homepage-body" id="homePageBody">
 @include('layouts.nav')
 @include('layouts.carousel')
 <!--Radio-start-->
@@ -478,3 +479,4 @@
     </div>
 </div>
 @include('layouts.footer')
+@include('layouts.homeScript')

@@ -7,7 +7,7 @@ use app\User;
 
 class Album extends Model
 {
-    protected $table = 'albums';
+    protected $table = 'pages';
 
 	protected $hidden = [
     ];

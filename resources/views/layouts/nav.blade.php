@@ -12,7 +12,7 @@ $parentId = $cats[0][0]->id;
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img class="logo" height="40" src="resources/img/Logo.svg" alt="">
+            <img class="logo" height="40" src="{{url('resources/img/Logo.svg')}}" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
