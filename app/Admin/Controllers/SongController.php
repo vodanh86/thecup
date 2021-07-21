@@ -77,7 +77,7 @@ class SongController extends AdminController
         $form = new Form(new Song());
 
         $form->text('title', __('Title'));
-        $form->file('link', __('Link'));
+        $form->file('link', __('Link'))->uniqueName();
         $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'));
         $form->text('description', __('Description'));
         $form->hidden('duration');
