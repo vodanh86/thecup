@@ -81,7 +81,7 @@ class SongController extends AdminController
         $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'));
         $form->text('description', __('Description'));
         $form->hidden('duration');
-        $form->submitted(function ($form) {
+        $form->saving(function ($form) {
             $ffprobe    = \FFMpeg\FFProbe::create();
             $form->duration   = $ffprobe->format(url(env('AWS_URL')).$form->link)->get('duration');
         });
