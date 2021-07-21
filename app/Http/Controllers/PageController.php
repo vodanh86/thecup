@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Photo;
+use App\Models\Song;
 use App\Models\AuthUser;
 use Carbon\Carbon;
 
@@ -21,10 +23,17 @@ class PageController extends Controller
         $page = Page::where('slug', $slug)->first();
         $cat = Category::find($page->category_id);
         $author = AuthUser::find($page->author_id);
+        $photos = Photo::where("album_id", $page->id)->get();
+        $songs = Song::where("podcast_id", $page->id)->get();
+
         $view = 'template.covid_post';
         if ($page->type == 1){
             $view = 'template.image_post';
         }
-        return view($view, ["page" => $page, "cat" => $cat, "author" => $author]);
+        if ($page->type == 2){
+            $view = 'template.podcast_episodes';
+        }
+        return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs,
+        "cat" => $cat, "author" => $author]);
     }
 }
