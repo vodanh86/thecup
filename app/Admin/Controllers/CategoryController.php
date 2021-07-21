@@ -96,7 +96,9 @@ class CategoryController extends AdminController
         $form->image('image', __('Image'));
         $form->switch('show', __('Hiện'))->states(Constant::SWITCH_STATE);
         $form->saving(function ($form) {
-            $form->slug = Util::createSlug($form->title, Category::get());
+            if (!($form->model()->id && $form->model()->title == $form->title)){
+                $form->slug = Util::createSlug($form->title, Page::get());
+            }
         });
         return $form;
     }

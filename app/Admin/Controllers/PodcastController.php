@@ -83,10 +83,11 @@ class PodcastController extends AdminController
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
         $form->image('image', __('Image'));
-        $form->hasMany('songs', function (Form\NestedForm $form) {
-            $form->text('title', 'Nội dung');
-            $form->file('link', 'Bài hát');
-        });
+        /*$form->hasMany('songs', function (Form\NestedForm $form) {
+            $form->text('title', 'Tiêu đề');
+            $form->file('link', 'Bài hát')->rules('mimes:audio/mpeg');
+            $form->text('description', 'Nội dung');
+        });*/
         $form->hidden('type')->default(2);
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->hidden('slug');
@@ -95,7 +96,9 @@ class PodcastController extends AdminController
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
         $form->saving(function ($form) {
-            $form->slug = Util::createSlug($form->title, Page::get());
+            if (!($form->model()->id && $form->model()->title == $form->title)){
+                $form->slug = Util::createSlug($form->title, Page::get());
+            }
         });
         return $form;
     }

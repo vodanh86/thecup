@@ -95,6 +95,7 @@ use App\Admin\Controllers\Util;
         </div>
         <div class="news-main">
             <div class="news-other-post">
+                @foreach($songs as $song)
                 <div class="podcast">
                     <a href="/thecup/template/podcast_single.html">
                         <div class="row">
@@ -106,7 +107,7 @@ use App\Admin\Controllers\Util;
                             </div>
                             <div class="col-md-9">
                                 <p class="post-date">12/05/2021</p>
-                                <p class="podcast-title">Phần 1: Quảng gánh lo đi mà sống</p>
+                                <p class="podcast-title">{{$song->title}}</p>
                                 <p class="podcast-description">Cuộc sống đâu lường trước điều gì?
                                     Tình yêu có thể đến rồi đi. Bàn tay dẫu đang nắm thật chặt mà vẫn lạc nhau. Còn nhớ
                                     trong ngày nắng nhạt nhòa. Mình quay lưng về phía người kia. Và bước đi rồi chẳng nhìn
@@ -115,62 +116,7 @@ use App\Admin\Controllers\Util;
                         </div>
                     </a>
                 </div>
-                <div class="podcast">
-                    <a href="/thecup/template/podcast_single.html">
-                        <div class="row">
-                            <div class="col-md-3 podcast-play">
-                                <div class="play-icon">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                                <p class="podcast-time">34 phút</p>
-                            </div>
-                            <div class="col-md-9">
-                                <p class="post-date">12/05/2021</p>
-                                <p class="podcast-title">Phần 2: Quảng gánh lo đi mà sống</p>
-                                <p class="podcast-description">Cuộc sống đâu lường trước điều gì?
-                                    Tình yêu có thể đến rồi đi. Bàn tay dẫu đang nắm thật chặt mà vẫn lạc nhau. Còn nhớ
-                                    trong ngày nắng nhạt nhòa. Mình quay lưng về phía người kia. Và bước đi rồi chẳng nhìn
-                                    lại dù chỉ một lần.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="podcast">
-                    <div class="row">
-                        <div class="col-md-3 podcast-play">
-                            <div class="play-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <p class="podcast-time">34 phút</p>
-                        </div>
-                        <div class="col-md-9">
-                            <p class="post-date">12/05/2021</p>
-                            <p class="podcast-title">Phần 3: Quảng gánh lo đi mà sống</p>
-                            <p class="podcast-description">Cuộc sống đâu lường trước điều gì?
-                                Tình yêu có thể đến rồi đi. Bàn tay dẫu đang nắm thật chặt mà vẫn lạc nhau. Còn nhớ
-                                trong ngày nắng nhạt nhòa. Mình quay lưng về phía người kia. Và bước đi rồi chẳng nhìn
-                                lại dù chỉ một lần.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="podcast">
-                    <div class="row">
-                        <div class="col-md-3 podcast-play">
-                            <div class="play-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <p class="podcast-time">34 phút</p>
-                        </div>
-                        <div class="col-md-9">
-                            <p class="post-date">12/05/2021</p>
-                            <p class="podcast-title">Phần 4: Quảng gánh lo đi mà sống</p>
-                            <p class="podcast-description">Cuộc sống đâu lường trước điều gì?
-                                Tình yêu có thể đến rồi đi. Bàn tay dẫu đang nắm thật chặt mà vẫn lạc nhau. Còn nhớ
-                                trong ngày nắng nhạt nhòa. Mình quay lưng về phía người kia. Và bước đi rồi chẳng nhìn
-                                lại dù chỉ một lần.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="divider"></div>
             <div class="rating-holder">

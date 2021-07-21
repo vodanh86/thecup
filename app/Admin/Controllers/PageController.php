@@ -95,7 +95,9 @@ class PageController extends AdminController
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
         $form->saving(function ($form) {
-            $form->slug = Util::createSlug($form->title, Page::get());
+            if (!($form->model()->id && $form->model()->title == $form->title)){
+                $form->slug = Util::createSlug($form->title, Page::get());
+            }
         });
 
         return $form;
