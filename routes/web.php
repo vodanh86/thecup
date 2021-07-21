@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 Route::get('/category/{slug}', 'CategoryController@view');
 Route::get('/page/{slug}', 'PageController@view');
+Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/subscribe', 'HomeController@subscribe');
 Route::get('/vnpay_return', 'HomeController@vnpayReturn');

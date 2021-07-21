@@ -8,7 +8,6 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use App\Admin\Controllers\MP3File;
 
 class SongController extends AdminController
 {
@@ -30,9 +29,9 @@ class SongController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
-        $grid->column('link', __('Link'))->display(function ($link) {
+        $grid->column('link', __('Link'))->display(function ($title) {
             return "<audio controls>".
-                        '<source src="'.url(env('AWS_URL')).$link.'" type="audio/mpeg">'.
+                        '<source src="'.url(env('AWS_URL')).$title.'" type="audio/mpeg">'.
                     "</audio>";
         
         });
@@ -77,14 +76,15 @@ class SongController extends AdminController
         $form = new Form(new Song());
 
         $form->text('title', __('Title'));
-        $form->file('link', __('Link'))->uniqueName();
+        $form->file('link', __('Link'));
         $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'));
+        $form->hidden('slug');
         $form->text('description', __('Description'));
         $form->hidden('duration');
-        $form->saved(function ($form) {
-            $ffprobe    = \FFMpeg\FFProbe::create();
-            $form->model()->duration   = $ffprobe->format(env('AWS_URL').$form->model()->link)->get('duration');
-            $form->model()->save();
+        $form->saving(function ($form) {
+            if (!($form->model()->id && $form->model()->title == $form->title)){
+                $form->slug = Util::createSlug($form->title, Podcast::get());
+            }
         });
         return $form;
     }

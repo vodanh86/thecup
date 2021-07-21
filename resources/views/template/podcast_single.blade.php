@@ -5,40 +5,40 @@ use App\Admin\Controllers\Util;
 
 ?>
 @include('layouts.header')
-<body class="podcast-episodes-body">
+<body class="podcast-single-body">
 @include('layouts.nav')
 <!--Podcast-holder"-start-->
 <div class="podcast-holder">
     <div class="container podcast-player-inner">
         <div class="row">
-            <div class="col-md-4 podcast-image" style="background-image:url('{{url(env('AWS_URL')).$page->image}}'); background-size: cover"></div>
+            <div class="col-md-4 podcast-image"></div>
             <div class="col-md-8 podcast-play">
                 <p class="category">{{$cat->title}}</p>
-                <p class="title">{{$page->title}}</p>
+                <p class="title">{{$song->title}}</p>
                 <div class="podcast-infor">
-                    <span class="infor">{{count($songs)}} phần</span>
+                    <span class="infor">8 phần</span>
                     <div class="dot-seperator"></div>
                     <span class="infor">86 phút</span>
                     <div class="dot-seperator"></div>
                     <span class="infor">3 bình luận</span>
                     <div class="dot-seperator"></div>
                     <div class="rating-holder">
+            <span class="material-icons material-icons-outlined">
+            star
+            </span>
                         <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star_half
-                        </span>
-                                    <span class="quantity">(23)</span>
+            star
+            </span>
+                        <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                        <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                        <span class="material-icons material-icons-outlined">
+            star_half
+            </span>
+                        <span class="quantity">(23)</span>
                     </div>
                 </div>
                 <div class="play-and-sharing">
@@ -74,51 +74,14 @@ use App\Admin\Controllers\Util;
 <!--Post-start-->
 <div class="news-holder">
     <div class="container">
-        <div class="search-result">
-            <div class="total-post">
-                <span>Danh sách podcast</span>
-            </div>
-            <div class="sorting-post">
-                <span>Sắp xếp: </span>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                        Theo ngày đăng
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Theo giờ</a></li>
-                        <li><a class="dropdown-item" href="#">Theo tháng</a></li>
-                        <li><a class="dropdown-item" href="#">Theo năm</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="news-main">
-            <div class="news-other-post">
-                @foreach($songs as $song)
-                <div class="podcast">
-                    <a href="{{ url('/episode/'.$song->slug) }}">
-                        <div class="row">
-                            <div class="col-md-3 podcast-play">
-                                <div class="play-icon">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                                <p class="podcast-time">34 phút</p>
-                            </div>
-                            <div class="col-md-9">
-                                <p class="post-date">{{Util::dateFormat($song->created_at)}}</p>
-                                <p class="podcast-title">{{$song->title}}</p>
-                                <p class="podcast-description">{{$song->description}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
+            <div class="podcast-caption">
+                <p>{!!$song->description!!}</p>
             </div>
             <div class="divider"></div>
             <div class="rating-holder">
                 <div class="text">
-                    <span>Đánh giá bài viết</span>
+                    <span>Đánh giá Podcast</span>
                 </div>
                 <div class="star">
                     <span class="material-icons material-icons-outlined">
@@ -221,34 +184,49 @@ use App\Admin\Controllers\Util;
     <div class="upper">
         <span class="podcast-title">Hài lòng với nhưng thứ đã có sẽ làm bạn hạnh phúc hơn</span>
         <div class="dot-seperator"></div>
-        <span class="podcast-name">Phần 2: Quẳng gánh lo đi mà sống</span>
+        <span class="podcast-name" id="track">Phần 2: Quẳng gánh lo đi mà sống</span>
     </div>
     <div class="divider"></div>
     <div class="lower">
         <div class="container">
-           <div class="row">
-               <div class="col-md-4 button-holder">
-                   <span class="material-icons smaterial-icons-outlined">playlist_play</span>
-                   <span class="material-icons material-icons-outlined">1x_mobiledata</span>
-                   <span class="material-icons material-icons-outlined">volume_up</span>
-                   <span class="material-icons material-icons-outlined">skip_previous</span>
-                   <span class="material-icons material-icons-outlined">replay_10</span>
-                   <div class="play-button">
+            <div class="row">
+                <div class="col-md-6 button-holder">
+                    <span class="material-icons smaterial-icons-outlined">playlist_play</span>
+                    <span class="play-speed">1X</span>
+                    <div class="volume-holder">
+                        <span class="material-icons material-icons-outlined">volume_up</span>
+                        <div class="progress" id="volumeProgressWrapper">
+                            <div id="volProgress" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <button class="btn" id="prevBtn">
+                        <span class="material-icons material-icons-outlined">skip_previous</span>
+                    </button>
+                    <button id="replay10s" class="btn">
+                        <span class="material-icons material-icons-outlined">replay_10</span>
+                    </button>
+                    <button class="play-button" id="playBtn">
                        <span class="material-icons material-icons-outlined">
                         play_arrow
                         </span>
-                   </div>
-                   <span class="material-icons material-icons-outlined">forward_10</span>
-                   <span class="material-icons material-icons-outlined">skip_next</span>
-               </div>
-               <div class="col-md-8 progress-holder">
-                    <span class="time-played">18:42</span>
-                    <div class="progress">
-                       <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </button>
+                    <button id="forward10s" class="btn">
+                        <span class="material-icons material-icons-outlined">forward_10</span>
+                    </button>
+                    <button class="btn" id="nextBtn">
+                        <span class="material-icons material-icons-outlined">skip_next</span>
+                    </button>
+                </div>
+                <div class="col-md-6 progress-holder">
+                    <span id="timer" class="time-played">0:00</span>
+                    <div class="progress" id="durationProgressWrapper">
+                        <div id="progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25"
+                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                   <span class="total-time">34:43</span>
-               </div>
-           </div>
+                    <span id="duration" class="total-time">0:00</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
