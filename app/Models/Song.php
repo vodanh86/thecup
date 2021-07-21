@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use app\Podcast;
+use App\Models\Podcast;
 
 class Song extends Model
 {
