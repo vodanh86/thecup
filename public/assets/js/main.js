@@ -18,7 +18,7 @@ $(document).ready(function(){
             }
         }
     })
-    //Carousel
+    // Control carousel prev, next button
     $('.btn-carousel-prev').click(function() {
         $(".carousel-holder .owl-carousel .owl-prev").trigger('click');
     });
@@ -74,8 +74,21 @@ $(document).ready(function(){
         searchPopupBody.style.opacity= '0';
         homePageBody.style.overflow = "visible";
     });
+
+    //Disable move gesture on mobile
+    $('#loginBody').on('touchmove', function(e){
+        //prevent native touch activity like scrolling
+        e.preventDefault();
+    });
+    $('#registerBody').on('touchmove', function(e){
+        //prevent native touch activity like scrolling
+        e.preventDefault();
+    });
+    $('#searchPopupBody').on('touchmove', function(e){
+        //prevent native touch activity like scrolling
+        e.preventDefault();
+    });
 });
 
-// Sound player
 
 

@@ -280,7 +280,44 @@ p {
             color: #000000; }
           .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder {
             display: inline-flex;
-            align-items: center; }
+            align-items: center;
+            position: relative;
+            cursor: pointer; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar {
+              position: absolute;
+              transform: rotateZ(-90deg);
+              top: -55px;
+              left: -30px;
+              display: none;
+              align-items: center;
+              width: 85px;
+              height: 20px;
+              padding: 10px;
+              border-radius: 10px;
+              background: white; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider {
+                width: 55px;
+                -webkit-appearance: none;
+                height: 1px;
+                border-radius: 5px;
+                background: #000000;
+                outline: none;
+                opacity: 1;
+                cursor: pointer; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #1B3864;
+                cursor: pointer; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #04AA6D;
+                cursor: pointer; }
     .radio-holder .radio-frame .radio-frame-behind1 {
       position: absolute;
       z-index: 2;
@@ -2007,9 +2044,10 @@ p {
       .image-post-body .image-post-holder .image-grid-holder .img-grid .img-block {
         margin-top: 10px;
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        padding: 0px 5px; }
         .image-post-body .image-post-holder .image-grid-holder .img-grid .img-block img {
-          width: 103px; }
+          width: 100%; }
     .image-post-body .image-post-holder .image-grid-holder .comment {
       margin-top: 40px; }
       .image-post-body .image-post-holder .image-grid-holder .comment .comment-block {
@@ -2211,14 +2249,12 @@ p {
     margin-top: 30px; }
   .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder {
     width: 100%;
-    height: 64px;
+    height: auto;
     background-color: #E8EFFA; }
     .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .question-holder {
       display: flex;
       align-items: center;
-      padding-top: 15px;
-      padding-right: 25px;
-      padding-left: 20px; }
+      padding: 15px 25px 20px 15px; }
       .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .question-holder button {
         display: inline-flex;
         align-items: center;
@@ -2250,15 +2286,15 @@ p {
       .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .collapse .vertical-divider {
         position: absolute;
         width: 1px;
-        height: 90%;
+        height: 75%;
         border-left: 1px dashed #ABC6EF;
-        top: 0px;
+        top: 10px;
         left: 30px; }
     .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .collapsing {
       background-color: #E8EFFA;
       transition: 0.3s ease; }
   .post-body .news-holder .news-main .post-holder .post-content .subsidiary {
-    margin-top: 120px;
+    margin-top: 40px;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -2887,5 +2923,50 @@ p {
     line-height: 19px;
     text-align: center;
     color: #333333; }
+
+.search-popup-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 12;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease; }
+  .search-popup-body .search-popup-holder {
+    width: 100%;
+    height: 200px;
+    margin: 250px 0px;
+    padding: 0px 15px;
+    text-align: center; }
+    .search-popup-body .search-popup-holder .input-group {
+      display: inline-flex;
+      width: 50%;
+      height: 70px; }
+      .search-popup-body .search-popup-holder .input-group input {
+        border-radius: 30px;
+        font-size: 24px;
+        border: 0px solid white;
+        padding-left: 25px; }
+    .search-popup-body .search-popup-holder button {
+      display: inline-flex;
+      font-size: 28px;
+      margin-left: 24px;
+      color: #767676;
+      letter-spacing: 1px;
+      align-items: center; }
+      .search-popup-body .search-popup-holder button i {
+        color: white; }
+      .search-popup-body .search-popup-holder button:after {
+        content: " Tìm kiếm";
+        color: white;
+        font-size: 18px;
+        padding-left: 8px;
+        display: block; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1992,7 +1992,7 @@
     height: 350px;
     width: 100%;
     padding-left: 0px !important;
-    margin-top: 30px; }
+    margin-top: 0px !important; }
     .image-post-body .life-carousel-holder .carousel-indicators {
       bottom: 3%; }
       .image-post-body .life-carousel-holder .carousel-indicators button {
@@ -2324,14 +2324,12 @@
       margin-top: 30px; }
     .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder {
       width: 100%;
-      height: 64px;
+      height: auto;
       background-color: #E8EFFA; }
       .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .question-holder {
         display: flex;
         align-items: center;
-        padding-top: 15px;
-        padding-right: 25px;
-        padding-left: 20px; }
+        padding: 15px 25px 20px 15px; }
         .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .question-holder button {
           display: inline-flex;
           align-items: center;
@@ -2363,15 +2361,15 @@
         .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .collapse .vertical-divider {
           position: absolute;
           width: 1px;
-          height: 90%;
+          height: 75%;
           border-left: 1px dashed #ABC6EF;
-          top: 0px;
+          top: 10px;
           left: 30px; }
       .post-body .news-holder .news-main .post-holder .post-content .q-and-a-collapse-holder .collapsing {
         background-color: #E8EFFA;
         transition: 0.3s ease; }
     .post-body .news-holder .news-main .post-holder .post-content .subsidiary {
-      margin-top: 120px;
+      margin-top: 40px;
       font-style: normal;
       font-weight: bold;
       font-size: 16px;
@@ -2504,7 +2502,7 @@
 
   .register-body, .login-body {
     background-color: #E8EFFA;
-    padding-top: 50px; }
+    padding-top: 36px; }
     .register-body .logo-thecup, .login-body .logo-thecup {
       display: block;
       margin-left: auto;
@@ -2727,6 +2725,7 @@
           content: " Tìm kiếm";
           color: white;
           font-size: 18px;
-          padding-left: 8px; } }
+          padding-left: 8px;
+          display: block; } }
 
 /*# sourceMappingURL=responsive.css.map */

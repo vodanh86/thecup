@@ -327,6 +327,49 @@ p{
           .volume-holder{
             display: inline-flex;
             align-items: center;
+            position: relative;
+            cursor: pointer;
+            .volume-bar{
+              position: absolute;
+              transform: rotateZ(
+                              -90deg
+              );
+              top: -55px;
+              left: -30px;
+              display: none;
+              align-items: center;
+              width: 85px;
+              height: 20px;
+              padding: 10px;
+              border-radius: 10px;
+              background: white;
+              .slider{
+                width: 55px;
+                -webkit-appearance: none;
+                height: 1px;
+                border-radius: 5px;
+                background: #000000;
+                outline: none;
+                opacity: 1;
+                cursor: pointer;
+              }
+              .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #1B3864;
+                cursor: pointer;
+              }
+              .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #04AA6D;
+                cursor: pointer;
+              }
+            }
           }
         }
       }
@@ -2519,8 +2562,9 @@ p{
           margin-top: 10px;
           display: flex;
           justify-content: center;
+          padding: 0px 5px;
           img{
-            width: 103px;
+            width: 100%;
           }
         }
       }
@@ -2783,14 +2827,12 @@ p{
           }
           .q-and-a-collapse-holder{
             width: 100%;
-            height: 64px;
+            height: auto;
             background-color: #E8EFFA;
             .question-holder{
               display: flex;
               align-items: center;
-              padding-top: 15px;
-              padding-right: 25px;
-              padding-left: 20px;
+              padding: 15px 25px 20px 15px;
               button{
                 display: inline-flex;
                 align-items: center;
@@ -2827,9 +2869,9 @@ p{
               .vertical-divider{
                 position: absolute;
                 width: 1px;
-                height: 90%;
+                height: 75%;
                 border-left: 1px dashed #ABC6EF;
-                top: 0px;
+                top: 10px;
                 left: 30px;
               }
             }
@@ -2839,7 +2881,7 @@ p{
             }
           }
           .subsidiary{
-            margin-top: 120px;
+            margin-top: 40px;
             font-style: normal;
             font-weight: bold;
             font-size: 16px;
@@ -3608,4 +3650,54 @@ p{
   }
 }
 
-
+.search-popup-body{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 12;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease;
+  .search-popup-holder{
+    width: 100%;
+    height: 200px;
+    margin: 250px 0px;
+    padding: 0px 15px;
+    text-align: center;
+    .input-group{
+      display: inline-flex;
+      width: 50%;
+      height: 70px;
+      input{
+        border-radius: 30px;
+        font-size: 24px;
+        border: 0px solid white;
+        padding-left: 25px;
+      }
+    }
+    button{
+      display: inline-flex;
+      font-size: 28px;
+      margin-left: 24px;
+      color: #767676;
+      letter-spacing: 1px;
+      align-items: center;
+      i{
+        color: white;
+      }
+      &:after{
+        content: " Tìm kiếm";
+        color: white;
+        font-size: 18px;
+        padding-left: 8px;
+        display: block;
+      }
+    }
+  }
+}
