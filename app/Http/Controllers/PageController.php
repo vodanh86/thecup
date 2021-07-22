@@ -36,4 +36,9 @@ class PageController extends Controller
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs,
         "cat" => $cat, "author" => $author]);
     }
+
+    public function contact()
+    {
+        return view('template.contact', []);
+    }
 }

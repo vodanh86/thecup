@@ -62,7 +62,7 @@ $parentId = $cats[0][0]->id;
                     <a href="#" class="the-cup-logo">
                         <img src="{{ url('/resources/img/logo-footer.svg')}}" alt="">
                     </a>
-                    <a href="/thecup/template/contact.html" class="the-cup-footer-link">
+                    <a href="{{url('site/contact')}}" class="the-cup-footer-link">
                         <div class="text">Liên hệ</div>
                     </a>
                     <a href="#" class="the-cup-footer-link">
