@@ -4,7 +4,7 @@ use App\Models\Category;
 
 ?>
 @include('layouts.header')
-<body class="homepage-body" id="homePageBody">
+<body class="homepage-body" id="homePageBody" style="touch-action: auto">
 @include('layouts.nav')
 @include('layouts.carousel')
 <!--Radio-start-->
@@ -51,14 +51,12 @@ use App\Models\Category;
                             <span> / </span>
                             <span id="duration" class="total-time">0:00</span>
                         </div>
-                        <div class="volume-holder">
-                            <span class="material-icons material-icons-outlined">volume_up</span>
-                            <div class="progress" id="volumeProgressWrapper" style="visibility: hidden">
-                                <div id="volProgress" class="progress-bar" role="progressbar" style="width: 80%;"
-                                     aria-valuenow="25"
-                                     aria-valuemin="0" aria-valuemax="100"></div>
+                        <button class="btn volume-holder">
+                            <span class="material-icons material-icons-outlined" id="volumeHolder">volume_up</span>
+                            <div class="volume-bar" id="volumeProgressWrapper" style="display: none">
+                                <input type="range" min="0" max="100" value="80" class="slider" id="volProgress">
                             </div>
-                        </div>
+                        </button>
                         </button>
                     </div>
                 </div>

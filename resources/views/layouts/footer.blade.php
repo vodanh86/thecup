@@ -125,11 +125,11 @@ $parentId = $cats[0][0]->id;
             <input type="text" class="form-control" placeholder="Tìm kiếm theo từ khóa, chủ đề, tên bài viết"
                    aria-label="Recipient's username with two button addons">
         </div>
+
+        <a href="/thecup/template/search.html">
         <button class="btn">
-            <a href="/thecup/template/search.html">
-                <i class="fas fa-search"></i>
-            </a>
-        </button>
+          <i class="fas fa-search"></i>
+        </button></a>
     </div>
 </div>
 <!--Footer-start-->

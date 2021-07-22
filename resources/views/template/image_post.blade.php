@@ -126,7 +126,7 @@ use App\Admin\Controllers\Util;
       </div>
     </div>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9 order-first order-md-last">
     <!--Life-Carousel-start-->
     <div id="life-carousel" class="carousel slide carousel-fade life-carousel-holder" data-bs-ride="none">
       <div class="carousel-indicators">
