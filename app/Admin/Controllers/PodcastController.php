@@ -82,7 +82,7 @@ class PodcastController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->image('image', __('Image'));
+        $form->image('image', __('Image'))->move('podcast');
         /*$form->hasMany('songs', function (Form\NestedForm $form) {
             $form->text('title', 'Tiêu đề');
             $form->file('link', 'Bài hát')->rules('mimes:audio/mpeg');
@@ -97,7 +97,7 @@ class PodcastController extends AdminController
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
         $form->saving(function ($form) {
             if (!($form->model()->id && $form->model()->title == $form->title)){
-                $form->slug = Util::createSlug($form->title, Page::get());
+                $form->slug = Util::createSlug($form->title, Podcast::get());
             }
         });
         return $form;

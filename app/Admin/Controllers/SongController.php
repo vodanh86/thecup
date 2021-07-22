@@ -83,7 +83,7 @@ class SongController extends AdminController
         $form->hidden('duration');
         $form->saving(function ($form) {
             if (!($form->model()->id && $form->model()->title == $form->title)){
-                $form->slug = Util::createSlug($form->title, Podcast::get());
+                $form->slug = Util::createSlug($form->title, Song::get());
             }
         });
         return $form;

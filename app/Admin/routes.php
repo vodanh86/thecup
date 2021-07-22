@@ -20,4 +20,5 @@ Route::group([
     $router->resource('plans', PlanController::class);
     $router->resource('payments', PaymentController::class);
     $router->resource('songs', SongController::class);
+    $router->resource('authors', AuthorController::class);
 });
