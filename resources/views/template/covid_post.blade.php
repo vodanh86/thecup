@@ -25,11 +25,11 @@ use App\Admin\Controllers\Util;
                         <p class="title-name">{{$page->title}}</p>
                         <div class="author-date-rating">
                             <div class="author">
-                                <a href="/thecup/template/author.html">
+                                <a href="{{url('author/'.$author->slug)}}">
                                     <span class="material-icons material-icons-outlined">
                                     person
                                     </span>
-                                    <span>{{$author->name}}</span>
+                                    <span>{{$author->title}}</span>
                                 </a>
                             </div>
                             <div class="date">

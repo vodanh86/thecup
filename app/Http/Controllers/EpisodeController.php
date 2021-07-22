@@ -12,12 +12,6 @@ use Carbon\Carbon;
 
 class EpisodeController extends Controller
 {
-    //
-    public function index()
-    {
-        return view('welcome', []);
-    }
-
     public function view($slug)
     {
         $song = Song::where('slug', $slug)->first();

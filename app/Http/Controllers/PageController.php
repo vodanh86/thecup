@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Page;
 use App\Models\Photo;
 use App\Models\Song;
-use App\Models\AuthUser;
+use App\Models\Author;
 use Carbon\Carbon;
 
 class PageController extends Controller
@@ -22,7 +22,7 @@ class PageController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
         $cat = Category::find($page->category_id);
-        $author = AuthUser::find($page->author_id);
+        $author = Author::where("admin_user_id", $page->author_id)->first();
         $photos = Photo::where("album_id", $page->id)->get();
         $songs = Song::where("podcast_id", $page->id)->get();
 

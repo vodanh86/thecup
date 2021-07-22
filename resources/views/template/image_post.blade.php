@@ -20,7 +20,9 @@ use App\Admin\Controllers\Util;
   <div class="col-md-3">
     <div class="image-grid-holder">
       <div class="upper">
-        <p class="author-name">{{$author->name}}</p>
+        <a href="{{url('author/'.$author->slug)}}">
+          <p class="author-name">{{$author->title}}</p>
+        </a>
         <p class="album-name">{{$page->title}}</p>
         <div class="date-and-rating">
           <p class="date">{{Util::dateFormat($page->created_at)}}</p>
