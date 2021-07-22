@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 Route::get('/category/{slug}', 'CategoryController@view');
 Route::get('/page/{slug}', 'PageController@view');
 Route::get('/episode/{slug}', 'EpisodeController@view');

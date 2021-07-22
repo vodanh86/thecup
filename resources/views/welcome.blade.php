@@ -1,3 +1,8 @@
+<?php
+use App\Admin\Controllers\Util;
+use App\Models\Category;
+
+?>
 @include('layouts.header')
 <body class="homepage-body" id="homePageBody">
 @include('layouts.nav')
@@ -10,7 +15,7 @@
                 <span>Podcast được nghe nhiều</span>
             </div>
             <div class="radio-seemore ms-auto">
-                <a href="/thecup/template/podcast_episodes.html">
+                <a href="{{url('')}}">
                     <span>Xem tất cả</span>
                 </a>
             </div>
@@ -84,25 +89,25 @@
                     <div class="hightlight-upper d-flex">
                         <div class="upper-left me-auto">
                             <div class="hightlight-large-block">
-                                <a href="/thecup/template/covid_post.html">
+                                <a href="{{ url('/page/'.$topPages[0]->slug) }}">
                                     <div class="hightlight-arcticle">
-                                        <p>Nghệ thuật</p>
-                                        <img src="resources/img/highlight/highlight-large-1.png" alt="">
+                                        <p>{{$cats[$topPages[0]->category_id]}}</p>
+                                        <img src="{{url(env('AWS_URL')).$topPages[0]->image}}" alt="{{$topPages[0]->title}}">
                                     </div>
-                                    <p class="article-datetime">Ngày 13 tháng 5, 2020</p>
-                                    <p class="article-title">Cần biết về Covid-19 và tiêm phòng ngừa Covid-19</p>
+                                    <p class="article-datetime">{{Util::vnDateFormat($topPages[0]->created_at)}}</p>
+                                    <p class="article-title">{{$topPages[0]->title}}</p>
                                 </a>
                             </div>
                         </div>
                         <div class="upper-right ms-auto">
                             <div class="hightlight-small-block">
-                                <a href="/thecup/template/restricted-post.html">
+                                <a href="{{ url('/page/'.$topPages[1]->slug) }}">
                                     <div class="hightlight-arcticle">
-                                        <p>Sống</p>
-                                        <img src="resources/img/highlight/highlight-small-1.png" alt="">
+                                        <p>{{$cats[$topPages[1]->category_id]}}</p>
+                                        <img src="{{url(env('AWS_URL')).$topPages[1]->image}}" alt="{{$topPages[1]->title}}">
                                     </div>
-                                    <p class="article-datetime">Ngày 20 tháng 5, 2020</p>
-                                    <p class="article-title">Bài viết bị giới hạn</p>
+                                    <p class="article-datetime">{{Util::vnDateFormat($topPages[1]->created_at)}}</p>
+                                    <p class="article-title">{{$topPages[1]->title}}</p>
                                 </a>
                             </div>
                         </div>
@@ -110,23 +115,26 @@
                     <div class="hightlight-lower d-flex">
                         <div class="lower-left me-auto">
                             <div class="hightlight-small-block">
-                                <div class="hightlight-arcticle">
-                                    <p>Sống</p>
-                                    <img src="resources/img/highlight/highlight-small-2.png" alt="">
-                                </div>
-                                <p class="article-datetime">Ngày 20 tháng 5, 2020</p>
-                                <p class="article-title">Những bức ảnh chưa được tiết lộ về thế chiến thứ nhất</p>
+                                <a href="{{ url('/page/'.$topPages[2]->slug) }}">
+                                    <div class="hightlight-arcticle">
+                                        <p>{{$cats[$topPages[2]->category_id]}}</p>
+                                        <img src="{{url(env('AWS_URL')).$topPages[2]->image}}" alt="{{$topPages[2]->title}}">
+                                    </div>
+                                    <p class="article-datetime">{{Util::vnDateFormat($topPages[2]->created_at)}}</p>
+                                    <p class="article-title">{{$topPages[2]->title}}</p>
+                                </a>
                             </div>
                         </div>
                         <div class="lower-right ms-auto">
                             <div class="hightlight-large-block">
-                                <div class="hightlight-arcticle">
-                                    <p>Nghệ thuật</p>
-                                    <img src="resources/img/highlight/highlight-large-2.png" alt="">
-                                </div>
-                                <p class="article-datetime">Ngày 13 tháng 5, 2020</p>
-                                <p class="article-title">Phân tích tác phẩm tiếng thét, sự thật đằng sau nó
-                                    còn đáng giá hơn rất nhiều</p>
+                                <a href="{{ url('/page/'.$topPages[3]->slug) }}">
+                                    <div class="hightlight-arcticle">
+                                        <p>{{$cats[$topPages[3]->category_id]}}</p>
+                                        <img src="{{url(env('AWS_URL')).$topPages[3]->image}}" alt="{{$topPages[3]->title}}">
+                                    </div>
+                                    <p class="article-datetime">{{Util::vnDateFormat($topPages[3]->created_at)}}</p>
+                                    <p class="article-title">{{$topPages[3]->title}}</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -136,105 +144,42 @@
                 </div>
                 <div class="news-divider"></div>
                 <div class="news-other-post">
-                    <div class="other-post">
+                    @foreach($pages as $page)
+                    <div class="other-post" style="min-height:250px">
                         <div class="row">
                             <div class="col-5">
-                                <img src="resources/img/other%20post/another-post-1.png" alt="">
+                                <a href="{{ url('/page/'.$page->slug) }}">
+                                    <img src="{{url(env('AWS_URL')).$page->image}}" alt="">
+                                    @if($page->type == 1)
+                                    <div class="listenable-box">
+                                        <img width="32" height="32" class="listenable-icon"
+                                            src="/thecup/resources/img/icon/ic_playlist.svg" alt="">
+                                    </div>
+                                    @endif
+                                    @if($page->type == 2)
+                                    <div class="listenable-box">
+                                        <img width="14" height="18" class="listenable-icon play-icon"
+                                            src="/thecup/resources/img/icon/ic_play.svg" alt="">
+                                    </div>
+                                    @endif
+                                </a>
                             </div>
                             <div class="col-7">
-                                <p class="other-post-category">Sống</p>
-                                <p class="other-post-title">Phân tích tác phẩm tiếng thét? Sự thật đằng sau nó còn đáng
-                                    giá
-                                    hơn rất nhiều</p>
+                                <p class="other-post-category">{{Category::find($page->category_id)->title}}</p>
+                                <p class="other-post-title"><a href="{{ url('/page/'.$page->slug) }}">{{$page->title}}</a></p>
                                 <div class="other-post-information">
-                                    <span class="other-post-date-info">Ngày 21 tháng 5, 2020</span>
+                                    <span class="other-post-date-info">{{Util::vnDateFormat($page->published_at)}}</span>
                                     <div class="info-seperator"></div>
                                     <span class="other-post-comment-info">3 bình luận</span>
                                 </div>
-                                <p class="other-post-description">Giao dịch khối ngoại là điểm trừ khi họ tiếp tục bán
-                                    ròng
-                                    khá mạnh với giá trị hơn 1.500 tỷ đồng trên toàn thị trường. Lực bán của khối ngoại
-                                    tập
-                                    trung vào các ...</p>
+                                <p class="other-post-description"><a href="{{ url('/page/'.$page->slug) }}">{!!$page->description!!}</a></p>
                             </div>
                         </div>
                     </div>
-                    <div class="other-post">
-                        <div class="row">
-                            <div class="col-5">
-                                <img class="post-img" src="resources/img/other%20post/another-post-2.png" alt="">
-                                <div class="listenable-box">
-                                    <img width="32" height="32" class="listenable-icon"
-                                         src="resources/img/icon/ic_playlist.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <p class="other-post-category">Sống</p>
-                                <p class="other-post-title">Làm sao để có thể là một nhà lãnh đạo tốt</p>
-                                <div class="other-post-information">
-                                    <span class="other-post-date-info">Ngày 21 tháng 5, 2020</span>
-                                    <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">3 bình luận</span>
-
-                                </div>
-                                <p class="other-post-description">Giao dịch khối ngoại là điểm trừ khi họ tiếp tục bán
-                                    ròng
-                                    khá mạnh với giá trị hơn 1.500 tỷ đồng trên toàn thị trường. Lực bán của khối ngoại
-                                    tập
-                                    trung vào các ...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="other-post">
-                        <div class="row">
-                            <div class="col-5">
-                                <img class="post-img" src="resources/img/other%20post/another-post-3.png" alt="">
-                                <div class="listenable-box">
-                                    <img width="14" height="18" class="listenable-icon play-icon"
-                                         src="resources/img/icon/ic_play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <p class="other-post-category">Sống</p>
-                                <p class="other-post-title">Kinh tế học đại cương tóm tắt và ngắn gọn</p>
-                                <div class="other-post-information">
-                                    <span class="other-post-date-info">Ngày 21 tháng 5, 2020</span>
-                                    <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">3 bình luận</span>
-                                    <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">0 audio</span>
-                                </div>
-                                <p class="other-post-description">Giao dịch khối ngoại là điểm trừ khi họ tiếp tục bán
-                                    ròng
-                                    khá mạnh với giá trị hơn 1.500 tỷ đồng trên toàn thị trường. Lực bán của khối ngoại
-                                    tập
-                                    trung vào các ...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="other-post">
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="resources/img/other%20post/another-post-4.png" alt="">
-                            </div>
-                            <div class="col-7">
-                                <p class="other-post-category">Sống</p>
-                                <p class="other-post-title">Phân tích tác phẩm tiếng thét? Sự thật đằng sau nó còn đáng
-                                    giá
-                                    hơn rất nhiều</p>
-                                <div class="other-post-information">
-                                    <span class="other-post-date-info">Ngày 21 tháng 5, 2020</span>
-                                    <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">3 bình luận</span>
-                                </div>
-                                <p class="other-post-description">Giao dịch khối ngoại là điểm trừ khi họ tiếp tục bán
-                                    ròng
-                                    khá mạnh với giá trị hơn 1.500 tỷ đồng trên toàn thị trường. Lực bán của khối ngoại
-                                    tập
-                                    trung vào các ...</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                </div>
+                <div class="paging-sector">
+                    {{ $pages->links() }}
                 </div>
             </div>
             <div class="news-newest col-md-4">
