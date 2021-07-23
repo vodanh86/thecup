@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/category/{slug}', 'CategoryController@view');
 Route::get('/page/{slug}', 'PageController@view');
 Route::get('/site/contact', 'PageController@contact');
+Route::get('/site/search', 'PageController@search');
 Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
 Route::get('/subscribe', 'HomeController@subscribe');

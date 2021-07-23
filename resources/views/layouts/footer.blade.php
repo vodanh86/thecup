@@ -120,17 +120,17 @@ $parentId = $cats[0][0]->id;
     </div>
 </div>
 <div class="search-popup-body" id="searchPopupBody">
-    <div class="search-popup-holder">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Tìm kiếm theo từ khóa, chủ đề, tên bài viết"
-                   aria-label="Recipient's username with two button addons">
-        </div>
-
-        <a href="/thecup/template/search.html">
-        <button class="btn">
-          <i class="fas fa-search"></i>
-        </button></a>
+</div>
+<div class="search-popup-holder" id="searchInput">
+    <form action="{{url('site/search')}}">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Tìm kiếm theo từ khóa, chủ đề, tên bài viết"
+               aria-label="">
     </div>
+    <button class="btn" type="submit">
+        <i class="fas fa-search"></i>
+    </button>
+    </form>
 </div>
 <!--Footer-start-->
 <footer class="footer-holder">

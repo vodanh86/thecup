@@ -18,6 +18,13 @@ $(document).ready(function(){
             }
         }
     })
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 550) {
+            $(".restrict-layer").addClass("show");
+            $(".restrict-layer-text").removeClass("transition");
+        }
+    });
+
     // Control carousel prev, next button
     $('.btn-carousel-prev').click(function() {
         $(".carousel-holder .owl-carousel .owl-prev").trigger('click');
@@ -67,11 +74,13 @@ $(document).ready(function(){
     $(document).on('click', '#searchBtn', function() {
         searchPopupBody.style.visibility = 'visible';
         searchPopupBody.style.opacity= '1';
+        searchInput.style.display = 'block';
         homePageBody.style.overflow = "hidden";
     });
     $(document).on('click', '#searchPopupBody', function() {
         searchPopupBody.style.visibility = 'hidden';
         searchPopupBody.style.opacity= '0';
+        searchInput.style.display = 'none';
         homePageBody.style.overflow = "visible";
     });
 

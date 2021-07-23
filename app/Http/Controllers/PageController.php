@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Admin\Controllers\Util;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Photo;
@@ -35,6 +36,13 @@ class PageController extends Controller
         }
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs,
         "cat" => $cat, "author" => $author]);
+    }
+
+    public function search()
+    {
+        $q = $_GET['q'];
+        $pages = Page::whereRaw("MATCH (title, description, content) AGAINST (? IN BOOLEAN MODE)", Util::fullTextWildcards($q))->paginate(5);
+        return view("template.search", ["q" => $q, 'pages' => $pages]);
     }
 
     public function contact()

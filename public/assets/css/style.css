@@ -478,7 +478,9 @@ p {
         color: #333333;
         font-weight: 500; }
       .news-holder .news-main .news-other-post .other-post .other-post-information {
-        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
         font-size: 13px;
         line-height: 15.23px;
         color: #828282;
@@ -491,8 +493,14 @@ p {
           display: inline-block;
           margin-left: 16px;
           margin-right: 16px; }
+        .news-holder .news-main .news-other-post .other-post .other-post-information .rating-holder {
+          display: inline-flex;
+          align-items: center; }
+          .news-holder .news-main .news-other-post .other-post .other-post-information .rating-holder .material-icons {
+            color: #FFA800;
+            font-size: 14px; }
       .news-holder .news-main .news-other-post .other-post .other-post-description {
-        margin-top: 10px;
+        margin-top: 12px;
         font-size: 14px;
         line-height: 19.6px;
         color: #4F4F4F;
@@ -1744,13 +1752,43 @@ p {
       .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder {
         display: inline-flex;
         align-items: center;
-        justify-content: center; }
-        .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder .progress {
-          display: inline-flex;
-          width: 60px;
-          height: 5px;
-          margin-left: 4px;
-          cursor: pointer; }
+        position: relative;
+        cursor: pointer; }
+        .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar {
+          position: absolute;
+          transform: rotateZ(-90deg);
+          top: -50px;
+          left: -19px;
+          display: none;
+          align-items: center;
+          width: 85px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 10px;
+          background: white; }
+          .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider {
+            width: 55px;
+            -webkit-appearance: none;
+            height: 1px;
+            border-radius: 5px;
+            background: #000000;
+            outline: none;
+            opacity: 1;
+            cursor: pointer; }
+          .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #1B3864;
+            cursor: pointer; }
+          .podcast-single-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer; }
     .podcast-single-body .podcast-player-holder .lower .progress-holder {
       display: inline-flex;
       align-items: center; }
@@ -2791,66 +2829,73 @@ p {
 .post-body {
   position: relative; }
   .post-body .restrict-layer {
+    transition: 0.8s ease;
+    visibility: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0.8;
+    background: rgba(0, 0, 0, 0);
     top: 0;
     left: 0;
     z-index: 10; }
-  .post-body .restrict-layer-text {
-    background-color: white;
-    width: 100%;
-    height: 398px;
-    opacity: 1;
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .post-body .restrict-layer-text .wrapper {
-      text-align: center; }
-      .post-body .restrict-layer-text .wrapper .text1 {
-        margin-bottom: 22px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 140%;
-        /* identical to box height, or 34px */
-        /* Neutral/200 */
-        color: #333333; }
-      .post-body .restrict-layer-text .wrapper .text2 {
-        margin-bottom: 40px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 140%;
-        /* or 25px */
-        /* Neutral/200 */
-        color: #333333; }
-      .post-body .restrict-layer-text .wrapper .button-holder .button-reg {
-        background-color: #2270E8;
-        border-radius: 32px;
-        padding: 16px 24px;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 21px;
-        color: #FFFFFF; }
-      .post-body .restrict-layer-text .wrapper .button-holder span {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 19px;
-        color: #B3B3B3;
-        margin: 0px 8px; }
-      .post-body .restrict-layer-text .wrapper .button-holder .button-log {
-        background-color: transparent;
-        font-weight: bold;
-        border-radius: 32px;
-        font-size: 18px;
-        line-height: 21px;
-        color: #2270E8;
-        padding: 16px 24px; }
+    .post-body .restrict-layer .restrict-layer-text {
+      transition: 0.4s ease;
+      background-color: white;
+      width: 100%;
+      height: 398px;
+      opacity: 1;
+      z-index: 11;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .post-body .restrict-layer .restrict-layer-text .wrapper {
+        text-align: center; }
+        .post-body .restrict-layer .restrict-layer-text .wrapper .text1 {
+          margin-bottom: 22px;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 140%;
+          /* identical to box height, or 34px */
+          /* Neutral/200 */
+          color: #333333; }
+        .post-body .restrict-layer .restrict-layer-text .wrapper .text2 {
+          margin-bottom: 40px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 140%;
+          /* or 25px */
+          /* Neutral/200 */
+          color: #333333; }
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg {
+          background-color: #2270E8;
+          border-radius: 32px;
+          padding: 16px 24px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 21px;
+          color: #FFFFFF; }
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          color: #B3B3B3;
+          margin: 0px 8px; }
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log {
+          background-color: transparent;
+          font-weight: bold;
+          border-radius: 32px;
+          font-size: 18px;
+          line-height: 21px;
+          color: #2270E8;
+          padding: 16px 24px; }
+    .post-body .restrict-layer .transition {
+      transform: translateY(200px); }
+  .post-body .show {
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.8); }
 
 .purchase-body .purchase-holder {
   margin-top: 73px; }
@@ -2938,35 +2983,41 @@ p {
   visibility: hidden;
   opacity: 0;
   transition: 0.2s ease; }
-  .search-popup-body .search-popup-holder {
-    width: 100%;
-    height: 200px;
-    margin: 250px 0px;
-    padding: 0px 15px;
-    text-align: center; }
-    .search-popup-body .search-popup-holder .input-group {
-      display: inline-flex;
-      width: 50%;
-      height: 70px; }
-      .search-popup-body .search-popup-holder .input-group input {
-        border-radius: 30px;
-        font-size: 24px;
-        border: 0px solid white;
-        padding-left: 25px; }
-    .search-popup-body .search-popup-holder button {
-      display: inline-flex;
-      font-size: 28px;
-      margin-left: 24px;
-      color: #767676;
-      letter-spacing: 1px;
-      align-items: center; }
-      .search-popup-body .search-popup-holder button i {
-        color: white; }
-      .search-popup-body .search-popup-holder button:after {
-        content: " Tìm kiếm";
-        color: white;
-        font-size: 18px;
-        padding-left: 8px;
-        display: block; }
+
+.search-popup-holder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  height: 200px;
+  margin: 250px 0px;
+  padding: 0px 15px;
+  text-align: center; }
+  .search-popup-holder .input-group {
+    display: inline-flex;
+    width: 50%;
+    height: 70px; }
+    .search-popup-holder .input-group input {
+      border-radius: 30px;
+      font-size: 24px;
+      border: 0px solid white;
+      padding-left: 25px; }
+  .search-popup-holder button {
+    display: inline-flex;
+    font-size: 28px;
+    margin-left: 24px;
+    color: #767676;
+    letter-spacing: 1px;
+    align-items: center; }
+    .search-popup-holder button i {
+      color: white; }
+    .search-popup-holder button:after {
+      content: " Tìm kiếm";
+      color: white;
+      font-size: 18px;
+      padding-left: 8px;
+      display: block; }
 
 /*# sourceMappingURL=style.css.map */

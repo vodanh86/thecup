@@ -17,5 +17,15 @@ class Page extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
+        /**
+     * The columns of the full text index
+     */
+    protected $searchable = [
+        'title',
+        'description',
+        'content'
+    ];
+
 	protected $guarded = [];
+    
 }
