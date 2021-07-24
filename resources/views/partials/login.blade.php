@@ -5,34 +5,48 @@
     </div>
     <div class="register-holder">
         <div class="upper">
-            <p class="reg-title">Đăng nhập</p>
-            <div class="oauth-button">
-                <button class="btn btn-primary btn-facebook">
-                    <img src="/thecup/resources/img/Button/facebook.svg" alt="">
-                    <span>Facebook</span>
+            <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                <p class="reg-title">Đăng nhập</p>
+                <div class="oauth-button">
+                    <button class="btn btn-primary btn-facebook">
+                        <img src="/thecup/resources/img/Button/facebook.svg" alt="">
+                        <span>Facebook</span>
+                    </button>
+                    <button class="btn btn-outline-success btn-google">
+                        <img src="/thecup/resources/img/Button/google.svg" alt="">
+                        <span>Google</span>
+                    </button>
+                </div>
+                <div class="divider"></div>
+                <p class="username">Email hoặc tên đăng nhập</p>
+                <div class="input-group">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email hoặc tên đăng nhập"
+                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <p class="password">Mật khẩu</p>
+                <div class="input-group">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mật khẩu của bạn"
+                    name="password" required autocomplete="current-password">
+
+                    @if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                    @endif
+                </div>
+                <button type="submit" class="btn btn-primary btn-reg">
+                    Đăng nhập
                 </button>
-                <button class="btn btn-outline-success btn-google">
-                    <img src="/thecup/resources/img/Button/google.svg" alt="">
-                    <span>Google</span>
-                </button>
-            </div>
-            <div class="divider"></div>
-            <p class="username">Email hoặc tên đăng nhập</p>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Email hoặc tên đăng nhập"
-                       aria-label="Recipient's username with two button addons">
-            </div>
-            <p class="password">Mật khẩu</p>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Mật khẩu của bạn"
-                       aria-label="Recipient's username with two button addons">
-            </div>
-            <a href="/thecup/template/my_account.html">
-                <button class="btn btn-primary btn-reg">Đăng nhập</button>
-            </a>
-            <a href="">
-                <p class="forgot-password">Bạn quên mật khẩu?</p>
-            </a>
+                <a href="">
+                    <p class="forgot-password">Bạn quên mật khẩu?</p>
+                </a>
+             </form>
         </div>
         <div class="lower">
             <div class="login-block">
@@ -54,3 +68,15 @@
         </button>
     </div>
 </div>
+@section('scripts')
+@parent
+
+@if($errors->has('email') || $errors->has('password'))
+    <script>
+$(function() {
+        loginBody.style.visibility = 'visible';
+        loginBody.style.opacity= '1';
+    });
+    </script>
+@endif
+@endsection

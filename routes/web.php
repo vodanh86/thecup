@@ -20,3 +20,6 @@ Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
 Route::get('/subscribe', 'HomeController@subscribe');
 Route::get('/vnpay_return', 'HomeController@vnpayReturn');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

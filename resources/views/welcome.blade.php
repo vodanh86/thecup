@@ -299,3 +299,4 @@ use App\Models\Category;
 <!--News-end-->
 @include('layouts.footer')
 @include('layouts.homeScript')
+@yield('scripts')
