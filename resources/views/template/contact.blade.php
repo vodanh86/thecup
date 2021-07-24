@@ -1,12 +1,9 @@
-<?php
-use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Admin\Controllers\Util;
-
-?>
-@include('layouts.header')
+@extends('layouts.app')
 <body class="contact-body">
-@include('layouts.nav')
+@section('body')
+@endsection
+
+@section('content')
 <!--Category-banner-start-->
 <div class="category-banner">
   <div class="text-block">
@@ -76,5 +73,4 @@ use App\Admin\Controllers\Util;
 </div>
 <!--Contact-end-->
 </div>
-@include('layouts.footer')
-@include('layouts.script')
+@endsection
