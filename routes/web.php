@@ -21,6 +21,8 @@ Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
 Route::get('/subscribe', 'HomeController@subscribe');
 Route::get('/vnpay_return', 'HomeController@vnpayReturn');
+Route::post('/user/update', 'UserController@update');
+Route::post('/user/updateAvatar', 'UserController@updateAvatar');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
