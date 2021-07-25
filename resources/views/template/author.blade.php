@@ -1,3 +1,9 @@
+<?php
+use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Admin\Controllers\Util;
+
+?>
 @extends('layouts.app')
 <body class="author-body">
 @section('body')
