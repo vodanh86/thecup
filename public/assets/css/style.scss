@@ -1390,9 +1390,8 @@ p{
     .podcast-player-inner{
       padding-left: 10px!important;
       .podcast-image{
-        width: 362px;
+        width: 100%;
         height: 265px;
-        background-image: url("/thecup/resources/img/podcast/podcast-img.png");
       }
       .podcast-play{
         padding-left: 30px;
@@ -1808,9 +1807,8 @@ p{
     .podcast-player-inner{
       padding-left: 10px!important;
       .podcast-image{
-        width: 362px;
+        width: 100%;
         height: 265px;
-        background-image: url("/thecup/resources/img/podcast/podcast-img.png");
       }
       .podcast-play{
         padding-left: 30px;
@@ -3433,6 +3431,13 @@ p{
         font-size: 14px;
         line-height: 21px;
         color: #B3B3B3;
+      }
+      .date-picker{
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        font-size: 14px;
+        padding: 6px 12px;
+        cursor: pointer;
       }
       .margin-top{
         margin-top: 60px;

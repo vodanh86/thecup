@@ -11,7 +11,9 @@ use App\Admin\Controllers\Util;
 <div class="podcast-holder">
     <div class="container podcast-player-inner">
         <div class="row">
-            <div class="col-md-4 podcast-image" style="background-image:url('{{url(env('AWS_URL')).$page->image}}'); background-size: cover"></div>
+            <div class="col-md-4">
+                <img class="podcast-image" src="{{url(env('AWS_URL')).$page->image}}" alt="">
+            </div>
             <div class="col-md-8 podcast-play">
                 <p class="category">{{$cat->title}}</p>
                 <p class="title">{{$page->title}}</p>

@@ -8,7 +8,9 @@
 <div class="podcast-holder">
     <div class="container podcast-player-inner">
         <div class="row">
-            <div class="col-md-4 podcast-image"></div>
+            <div class="col-md-4">
+                <img class="podcast-image" src="/thecup/resources/img/podcast/podcast-img.png" alt="">
+            </div>
             <div class="col-md-8 podcast-play">
                 <p class="category">{{$cat->title}}</p>
                 <p class="title">{{$song->title}}</p>

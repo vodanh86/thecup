@@ -1116,9 +1116,8 @@ p {
   .podcast-episodes-body .podcast-holder .podcast-player-inner {
     padding-left: 10px !important; }
     .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-image {
-      width: 362px;
-      height: 265px;
-      background-image: url("/thecup/resources/img/podcast/podcast-img.png"); }
+      width: 100%;
+      height: 265px; }
     .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-play {
       padding-left: 30px; }
       .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-play .category {
@@ -1450,9 +1449,8 @@ p {
   .podcast-single-body .podcast-holder .podcast-player-inner {
     padding-left: 10px !important; }
     .podcast-single-body .podcast-holder .podcast-player-inner .podcast-image {
-      width: 362px;
-      height: 265px;
-      background-image: url("/thecup/resources/img/podcast/podcast-img.png"); }
+      width: 100%;
+      height: 265px; }
     .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play {
       padding-left: 30px; }
       .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play .category {
@@ -2760,6 +2758,12 @@ p {
         font-size: 14px;
         line-height: 21px;
         color: #B3B3B3; }
+      .my-account-body .contact-holder .right .date-picker {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        font-size: 14px;
+        padding: 6px 12px;
+        cursor: pointer; }
       .my-account-body .contact-holder .right .margin-top {
         margin-top: 60px; }
     .my-account-body .contact-holder .left {

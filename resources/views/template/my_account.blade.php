@@ -57,7 +57,7 @@
             </div>
             <p class="input-name">Ngày sinh</p>
             <div class="input-group" style="position: relative">
-              <input type="text" class="form-control" id="birthdate" placeholder="Chủ đề" aria-label="Recipient's username with two button addons"/>
+              <input type="date" name="dateofbirth" class="date-picker">
             </div>
           </div>
         </div>
