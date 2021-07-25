@@ -435,7 +435,8 @@
         position: relative;
         margin-bottom: 45px; }
         .news-holder .news-main .news-other-post .other-post img {
-          width: 100%; }
+          width: 100%;
+          height: 100px !important; }
         .news-holder .news-main .news-other-post .other-post .col-5 {
           padding-right: 0px; }
           .news-holder .news-main .news-other-post .other-post .col-5 .listenable-box {
@@ -3451,7 +3452,6 @@
       .post-body .restrict-layer .transition {
         transform: translateY(200px); }
     .post-body .show {
-      visibility: visible;
-      background: rgba(0, 0, 0, 0.8); } }
+      visibility: visible; } }
 
 /*# sourceMappingURL=responsive.css.map */

@@ -147,7 +147,15 @@ Player.prototype = {
         // Update the display on the slider.
         //volProgress.style.width = val * 100 + '%'
     },
+    rate: function (val){
+        var self = this;
 
+        // Get the Howl we want to manipulate.
+        var sound = self.playlist[self.index].howl;
+        if (sound.playing()) {
+            sound.rate(val);
+        }
+    },
     /**
      * Seek to a new position in the currently playing track.
      * @param  {Number} per Percentage through the song to skip.
@@ -260,11 +268,17 @@ prevBtn.addEventListener('click', function() {
     player.skip('prev');
     $('#playBtn').find('span').text('pause');
     $('#playBtn').attr('id','pauseBtn');
+
+    $('.btn-speed').find('span').text('1X');
+    $('.btn-speed').attr('id','speedBtn1X');
 });
 nextBtn.addEventListener('click', function() {
     player.skip('next');
     $('#playBtn').find('span').text('pause');
     $('#playBtn').attr('id','pauseBtn');
+
+    $('.btn-speed').find('span').text('1X');
+    $('.btn-speed').attr('id','speedBtn1X');
 });
 progress.addEventListener('change', function(event) {
     //console.log(progress.value);
@@ -393,5 +407,22 @@ replay10s.addEventListener('click', function () {
             volumeProgressWrapper.style.display = 'none';
             homePageBody.style.touchAction = 'auto';
         }
+    });
+
+    //Button Speed
+    $(document).on('click', '#speedBtn1X', function() {
+        $('#speedBtn1X').find('span').text('1.5X');
+        $('#speedBtn1X').attr('id','speedBtn15X');
+        player.rate(1.5);
+    });
+    $(document).on('click', '#speedBtn15X', function() {
+        $('#speedBtn15X').find('span').text('2X');
+        $('#speedBtn15X').attr('id','speedBtn2X');
+        player.rate(2);
+    });
+    $(document).on('click', '#speedBtn2X', function() {
+        $('#speedBtn2X').find('span').text('1X');
+        $('#speedBtn2X').attr('id','speedBtn1X');
+        player.rate(1);
     });
 });

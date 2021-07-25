@@ -1,12 +1,9 @@
-<?php
-use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Admin\Controllers\Util;
-
-?>
-@include('layouts.header')
+@extends('layouts.app')
 <body class="author-body">
-@include('layouts.nav')
+@section('body')
+@endsection
+
+@section('content')
 <!--Economy-banner-start-->
 <div class="category-banner">
     <div class="text-block">
@@ -22,7 +19,9 @@ use App\Admin\Controllers\Util;
             <div class="col-md-4 author-info">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="rounded-avatar" style="background-image:url('{{url(env('AWS_URL')).$author->avatar}}')";>
+                        <div class="rounded-avatar">
+                            <img src="{{url(env('AWS_URL')).$author->avatar}}'" alt="">
+
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -61,7 +60,7 @@ use App\Admin\Controllers\Util;
                             <div class="row">
                                 <div class="col-5">
                                     <a href="{{ url('/page/'.$page->slug) }}">
-                                        <img src="{{url(env('AWS_URL')).$page->image}}" alt="">
+                                        <img class="post-img" src="{{url(env('AWS_URL')).$page->image}}" alt="">
                                         @if($page->type == 1)
                                         <div class="listenable-box">
                                             <img width="32" height="32" class="listenable-icon"
@@ -103,5 +102,4 @@ use App\Admin\Controllers\Util;
 </div>
 <!--Economy-end-->
 </div>
-@include('layouts.footer')
-@include('layouts.script')
+@endsection

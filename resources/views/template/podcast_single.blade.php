@@ -1,12 +1,9 @@
-<?php
-use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Admin\Controllers\Util;
-
-?>
-@include('layouts.header')
+@extends('layouts.app')
 <body class="podcast-single-body">
-@include('layouts.nav')
+@section('body')
+@endsection
+
+@section('content')
 <!--Podcast-holder"-start-->
 <div class="podcast-holder">
     <div class="container podcast-player-inner">
@@ -191,15 +188,18 @@ use App\Admin\Controllers\Util;
         <div class="container">
             <div class="row">
                 <div class="col-md-6 button-holder">
-                    <span class="material-icons smaterial-icons-outlined">playlist_play</span>
-                    <span class="play-speed">1X</span>
-                    <div class="volume-holder">
-                        <span class="material-icons material-icons-outlined">volume_up</span>
-                        <div class="progress" id="volumeProgressWrapper">
-                            <div id="volProgress" class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
-                                 aria-valuemin="0" aria-valuemax="100"></div>
+                    <button class="btn">
+                        <span class="material-icons smaterial-icons-outlined">playlist_play</span>
+                    </button>
+                    <button class="btn btn-speed" id="speedBtn1X">
+                        <span class="play-speed">1X</span>
+                    </button>
+                    <button class="btn volume-holder">
+                        <span class="material-icons material-icons-outlined" id="volumeHolder">volume_up</span>
+                        <div class="volume-bar" id="volumeProgressWrapper" style="display: none">
+                            <input type="range" min="0" max="100" value="80" class="slider" id="volProgress">
                         </div>
-                    </div>
+                    </button>
                     <button class="btn" id="prevBtn">
                         <span class="material-icons material-icons-outlined">skip_previous</span>
                     </button>
@@ -231,5 +231,4 @@ use App\Admin\Controllers\Util;
     </div>
 </div>
 <!--Podcast-player-end-->
-@include('layouts.footer')
-@include('layouts.script')
+@endsection

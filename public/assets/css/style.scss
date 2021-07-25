@@ -460,6 +460,8 @@ p{
         }
         img{
           width: 100%;
+          height: 315px;
+          object-fit: cover;
           z-index: 0;
         }
       }
@@ -480,6 +482,8 @@ p{
         }
         img{
           width: 100%;
+          height: 315px;
+          object-fit: cover;
           z-index: 0;
         }
       }
@@ -540,6 +544,8 @@ p{
           position: relative;
           .post-img{
             width: 100%;
+            height: 218px;
+            object-fit: cover;
           }
           .listenable-box{
             display: flex;
@@ -611,9 +617,6 @@ p{
   }
   .news-newest{
     padding-left: 20px;
-    .new-post-block{
-
-    }
     .new-podcast-block{
       margin-top: 60px;
     }
@@ -628,6 +631,11 @@ p{
     }
     .newest-post{
       margin-bottom: 20px;
+      img{
+        width: 87px;
+        height: 87px;
+        object-fit: cover;
+      }
       .new-post-title{
         color: #333333;
         font-size: 14px;
@@ -646,7 +654,6 @@ p{
   }
   .comment {
     margin-top: 60px;
-    .comment-block{
       .col-md-10{
         padding-left: 20px;
         .comment-text{
@@ -664,7 +671,6 @@ p{
       }
     }
 
-  }
 }
 .footer-holder{
   margin-top: 40px;
@@ -840,8 +846,11 @@ p{
       width: 60px;
       height: 60px;
       border-radius: 30px;
-      background-repeat: no-repeat;
-      background-image: url("/thecup/resources/img/user-img/user-img-1.png");
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
     .user-name{
       font-style: normal;
@@ -1244,9 +1253,12 @@ p{
         box-sizing: border-box;
         border: 5px solid #DDDDDD;
         border-radius: 50px;
-        background-image: url("/thecup/resources/img/author2.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .author-name{
         margin-top: 8px;
@@ -3397,8 +3409,9 @@ p{
           align-items: center;
           justify-content: center;
           margin: 0 auto;
+          overflow: hidden;
           img{
-
+            object-fit: cover;
           }
         }
         .input{
@@ -3533,7 +3546,7 @@ p{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
     z-index: 10;
@@ -3611,7 +3624,6 @@ p{
   }
   .show{
     visibility: visible;
-    background: rgba(0, 0, 0, 0.8);
   }
 }
 

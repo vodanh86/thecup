@@ -94,7 +94,7 @@ use App\Admin\Controllers\Util;
                         </div>
                         <div class="comment">
                             <div class="title">
-                                <p>Bình luận</p>
+                                <p>Bình luận mới nhất</p>
                             </div>
                             <div class="comment-block">
                                 <div class="row">

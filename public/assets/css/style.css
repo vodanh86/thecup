@@ -394,6 +394,8 @@ p {
       padding: 5px 8px; }
     .news-holder .news-main .hightlight-large-block .hightlight-arcticle img {
       width: 100%;
+      height: 315px;
+      object-fit: cover;
       z-index: 0; }
   .news-holder .news-main .hightlight-small-block .hightlight-arcticle {
     position: relative; }
@@ -409,6 +411,8 @@ p {
       padding: 5px 8px; }
     .news-holder .news-main .hightlight-small-block .hightlight-arcticle img {
       width: 100%;
+      height: 315px;
+      object-fit: cover;
       z-index: 0; }
   .news-holder .news-main .article-datetime {
     margin-top: 14px;
@@ -452,7 +456,9 @@ p {
       .news-holder .news-main .news-other-post .other-post .col-5 {
         position: relative; }
         .news-holder .news-main .news-other-post .other-post .col-5 .post-img {
-          width: 100%; }
+          width: 100%;
+          height: 218px;
+          object-fit: cover; }
         .news-holder .news-main .news-other-post .other-post .col-5 .listenable-box {
           display: flex;
           left: 12px;
@@ -519,6 +525,10 @@ p {
       color: #1B3864; }
     .news-holder .news-newest .newest-post {
       margin-bottom: 20px; }
+      .news-holder .news-newest .newest-post img {
+        width: 87px;
+        height: 87px;
+        object-fit: cover; }
       .news-holder .news-newest .newest-post .new-post-title {
         color: #333333;
         font-size: 14px;
@@ -533,15 +543,15 @@ p {
         text-transform: uppercase; }
   .news-holder .comment {
     margin-top: 60px; }
-    .news-holder .comment .comment-block .col-md-10 {
+    .news-holder .comment .col-md-10 {
       padding-left: 20px; }
-      .news-holder .comment .comment-block .col-md-10 .comment-text {
+      .news-holder .comment .col-md-10 .comment-text {
         font-style: italic;
         font-weight: normal;
         font-size: 14px;
         line-height: 140%;
         color: #767676; }
-      .news-holder .comment .comment-block .col-md-10 .post {
+      .news-holder .comment .col-md-10 .post {
         font-size: 15px;
         color: #767676;
         font-weight: bold; }
@@ -690,9 +700,11 @@ p {
     .comment .comment-block .user-avatar {
       width: 60px;
       height: 60px;
-      border-radius: 30px;
-      background-repeat: no-repeat;
-      background-image: url("/thecup/resources/img/user-img/user-img-1.png"); }
+      border-radius: 30px; }
+      .comment .comment-block .user-avatar img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
     .comment .comment-block .user-name {
       font-style: normal;
       font-weight: bold;
@@ -998,9 +1010,11 @@ p {
     box-sizing: border-box;
     border: 5px solid #DDDDDD;
     border-radius: 50px;
-    background-image: url("/thecup/resources/img/author2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; }
+    overflow: hidden; }
+    .author-body .author-holder .author-info .rounded-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
   .author-body .author-holder .author-info .author-name {
     margin-top: 8px;
     font-style: normal;
@@ -2726,7 +2740,10 @@ p {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto; }
+          margin: 0 auto;
+          overflow: hidden; }
+          .my-account-body .contact-holder .right .upload-avatar .upload-button img {
+            object-fit: cover; }
         .my-account-body .contact-holder .right .upload-avatar .input {
           position: absolute;
           height: 100%;
@@ -2834,7 +2851,7 @@ p {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
     z-index: 10; }
@@ -2894,8 +2911,7 @@ p {
     .post-body .restrict-layer .transition {
       transform: translateY(200px); }
   .post-body .show {
-    visibility: visible;
-    background: rgba(0, 0, 0, 0.8); }
+    visibility: visible; }
 
 .purchase-body .purchase-holder {
   margin-top: 73px; }
