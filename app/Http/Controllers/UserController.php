@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\Plan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +37,8 @@ class UserController extends Controller
 
     public function purchase()
     {
-        return view('template.purchase', []);
+        $plans = Plan::all();
+        return view('template.purchase', ["plans" => $plans]);
     }
 
     //

@@ -71,6 +71,7 @@ class PlanController extends AdminController
         $form->number('duration', __('Thời gian subscribe(Theo tháng)'));
         $form->number('added_month', __('Só tháng cộng thêm'));
         $form->currency('price', __('Giá'))->symbol('VND');
+        $form->color('color', "Màu nền");
 
         return $form;
     }
