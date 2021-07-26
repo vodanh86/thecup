@@ -66,7 +66,7 @@ $parentId = $cats[0][0]->id;
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url('site/profile') }}">
+                            <a class="dropdown-item" href="{{ url('user/profile') }}">
                                 Thông tin tài khoản
                             </a>
                             <hr class="dropdown-divider">

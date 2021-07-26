@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -24,6 +28,12 @@ class UserController extends Controller
         ]);
     }
 
+
+    public function profile()
+    {
+        return view('template.my_account', []);
+    }
+
     //
     public function update(Request $request)
     {
@@ -36,6 +46,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->avatar = $request->avatar;
+        $user->birthdate = $request->birthdate;
         if ($request->password != '*******'){
             $user->password = Hash::make($request->password);
         }

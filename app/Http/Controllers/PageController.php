@@ -50,8 +50,4 @@ class PageController extends Controller
         return view('template.contact', []);
     }
 
-    public function profile()
-    {
-        return view('template.my_account', []);
-    }
 }

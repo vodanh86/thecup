@@ -12,6 +12,7 @@
   </div>
 </div>
 <!--Category-banner-end-->
+@include('layouts.message')
 <!--Contact-start-->
 <div class="contact-holder">
   <div class="container">
@@ -57,7 +58,7 @@
             </div>
             <p class="input-name">Ngày sinh</p>
             <div class="input-group" style="position: relative">
-              <input type="date" name="dateofbirth" class="date-picker">
+              <input type="date" name="birthdate" value="{{$user->birthdate}}" class="date-picker">
             </div>
           </div>
         </div>
@@ -144,8 +145,6 @@
 
 <script>
 $(function () {
-  $( "#birthdate" ).datetimepicker({  
-  }); 
   submitImage = function(e) {
     var form = $('#laravel-ajax-file-upload');
     var formData = new FormData(form[0]);
@@ -179,10 +178,16 @@ $(function () {
           url: "{{ url('user/update') }}",
           data: formData,
           success: () => {
+            $(".messages").html('    <div class="alert alert-success alert-block">' + 
+                                    '<strong id="success-message">Cập nhật thành công</strong>'+
+                                    '<button type="button" class="close" style="float:right" data-dismiss="alert">×</button>	'+
+                                '</div>' );
             //window.location.assign("{{ route('home') }}")
           },
           error: (response) => {
-              if(response.status === 422) {
+              if(response.status === 401) {
+                  //window.location.reload();
+              } else if(response.status === 422) {
                   let errors = response.responseJSON.errors;
 
                   Object.keys(errors).forEach(function (key) {
