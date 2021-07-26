@@ -1,3 +1,5 @@
+<?php
+use App\Admin\Controllers\Constant;?>
 @extends('layouts.app')
 @section('body')
 <body class="my-account-body">
@@ -147,7 +149,7 @@
     <div class="upper">
       <span>Lịch sử mua gói</span>
       <button class="btn" id="purchaseHisCloseBtn">
-        <img src="/thecup/resources/img/icon/ic_x.svg" width="16" height="16" alt="">
+        <img src="{{url('resources/img/icon/ic_x.svg')}}" width="16" height="16" alt="">
       </button>
     </div>
     <div class="lower">
@@ -158,6 +160,7 @@
           <th scope="col">Gói mua</th>
           <th scope="col">Hình thức thanh toán</th>
           <th scope="col">Thành tiền</th>
+          <th scope="col">Trạng thái</th>
         </tr>
         </thead>
         <tbody>
@@ -167,6 +170,7 @@
           <td>{{$order->plan->name}}</td>
           <td>{{$order->type}}</td>
           <td>{{number_format($order->price)}} VND</td>
+          <td>{{Constant::ORDER_STATUS[$order->status]}}</td>
         </tr>
         @endforeach
         </tbody>

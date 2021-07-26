@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Payment;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Order;
 use Carbon\Carbon;
 
 class PaymentController extends Controller
@@ -77,6 +78,12 @@ class PaymentController extends Controller
 
     public function vnpayReturn()
     {
+        if ($_GET["vnp_ResponseCode"] == 24){
+            $order = Order::where("order_code", $_GET["vnp_TxnRef"])->first();
+            $order->status = 2;
+            $order->save();
+            return redirect()->to(url('user/profile'))->with('success','Thanh toán không thành công');
+        }
         $payment = new Payment();
         $payment->amount = $_GET["vnp_Amount"];
         $payment->bank_code = $_GET["vnp_BankCode"];
