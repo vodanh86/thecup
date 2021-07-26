@@ -53,7 +53,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->avatar = $request->avatar;
-        $user->birthdate = $request->birthdate;
+        $user->birthdate = date("Y-m-d", strtotime($request->birthdate)); 
         if ($request->password != '*******'){
             $user->password = Hash::make($request->password);
         }

@@ -57,8 +57,12 @@
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{$user->email}}" readonly required>
             </div>
             <p class="input-name">Ngày sinh</p>
-            <div class="input-group" style="position: relative">
-              <input type="date" name="birthdate" value="{{$user->birthdate}}" class="date-picker">
+            <div class="input-group date" data-provide="datepicker" class="date-picker">
+              <input type="text" class="form-control" name="birthdate" value="{{date('d-m-Y', strtotime($user->birthdate))}}"  >
+              <div class="input-group-addon">
+                <span class="material-icons">today</span>
+              </div>
+
             </div>
           </div>
         </div>
@@ -107,11 +111,11 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary">
-          <a href="{{url('user/purchase')}}">
-            Nâng cấp gói
-          </a>
-        </button>
+        <a href="{{url('user/purchase')}}">
+          <button class="btn btn-primary">
+              Nâng cấp gói
+          </button>
+        </a>
         @else
         <div class="trial-card">
           <div class="card-inner">
@@ -127,11 +131,11 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary">
-          <a href="{{url('user/purchase')}}">
-            Nâng cấp gói
-          </a>
-        </button>
+        <a href="{{url('user/purchase')}}">
+          <button class="btn btn-primary">
+              Nâng cấp gói
+          </button>
+        </a>
       @endif
       </div>
     </div>
