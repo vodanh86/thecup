@@ -22,6 +22,7 @@ Route::get('/author/{slug}', 'AuthorController@view');
 Route::get('/subscribe', 'HomeController@subscribe');
 Route::get('/vnpay_return', 'HomeController@vnpayReturn');
 Route::post('/user/update', 'UserController@update');
+Route::get('/user/purchase', 'UserController@purchase');
 Route::post('/user/updateAvatar', 'UserController@updateAvatar');
 Auth::routes();
 

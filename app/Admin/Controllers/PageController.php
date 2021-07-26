@@ -92,6 +92,8 @@ class PageController extends AdminController
         $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->switch('feature', __("Bài nổi bật"))->states(Constant::ON_STATE);
         $form->switch('slide', __("Hiện lên slide"))->states(Constant::ON_STATE);
+        $form->switch('free', __("Bài miễn phí"))->states(Constant::ON_STATE);
+        $form->switch('trial', __("Bài cho tài khoản đọc thử"))->states(Constant::ON_STATE);
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
         $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
         $form->saving(function ($form) {

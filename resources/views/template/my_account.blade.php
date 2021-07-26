@@ -96,38 +96,39 @@
             <p class="history">Lịch sử mua gói</p>
           </button>
         </div>
+        @if($user->package_type == 1)
+        <div class="sixmonth-card">
+          <div class="card-inner">
+            <p class="card-title white">Thành viên</p>
+            <p class="card-scope white">Truy cập không giới hạn</p>
+            <div class="expire">
+              <span class="text white">Thời hạn sử dụng</span>
+              <span class="date">{{$user->expire_time}}</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary">
+          <a href="{{url('user/purchase')}}">
+            Nâng cấp gói
+          </a>
+        </button>
+        @else
         <div class="trial-card">
           <div class="card-inner">
             <p class="card-title">Dùng thử</p>
             <p class="card-scope">Truy cập giới hạn</p>
             <div class="expire">
               <span class="text">Thời hạn sử dụng</span>
-              <span class="date">24:00 19/07/2021</span>
+              <span class="date">{{$user->expire_time}}</span>
             </div>
           </div>
         </div>
         <button class="btn btn-primary">
-          <a href="/thecup/template/purchase.html">
+          <a href="{{url('user/purchase')}}">
             Nâng cấp gói
           </a>
         </button>
-        <div class="sixmonth-card">
-          <div class="card-inner">
-            <p class="card-title white">Dùng thử</p>
-            <p class="card-scope white">Truy cập giới hạn</p>
-            <div class="expire">
-              <span class="text white">Thời hạn sử dụng</span>
-              <span class="date">24:00 19/07/2021</span>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary">
-          <a href="/thecup/template/purchase.html">
-            Nâng cấp gói
-          </a>
-
-        </button>
-
+      @endif
       </div>
     </div>
   </div>

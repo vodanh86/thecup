@@ -34,6 +34,11 @@ class UserController extends Controller
         return view('template.my_account', []);
     }
 
+    public function purchase()
+    {
+        return view('template.purchase', []);
+    }
+
     //
     public function update(Request $request)
     {
