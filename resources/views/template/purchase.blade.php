@@ -22,7 +22,7 @@
                     <p class="pricing" style="color: white">{{number_format($plan->price)}} VND</p>
                     <p class="package-info" style="color: white">Giới hạn truy cập bài viết: {{$plan->duration}} tháng</p>
                     <p class="package-info" style="color: white">Số tháng cộng thêm: {{$plan->added_month}} tháng</p>
-                    <a href="{{url('user/subscribe')}}">
+                    <a href="{{url('user/subscribe?plan='.$plan->id)}}">
                         <button class="btn select-package button-blue">
                             Chọn gói
                         </button>

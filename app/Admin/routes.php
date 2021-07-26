@@ -21,4 +21,5 @@ Route::group([
     $router->resource('payments', PaymentController::class);
     $router->resource('songs', SongController::class);
     $router->resource('authors', AuthorController::class);
+    $router->resource('orders', OrderController::class);
 });

@@ -19,44 +19,44 @@
     <div class="row">
       <div class="col-md-7 right" style="border:none; width: 60%">
         <p class="title">
-          Thông tin cá nhân
+          Thông tin thanh toán
         </p>
         <?php $user = Auth::user() ?>
         <form action="{{url('/payment/createPayment')}}" id="create_form">  
         <div class="row">
-          <div class="col-md-6">
-            <p class="input-name">Loại hàng hóa</p>
+          <div class="col-md-12">
+            <p class="input-name">Loại thanh toán</p>
             <div class="input-group">
+                <input type = "hidden" value="{{$plan->id}}" name="plan_id"/>
                 <select name="order_type" id="order_type" class="form-control">
-                    <option value="topup">Nạp tiền điện thoại</option>
-                    <option value="billpayment">Thanh toán hóa đơn</option>
-                    <option value="fashion">Thời trang</option>
-                    <option value="other">Khác - Xem thêm tại VNPAY</option>
+                    <option value="billpayment">Thanh toán gói dịch vụ</option>
                 </select>
               </div>
             <p class="input-name">Số tiền</p>
             <div class="input-group">
                 <input class="form-control" id="amount"
-                        name="amount" type="number" value="10000"/>
+                        name="amount" type="number" value="{{$plan->price}}"/>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <p class="input-name">Mã hóa đơn</p>
             <div class="input-group">
-                <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>"/>
+                <input class="form-control" id="order_id" name="order_id" type="text" value="{{$order->order_code}}"/>
             </div>
             <p class="input-name">Nội dung thanh toán</p>
             <div class="input-group" style="position: relative">
-                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Noi dung thanh toan</textarea>
+                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Thanh toán gói dịch vụ: {{$plan->name}}
+Thời hạn gói dịch vụ: {{$plan->duration + $plan->added_month}} tháng
+              </textarea>
             </div>
           </div>
         </div>
         <div class="margin-top"></div>
         <p class="title">
-          Thông tin tài khoản
+          Thông tin thêm
         </p>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" style="display: none">
             <p class="input-name">Ngân hàng</p>
             <div class="input-group">
                 <select name="bank_code" id="bank_code" class="form-control">
@@ -86,7 +86,7 @@
                 </select>
              </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <p class="input-name">Ngôn ngữ</p>
             <div class="input-group">
                 <select name="language" id="language" class="form-control">

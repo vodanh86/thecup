@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\Plan;
+use App\Models\Order;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -39,6 +40,18 @@ class UserController extends Controller
     {
         $plans = Plan::all();
         return view('template.purchase', ["plans" => $plans]);
+    }
+
+    public function subscribe(Request $request)
+    {
+        $plan = Plan::find($request->plan);
+        $order = new Order();
+        $order->user_id =  \Auth::user()->id;
+        $order->plan_id = $request->plan;
+        $order->price = $plan->price;
+        $order->order_code = date("YmdHis").\Auth::user()->id.$request->plan;
+        $order->save();
+        return view('subscribe', ["plan" => $plan, "order" => $order]);
     }
 
     //

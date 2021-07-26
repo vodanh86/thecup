@@ -19,7 +19,7 @@ Route::get('/site/search', 'PageController@search');
 Route::get('/user/profile', 'UserController@profile');
 Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
-Route::get('/user/subscribe', 'HomeController@subscribe')->middleware('auth');
+Route::get('/user/subscribe', 'UserController@subscribe')->middleware('auth');
 Route::post('/user/update', 'UserController@update');
 Route::get('/user/purchase', 'UserController@purchase');
 Route::post('/user/updateAvatar', 'UserController@updateAvatar');

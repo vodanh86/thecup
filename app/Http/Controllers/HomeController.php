@@ -36,9 +36,4 @@ class HomeController extends Controller
         $pages = Page::where('status', 1)->whereNotIn('id', $ids)->orderBy("created_at", 'DESC')->paginate(5);
         return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "cats" => $cats]);
     }
-
-    public function subscribe()
-    {
-        return view('subscribe', []);
-    }
 }
