@@ -22,7 +22,7 @@
           Thông tin cá nhân
         </p>
         <?php $user = Auth::user() ?>
-        <form action="/vnpay_php/vnpay_create_payment.php" id="create_form" method="post">  
+        <form action="{{url('/payment/createPayment')}}" id="create_form">  
         <div class="row">
           <div class="col-md-6">
             <p class="input-name">Loại hàng hóa</p>
@@ -103,11 +103,15 @@
   </div>
 </div>
 <!--Contact-end-->
-<link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
-<script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script>
 <div class="popup-purchase" id="popupPurchase">
   <div class="holder">
 
   </div>
 </div>
+@endsection
+
+@section('scripts')
+@parent
+<link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
+<script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script>
 @endsection

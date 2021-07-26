@@ -20,10 +20,11 @@ Route::get('/user/profile', 'UserController@profile');
 Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
 Route::get('/user/subscribe', 'HomeController@subscribe')->middleware('auth');
-Route::get('/vnpay_return', 'HomeController@vnpayReturn');
 Route::post('/user/update', 'UserController@update');
 Route::get('/user/purchase', 'UserController@purchase');
 Route::post('/user/updateAvatar', 'UserController@updateAvatar');
+Route::get('/payment/createPayment', 'PaymentController@createPayment');
+Route::get('/payment/vnpayReturn', 'PaymentController@vnpayReturn');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

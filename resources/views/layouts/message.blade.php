@@ -1,7 +1,7 @@
 @if ($message = Session::get('success'))
 <div class="alert alert-success alert-block">
-	<button type="button" class="close" data-dismiss="alert">×</button>	
-        <strong id="success-message">{{ $message }}</strong>
+	<strong id="success-message">{{ $message }}</strong>
+	<button type="button" class="close" data-dismiss="alert" style="float:right">×</button>	
 </div>
 @endif
 
