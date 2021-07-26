@@ -1825,21 +1825,45 @@ $navbar-color : #1B3864;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: black;
-      opacity: 0.7;
+      transition: 0.2s ease;
+      background-color: rgba(0, 0, 0, 0.8);
       z-index: 14;
       visibility: hidden;
+      opacity: 0;
       display: flex;
       justify-content: center;
       .holder{
-        margin-top: 200px;
-        width: 941px;
-        height: 657px;
+        margin-top: 150px;
+        width: 100%;
         background-color: white;
+        padding: 20px 20px;
+        border-radius: 16px;
+        .upper{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span{
+            font-style: normal;
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #1B3864;
+          }
+          button{
+            img{
+
+            }
+          }
+        }
+        .lower{
+          height: auto;
+        }
       }
     }
     .contact-holder{
-      margin-top: 60px;
+      margin-top: 40px;
       .contact-left{
         .title{
           font-style: normal;
@@ -1889,6 +1913,7 @@ $navbar-color : #1B3864;
         padding-right: 20px;
         padding-left: 20px;
         border-right: none;
+        margin-top: 60px;
         .title{
           font-style: normal;
           font-weight: 900;
@@ -1986,7 +2011,7 @@ $navbar-color : #1B3864;
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
-        margin-top: 60px;
+        margin-top: 0px;
         .text-head{
           display: flex;
           justify-content: space-between;
@@ -4258,7 +4283,7 @@ $navbar-color : #1B3864;
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0.8);
       top: 0;
       left: 0;
       z-index: 10;

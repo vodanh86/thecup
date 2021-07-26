@@ -144,7 +144,34 @@
 <!--Contact-end-->
 <div class="popup-purchase" id="popupPurchase">
   <div class="holder">
-
+    <div class="upper">
+      <span>Lịch sử mua gói</span>
+      <button class="btn" id="purchaseHisCloseBtn">
+        <img src="/thecup/resources/img/icon/ic_x.svg" width="16" height="16" alt="">
+      </button>
+    </div>
+    <div class="lower">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Ngày</th>
+          <th scope="col">Gói mua</th>
+          <th scope="col">Hình thức thanh toán</th>
+          <th scope="col">Thành tiền</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($orders as $order)
+        <tr>
+          <th scope="row">{{$order->created_at}}</th>
+          <td>{{$order->plan->name}}</td>
+          <td>{{$order->type}}</td>
+          <td>{{number_format($order->price)}} VND</td>
+        </tr>
+        @endforeach
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 @endsection

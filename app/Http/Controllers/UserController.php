@@ -33,7 +33,8 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('template.my_account', []);
+        $orders = Order::where("user_id", \Auth::user()->id)->orderBy('id', 'DESC')->get();
+        return view('template.my_account', ["orders" => $orders]);
     }
 
     public function purchase()
@@ -66,8 +67,8 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->avatar = $request->avatar;
-        $user->birthdate = date("Y-m-d", strtotime($request->birthdate)); 
-        if ($request->password != '*******'){
+        $user->birthdate = date("Y-m-d", strtotime($request->birthdate));
+        if ($request->password != '******'){
             $user->password = Hash::make($request->password);
         }
         $user->save();

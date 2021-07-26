@@ -46,7 +46,12 @@ $(document).ready(function(){
     $(document).on('click', '#purchaseHistory', function() {
         console.log("History Clicked!");
         popupPurchase.style.visibility = 'visible';
-        //progress.style.width = "50%";
+        popupPurchase.style.opacity = 1;
+    });
+    $(document).on('click', '#purchaseHisCloseBtn', function() {
+        console.log("History Clicked!");
+        popupPurchase.style.visibility = 'hidden';
+        popupPurchase.style.opacity = 0;
     });
 
     //POPUP LOGIN , REGISTER
