@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/category/{slug}', 'CategoryController@view');
 Route::get('/page/{slug}', 'PageController@view');
 Route::get('/site/contact', 'PageController@contact');
@@ -19,7 +19,7 @@ Route::get('/site/search', 'PageController@search');
 Route::get('/user/profile', 'UserController@profile');
 Route::get('/episode/{slug}', 'EpisodeController@view');
 Route::get('/author/{slug}', 'AuthorController@view');
-Route::get('/subscribe', 'HomeController@subscribe');
+Route::get('/user/subscribe', 'HomeController@subscribe')->middleware('auth');
 Route::get('/vnpay_return', 'HomeController@vnpayReturn');
 Route::post('/user/update', 'UserController@update');
 Route::get('/user/purchase', 'UserController@purchase');

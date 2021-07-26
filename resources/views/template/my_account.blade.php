@@ -119,7 +119,11 @@
             <p class="card-scope">Truy cập giới hạn</p>
             <div class="expire">
               <span class="text">Thời hạn sử dụng</span>
-              <span class="date">{{$user->expire_time}}</span>
+              <span class="date">
+              <?php 
+              $expire_time = strtotime($user->expire_time);
+              echo(date('d/m/Y H:i:s',$expire_time));
+              ?> </span>
             </div>
           </div>
         </div>

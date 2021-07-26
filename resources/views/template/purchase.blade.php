@@ -22,7 +22,9 @@
                     <p class="pricing" style="color: white">{{number_format($plan->price)}} VND</p>
                     <p class="package-info" style="color: white">Giới hạn truy cập bài viết: {{$plan->duration}} tháng</p>
                     <p class="package-info" style="color: white">Số tháng cộng thêm: {{$plan->added_month}} tháng</p>
-                    <button class="btn select-package button-blue">Chọn gói</button>
+                    <button class="btn select-package button-blue">
+                        <a href="{{url('user/subscribe')}}">Chọn gói</a>
+                    </button>
                 </div>
             </div>
             @endforeach
