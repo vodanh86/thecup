@@ -9,6 +9,7 @@ use App\Models\Page;
 use App\Models\Photo;
 use App\Models\Song;
 use App\Models\Author;
+use App\Models\Order;
 use Carbon\Carbon;
 
 class PageController extends Controller
@@ -93,7 +94,7 @@ class PageController extends Controller
         $vnpTranId = $inputData['vnp_TransactionNo']; //Mã giao dịch tại VNPAY
         $vnp_BankCode = $inputData['vnp_BankCode']; //Ngân hàng thanh toán
         $secureHash = hash('sha256',env('vnp_HashSecret') . $hashData);
-        $Status = 0;
+        $status = 0;
         $orderId = $inputData['vnp_TxnRef'];
 
         try {
@@ -103,14 +104,16 @@ class PageController extends Controller
                 //Lấy thông tin đơn hàng lưu trong Database và kiểm tra trạng thái của đơn hàng, mã đơn hàng là: $orderId            
                 //Việc kiểm tra trạng thái của đơn hàng giúp hệ thống không xử lý trùng lặp, xử lý nhiều lần một giao dịch
                 //Giả sử: $order = mysqli_fetch_assoc($result);   
-                $order = NULL;
+                $order = Order::where("order_code", $orderId)->first();
                 if ($order != NULL) {
-                    if ($order["Status"] != NULL && $order["Status"] == 0) {
+                    if ($order["status"] != NULL && $order["status"] == 0) {
                         if ($inputData['vnp_ResponseCode'] == '00') {
-                            $Status = 1;
+                            $status = 1;
                         } else {
-                            $Status = 2;
+                            $status = 2;
                         }
+                        $order->status = $status;
+                        $order->save();
                         //Cài đặt Code cập nhật kết quả thanh toán, tình trạng đơn hàng vào DB
                         //
                         //
