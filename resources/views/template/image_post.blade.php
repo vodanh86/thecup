@@ -26,7 +26,7 @@ use App\Admin\Controllers\Util;
         <p class="album-name">{{$page->title}}</p>
         <div class="date-and-rating">
           <p class="date">{{Util::dateFormat($page->created_at)}}</p>
-          @include('layouts.rating', ["rating" => $rating, "show" => 1])
+          @include('layouts.start', ["rate" => $rate, "page" => $page])
         </div>
       </div>
       <div class="img-grid">

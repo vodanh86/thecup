@@ -34,8 +34,11 @@ class PageController extends Controller
         $banner = Banner::where("position", 2)->where("show", 1)->first();
         $countRating = Rating::where('page_id', $page->id)->count();
         $sumRating = Rating::where('page_id', $page->id)->sum("rate");
-
-
+        $rate = null;
+        if (\Auth::user()){
+            $rate = Rating::where("user_id", \Auth::user()->id)->where("page_id", $page->id)->first();
+        }
+        
         $trial = true;
         $view = 'template.covid_post';
         if ($page->type == 1){
@@ -56,6 +59,7 @@ class PageController extends Controller
             }
         } 
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs, "trial" => $trial,
+        "rate" => $rate,
         "banner" => $banner, "rating" => array("number" => $countRating, "total" => $sumRating),
         "cat" => $cat, "author" => $author]);
     }

@@ -1,0 +1,20 @@
+#rating-div {
+    margin: 0 auto;
+}
+#rating-div ul {
+  margin: 0;
+  padding: 0;
+}
+#rating-div li {
+  cursor: pointer;
+  list-style-type: none;
+  display: inline-block;
+  color: #f0f0f0;
+  text-shadow: 0 0 1px #666666;
+  font-size: 20px;
+}
+#rating-div .highlight,
+#rating-div .selected {
+  color: #f4b30a;
+  text-shadow: 0 0 1px #f48f0a;
+}

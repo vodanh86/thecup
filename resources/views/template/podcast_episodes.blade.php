@@ -105,24 +105,7 @@ use App\Admin\Controllers\Util;
                 <div class="text">
                     <span>Đánh giá bài viết</span>
                 </div>
-                <div class="star">
-                    <span class="material-icons material-icons-outlined">
-                        star
-                    </span>
-                    <span class="material-icons material-icons-outlined">
-                        star
-                    </span>
-                    <span class="material-icons material-icons-outlined">
-                        star
-                    </span>
-                    <span class="material-icons material-icons-outlined">
-                        star_half
-                    </span>
-                    <span class="material-icons material-icons-outlined">
-                        star_outline
-                    </span>
-                    <p>Bài viết tạm ổn</p>
-                </div>
+                @include('layouts.start', ["rate" => $rate, "page" => $page])
                 <button class="btn btn-outline-primary send-rating">Gửi đánh giá</button>
             </div>
             <div class="divider"></div>

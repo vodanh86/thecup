@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('assets/owlcarousel/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{url('assets/css/start.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"

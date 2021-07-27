@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Plan;
 use App\Models\Order;
+use App\Models\Rating;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -74,6 +75,21 @@ class UserController extends Controller
         $user->save();
         return response()->json([
             'user' => $user
+        ]);
+    }
+
+    public function addRating(Request $request){
+        $user_id =  \Auth::user()->id;
+        $rating = Rating::where("user_id", $user_id)->where("page_id", $request->page_id)->first();
+        if (is_null($rating)){
+            $rating = new Rating();
+            $rating->user_id = $user_id;
+            $rating->page_id = $request->page_id;
+        }
+        $rating->rate = (int) $request->rating;
+        $rating->save();
+        return response()->json([
+            'rating' => $rating
         ]);
     }
 
