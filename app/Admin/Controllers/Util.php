@@ -69,4 +69,31 @@ final class Util {
        return $searchTerm;
    }
 
+   static function checkHash(){
+        $vnp_SecureHash = $_GET['vnp_SecureHash'];
+        $inputData = array();
+        foreach ($_GET as $key => $value) {
+            if (substr($key, 0, 4) == "vnp_") {
+                $inputData[$key] = $value;
+            }
+        }
+        unset($inputData['vnp_SecureHashType']);
+        unset($inputData['vnp_SecureHash']);
+        ksort($inputData);
+        $i = 0;
+        $hashData = "";
+        foreach ($inputData as $key => $value) {
+            if ($i == 1) {
+                $hashData = $hashData . '&' . $key . "=" . $value;
+            } else {
+                $hashData = $hashData . $key . "=" . $value;
+                $i = 1;
+            }
+        }
+
+        //$secureHash = md5($vnp_HashSecret . $hashData);
+        $secureHash = hash('sha256',env('vnp_HashSecret') . $hashData);
+        return ($secureHash == $vnp_SecureHash);
+   }
+
 }

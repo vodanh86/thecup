@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Admin\Controllers\Util;
 use App\Models\Payment;
 use App\Models\Category;
 use App\Models\Page;
@@ -76,18 +77,26 @@ class PaymentController extends Controller
         return redirect()->to($vnp_Url);
     }
 
+    public function vnpayResult(Request $request){
+        $payment = Payment::where("txn_ref", $request->txn_ref)->first();
+        return view('template.vnpayReturn', ["payment" => $payment]);
+    }
+
     public function vnpayReturn()
     {
+        /*return view('template.vnpayReturn');
         if ($_GET["vnp_ResponseCode"] == 24){
             $order = Order::where("order_code", $_GET["vnp_TxnRef"])->first();
             $order->status = 2;
             $order->save();
             return redirect()->to(url('user/profile'))->with('success','Thanh toán không thành công');
-        }
+        }*/
         $payment = new Payment();
+        $payment->vnp_securehashtype = $_GET['vnp_SecureHashType'];
+        $payment->vnp_securehash = $_GET['vnp_SecureHash'];
         $payment->amount = $_GET["vnp_Amount"];
         $payment->bank_code = $_GET["vnp_BankCode"];
-        $payment->bank_tran_no = $_GET["vnp_BankTranNo"];
+        $payment->bank_tran_no = isset($_GET["vnp_BankTranNo"]) ? $_GET["vnp_BankTranNo"] : "";
         $payment->card_type = $_GET["vnp_CardType"];
         $payment->order_info = $_GET["vnp_OrderInfo"];
         $payment->paydate = $_GET["vnp_PayDate"];
@@ -96,7 +105,8 @@ class PaymentController extends Controller
         $payment->transaction_no = $_GET["vnp_TransactionNo"];
         $payment->txn_ref = $_GET["vnp_TxnRef"];
         $payment->vnp_web = isset($_GET['customer_id']) ? $_GET["vnpweb"] : "";
+        $payment->vnp_checkhash = Util::checkHash();
         $payment->save();
-        return redirect()->to(url('user/profile'))->with('success','Thanh toán thành công');
+        return redirect()->to(url('payment/vnpayResult?txn_ref=').$payment->txn_ref);
     }
 }

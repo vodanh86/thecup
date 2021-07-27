@@ -103,11 +103,6 @@ Thời hạn gói dịch vụ: {{$plan->duration + $plan->added_month}} tháng
   </div>
 </div>
 <!--Contact-end-->
-<div class="popup-purchase" id="popupPurchase">
-  <div class="holder">
-
-  </div>
-</div>
 @endsection
 
 @section('scripts')
