@@ -16,8 +16,6 @@ abstract class Constant
     );
     const ORDER_STATUS = array(0 => 'Mới tạo', 1 => 'Thanh toán xong', 2 => "Thanh toán lỗi");
     const YES_NO_STATUS = array(0 => 'Không', 1 => 'Có');
-    const BANNER_POSITION = array(1 => 'Center', 3 => "Đơn vị sự nghiệp",
-                                  4 => "Trường học", 0 => 'Slider',  
-                                  2 => 'Quận - Huyện', 5 => "Khác");
+    const BANNER_POSITION = array(1 => 'Trang chủ', 2 => "Trang con");
 }
 ?>

@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $topPages = Page::where('status', 1)->orderBy('feature', 'DESC')->orderBy("created_at", 'DESC')->limit(4)->get();
-        $banner = Banner::where('show', 1)->first();
+        $banner = Banner::where('show', 1)->where('position', 1)->first();
         $ids = array();
         foreach($topPages as $page){
             $ids[] = $page->id;

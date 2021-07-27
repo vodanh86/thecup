@@ -38,25 +38,7 @@ use App\Admin\Controllers\Util;
                                 </span>
                                 <span>{{Util::dateFormat($page->created_at)}}</span>
                             </div>
-                            <div class="rating-holder">
-                                <span class="text">Đánh giá</span>
-                                <span class="material-icons material-icons-outlined">
-                  star
-                </span>
-                                <span class="material-icons material-icons-outlined">
-                  star
-                </span>
-                                <span class="material-icons material-icons-outlined">
-                  star
-                </span>
-                                <span class="material-icons material-icons-outlined">
-                  star_half
-                </span>
-                                <span class="material-icons material-icons-outlined">
-                  star_outline
-                </span>
-                                <span class="quantity">(23)</span>
-                            </div>
+                            @include('layouts.rating', ["rating" => $rating, "show" => 1])
                         </div>
                     </div>
                     <div class="post-content">
@@ -94,7 +76,9 @@ use App\Admin\Controllers\Util;
                         </div>
                         <div class="divider"></div>
                         <div class="news-ads-banner">
-                            <img src="../resources/img/ads-banner/banner-1.png" alt="">
+                            <a href="{{$banner->link}}">
+                                <img src="{{url(env('AWS_URL')).$banner->img}}" alt="{{$banner->name}}">
+                            </a>
                         </div>
                         <div class="comment">
                             <div class="title">

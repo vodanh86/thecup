@@ -22,4 +22,5 @@ Route::group([
     $router->resource('songs', SongController::class);
     $router->resource('authors', AuthorController::class);
     $router->resource('orders', OrderController::class);
+    $router->resource('ratings', RatingController::class);
 });

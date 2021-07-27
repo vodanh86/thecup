@@ -26,25 +26,7 @@ use App\Admin\Controllers\Util;
         <p class="album-name">{{$page->title}}</p>
         <div class="date-and-rating">
           <p class="date">{{Util::dateFormat($page->created_at)}}</p>
-          <div class="rating-holder">
-            <p class="text">Đánh giá</p>
-            <span class="material-icons material-icons-outlined">
-            star
-            </span>
-            <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-            <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-            <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-            <span class="material-icons material-icons-outlined">
-                        star_half
-                        </span>
-            <span class="quantity">(23)</span>
-          </div>
+          @include('layouts.rating', ["rating" => $rating, "show" => 1])
         </div>
       </div>
       <div class="img-grid">

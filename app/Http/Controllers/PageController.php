@@ -11,6 +11,8 @@ use App\Models\Song;
 use App\Models\Author;
 use App\Models\User;
 use App\Models\Plan;
+use App\Models\Rating;
+use App\Models\Banner;
 use App\Models\Order;
 use Carbon\Carbon;
 
@@ -29,6 +31,10 @@ class PageController extends Controller
         $author = Author::where("admin_user_id", $page->author_id)->first();
         $photos = Photo::where("album_id", $page->id)->get();
         $songs = Song::where("podcast_id", $page->id)->get();
+        $banner = Banner::where("position", 2)->where("show", 1)->first();
+        $rating = Rating::where("page_id", $page->id)->first();
+
+
         $trial = true;
         $view = 'template.covid_post';
         if ($page->type == 1){
@@ -49,6 +55,7 @@ class PageController extends Controller
             }
         } 
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs, "trial" => $trial,
+        "banner" => $banner, "rating" => $rating,
         "cat" => $cat, "author" => $author]);
     }
 

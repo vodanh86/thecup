@@ -24,24 +24,7 @@ use App\Admin\Controllers\Util;
                     <div class="dot-seperator"></div>
                     <span class="infor">3 bình luận</span>
                     <div class="dot-seperator"></div>
-                    <div class="rating-holder">
-                        <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star
-                        </span>
-                                    <span class="material-icons material-icons-outlined">
-                        star_half
-                        </span>
-                                    <span class="quantity">(23)</span>
-                    </div>
+                    @include('layouts.rating', ["rating" => $rating, "show" => 0])
                 </div>
                 <div class="play-and-sharing">
                     <div class="row">
