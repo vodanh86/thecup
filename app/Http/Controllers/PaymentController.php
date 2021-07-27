@@ -102,6 +102,12 @@ class PaymentController extends Controller
             }
         }
 
+        if(!array_key_exists("vnp_SecureHash", $inputData)){
+            $returnData['RspCode'] = '99';
+            $returnData['Message'] = 'Unknow error';
+            return json_encode($returnData);
+        }
+
         $vnp_SecureHash = $inputData['vnp_SecureHash'];
         unset($inputData['vnp_SecureHashType']);
         unset($inputData['vnp_SecureHash']);
