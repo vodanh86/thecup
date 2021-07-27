@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -26,6 +28,20 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
+    protected function authenticated(Request $request, $user)
+    {
+        $user = User::find($user->id);
+        if(is_null($user->expire_time)){
+            $user->expire_time = date('Y-m-d H:i:s');
+            $user->package_type = -1;
+            $user->save();
+        } else if(strtotime($user->expire_time) < time()) {
+            $user->package_type = -1;
+            $user->save();
+        }
+        // stuff to do after user logs in
+    }
 
     /**
      * Create a new controller instance.

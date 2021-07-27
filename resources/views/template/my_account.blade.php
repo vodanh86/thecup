@@ -106,7 +106,13 @@ use App\Admin\Controllers\Constant;?>
         <div class="sixmonth-card">
           <div class="card-inner">
             <p class="card-title white">Thành viên</p>
-            <p class="card-scope white">Truy cập không giới hạn</p>
+            <p class="card-scope">Trạng thái: <?php 
+            if ($user->package_type == 1 || $user->package_type == 0){
+              echo("Còn hạn");
+            } else {
+              echo("Hết hạn");
+            }
+            ?></p>
             <div class="expire">
               <span class="text white">Thời hạn sử dụng</span>
               <span class="date">{{$user->expire_time}}</span>
@@ -122,7 +128,13 @@ use App\Admin\Controllers\Constant;?>
         <div class="trial-card">
           <div class="card-inner">
             <p class="card-title">Dùng thử</p>
-            <p class="card-scope">Truy cập giới hạn</p>
+            <p class="card-scope">Trạng thái: <?php 
+            if ($user->package_type == 1 || $user->package_type == 0){
+              echo("Còn hạn");
+            } else {
+              echo("Hết hạn");
+            }
+            ?></p>
             <div class="expire">
               <span class="text">Thời hạn sử dụng</span>
               <span class="date">
