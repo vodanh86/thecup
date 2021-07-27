@@ -9,6 +9,8 @@ use App\Models\Page;
 use App\Models\Photo;
 use App\Models\Song;
 use App\Models\Author;
+use App\Models\User;
+use App\Models\Plan;
 use App\Models\Order;
 use Carbon\Carbon;
 
@@ -113,6 +115,27 @@ class PageController extends Controller
                             $status = 2;
                         }
                         $order->status = $status;
+                        $order->payment_type = $inputData['vnp_CardType'];
+                        $user = User::find($order->user_id);
+                        $plan = Plan::find($order->plan_id);
+                        if ($user->package_type == 1){
+                            // Người dùng vẫn đang sử dụng dịch vụ;
+                            $lastEndDate = new Carbon($user->expire_time);
+                            $newEndDate = new Carbon($user->expire_time);
+                            $newEndDate->addMonth($plan->duration + $plan->added_month);
+                            $order->start_date = $lastEndDate;
+                            $order->end_date= $newEndDate;
+                            $user->expire_time = $newEndDate;
+                        } else {
+                            $lastEndDate = Carbon::now();
+                            $newEndDate = Carbon::now();
+                            $newEndDate->addMonth($plan->duration + $plan->added_month);
+                            $order->start_date = $lastEndDate;
+                            $order->end_date= $newEndDate;
+                            $user->expire_time = $newEndDate;  
+                            $user->package_type = 1;
+                        }
+                        $user->save();
                         $order->save();
                         //Cài đặt Code cập nhật kết quả thanh toán, tình trạng đơn hàng vào DB
                         //

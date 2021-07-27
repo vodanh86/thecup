@@ -160,6 +160,8 @@ use App\Admin\Controllers\Constant;?>
           <th scope="col">Gói mua</th>
           <th scope="col">Hình thức thanh toán</th>
           <th scope="col">Thành tiền</th>
+          <th scope="col">Thành bắt đầu dịch vụ</th>
+          <th scope="col">Thành kết thúc dịch vụ</th>
           <th scope="col">Trạng thái</th>
         </tr>
         </thead>
@@ -168,8 +170,10 @@ use App\Admin\Controllers\Constant;?>
         <tr>
           <th scope="row">{{$order->created_at}}</th>
           <td>{{$order->plan->name}}</td>
-          <td>{{$order->type}}</td>
+          <td>{{$order->payment_type}}</td>
           <td>{{number_format($order->price)}} VND</td>
+          <td>{{$order->start_date}}</td>
+          <td>{{$order->end_date}}</td>
           <td>{{Constant::ORDER_STATUS[$order->status]}}</td>
         </tr>
         @endforeach
