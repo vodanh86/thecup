@@ -96,4 +96,9 @@ final class Util {
         return ($secureHash == $vnp_SecureHash);
    }
 
+   static function cutContent($content){
+       $newContent = substr($content, 0, strlen($content)/2) ."....";
+       return $newContent;
+   }
+
 }

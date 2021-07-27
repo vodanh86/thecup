@@ -62,7 +62,11 @@ use App\Admin\Controllers\Util;
                     <div class="post-content">
                         <p class="short-description">{!!$page->description!!}</p>
                         <img src="{{url(env('AWS_URL')).$page->image}}" alt="" class="image">
+                        @if($trial)
+                        <p class="post-text">{!!Util::cutContent($page->content)!!}</p>
+                        @else
                         <p class="post-text">{!!$page->content!!}</p>
+                        @endif
                         <div class="divider"></div>
                         <div class="rating-holder">
                             <div class="text">
@@ -173,6 +177,21 @@ use App\Admin\Controllers\Util;
     </div>
 </div>
 <!--Economy-end-->
+@if($trial)
+<!--Restrict-->
+<div class="restrict-layer">
+    <div class="restrict-layer-text fixed-bottom transition">
+        <div class="wrapper">
+            <p class="text1">Bài viết bị giới hạn</p>
+            <p class="text2">Vui lòng Đăng nhập hoặc Đăng ký để tiếp tục</p>
+            <div class="button-holder">
+                <button class="btn btn-primary button-reg">Đăng ký</button>
+                <span>Hoặc</span>
+                <button class="btn btn-primary button-log">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
 </div>
+@endif
 @include('layouts.footer')
 @include('layouts.script')

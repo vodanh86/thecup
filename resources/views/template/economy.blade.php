@@ -85,6 +85,5 @@ use App\Admin\Controllers\Util;
     </div>
 </div>
 <!--Economy-end-->
-</div>
 @include('layouts.footer')
 @include('layouts.script')

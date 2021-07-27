@@ -29,7 +29,7 @@ class PageController extends Controller
         $author = Author::where("admin_user_id", $page->author_id)->first();
         $photos = Photo::where("album_id", $page->id)->get();
         $songs = Song::where("podcast_id", $page->id)->get();
-
+        $trial = true;
         $view = 'template.covid_post';
         if ($page->type == 1){
             $view = 'template.image_post';
@@ -37,7 +37,18 @@ class PageController extends Controller
         if ($page->type == 2){
             $view = 'template.podcast_episodes';
         }
-        return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs,
+        if ($page->free){
+            $trial = false;
+        } else if (\Auth::user()) {  
+            $user = User::find(\Auth::user()->id);
+            if ($user->package_type == 1){
+                $trial = false;
+            }
+            if ($user->package_type == 0 && $page->trial == 1){
+                $trial = false;
+            }
+        } 
+        return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs, "trial" => $trial,
         "cat" => $cat, "author" => $author]);
     }
 
