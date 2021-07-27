@@ -138,7 +138,9 @@ use App\Models\Category;
                     </div>
                 </div>
                 <div class="news-ads-banner">
-                    <img src="resources/img/ads-banner/banner-1.png" alt="">
+                    <a href="{{$banner->link}}">
+                        <img src="{{url(env('AWS_URL')).$banner->img}}" alt="{{$banner->name}}">
+                    </a>
                 </div>
                 <div class="news-divider"></div>
                 <div class="news-other-post">

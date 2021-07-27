@@ -85,15 +85,7 @@ class BannerController extends AdminController
     {
         $form = new Form(new Banner());
 
-        $form->text('name', __('Tên banner'))
-        ->creationRules('required|unique:banners|max:100|regex:/^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/', [
-            'regex' => 'Tên chỉ gồm ký tự',
-            'max' => 'Tên không được dài quá 100 ký tự'
-        ]) 
-        ->updateRules('required|unique:banners,title,{{id}}|max:100|regex:/^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/', [
-            'regex' => 'Tên chỉ gồm ký tự',
-            'max' => 'Tên không được dài quá 100 ký tự'
-        ]);
+        $form->text('name', __('Tên banner'));
         $form->url('link', __('Địa chỉ liên kết'))->required();
         $form->select('position', __('Vị trí'))->options(Constant::BANNER_POSITION)->setWidth(2, 2);
         $form->number('order', __('Sắp xếp'));
