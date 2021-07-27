@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Rating;
-use App\Models\Page;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -29,15 +28,8 @@ class RatingController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('page.title', __('Bài viết'));
-        $grid->column('total', __('Tổng số điểm'));
-        $grid->column('number', __('Số lượt rate'));
-        $grid->column('trung bình ')->display(function () {
-            if ($this->number == 0){
-                return 0;
-            } else {
-                return $this->total / $this->number;
-            };
-        });
+        $grid->column('rate', __('Rate'));
+        $grid->column('user_id', __('User id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -56,8 +48,8 @@ class RatingController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('page_id', __('Page id'));
-        $show->field('total', __('Total'));
-        $show->field('number', __('Number'));
+        $show->field('rate', __('Rate'));
+        $show->field('user_id', __('User id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -72,9 +64,10 @@ class RatingController extends AdminController
     protected function form()
     {
         $form = new Form(new Rating());
+
         $form->select('page_id', __('Bài viết '))->options(Page::all()->pluck('title', 'id'));
-        $form->number('total', __('Total'));
-        $form->number('number', __('Number'));
+        $form->number('rate', __('Rate'));
+        $form->number('user_id', __('User id'));
 
         return $form;
     }

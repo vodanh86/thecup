@@ -238,5 +238,8 @@ use App\Admin\Controllers\Util;
     </div>
 </div>
 <!--Podcast-player-end-->
+@if($trial)
+@include('layouts.restrict')
+@endif
 @include('layouts.footer')
 @include('layouts.script')

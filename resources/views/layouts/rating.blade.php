@@ -3,8 +3,8 @@ $total = 0;
 $number = 0;
 $avg = 0;
 if (!is_null($rating)){
-    $total = $rating->total;
-    $number = $rating->number;
+    $total = $rating["total"];
+    $number = $rating["number"];
 }
 if ($number != 0){
     $avg = $total / $number;

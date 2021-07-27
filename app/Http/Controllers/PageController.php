@@ -32,7 +32,8 @@ class PageController extends Controller
         $photos = Photo::where("album_id", $page->id)->get();
         $songs = Song::where("podcast_id", $page->id)->get();
         $banner = Banner::where("position", 2)->where("show", 1)->first();
-        $rating = Rating::where("page_id", $page->id)->first();
+        $countRating = Rating::where('page_id', $page->id)->count();
+        $sumRating = Rating::where('page_id', $page->id)->sum("rate");
 
 
         $trial = true;
@@ -55,7 +56,7 @@ class PageController extends Controller
             }
         } 
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs, "trial" => $trial,
-        "banner" => $banner, "rating" => $rating,
+        "banner" => $banner, "rating" => array("number" => $countRating, "total" => $sumRating),
         "cat" => $cat, "author" => $author]);
     }
 
