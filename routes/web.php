@@ -26,6 +26,7 @@ Route::post('/user/updateAvatar', 'UserController@updateAvatar');
 Route::get('/payment/createPayment', 'PaymentController@createPayment');
 Route::get('/payment/vnpayReturn', 'PaymentController@vnpayReturn');
 Route::get('/payment/vnpayResult', 'PaymentController@vnpayResult');
+Route::get('/payment/VnPayIPN', 'PaymentController@vnpayIpn');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
