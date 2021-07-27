@@ -259,4 +259,5 @@ $(function () {
   });
 })
 </script>
+<script src="{{url('assets/js/datepickr.js')}}"></script>
 @endsection
