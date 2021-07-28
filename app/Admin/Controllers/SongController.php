@@ -8,6 +8,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use App\Admin\Controllers\Util;
 
 class SongController extends AdminController
 {
@@ -78,26 +79,22 @@ class SongController extends AdminController
     protected function form()
     {
         $form = new Form(new Song());
-        $duration = 0;
         $form->text('title', __('Title'))->required();
         $form->file('link', __('Link'))->required();
         $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'))->required();
         $form->hidden('slug');
         $form->text('description', __('Description'));
         $form->hidden('duration');
-        $form->submitted(function (Form $form) {
-            global $duration;
-            $file = $_FILES["link"]["tmp_name"];
-            $ratio = 16000; //bytespersec
-            $file_size = filesize($file);
-            $duration = ($file_size / $ratio);
-        });
         $form->saving(function ($form) {
-            global $duration;
-            $form->duration = $duration;
             if (!($form->model()->id && $form->model()->title == $form->title)){
                 $form->slug = Util::createSlug($form->title, Song::get());
             }
+        });
+        $form->saved(function ($form) {
+            $song = Song::find($form->model()->id);
+            $url = env('AWS_URL').urlencode($song->link);
+            $song->duration = Util::curl_get_file_size($url) / 16000;
+            $song->save();
         });
         return $form;
     }
