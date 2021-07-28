@@ -28,6 +28,8 @@ class PageController extends Controller
     public function view($slug)
     {
         $page = Page::where('slug', $slug)->first();
+        $page->view = $page->view + 1;
+        $page->save();
         $cat = Category::find($page->category_id);
         $author = Author::where("admin_user_id", $page->author_id)->first();
         $photos = Photo::where("album_id", $page->id)->get();

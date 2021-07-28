@@ -34,21 +34,7 @@ use App\Admin\Controllers\Util;
                                 <span class="ms-auto">Nghe tất cả</span>
                             </button>
                         </div>
-                        <div class="col-md-6 sharing">
-                            <span>Chia sẻ</span>
-                            <div class="social">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div class="social">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div class="social">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            <div class="social">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
+                        @include('layouts.social')
                     </div>
                 </div>
             </div>
