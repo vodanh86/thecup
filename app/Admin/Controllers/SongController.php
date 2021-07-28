@@ -80,7 +80,7 @@ class SongController extends AdminController
     {
         $form = new Form(new Song());
         $form->text('title', __('Title'))->required();
-        $form->file('link', __('Link'))->required();
+        $form->file('link', __('Link'))->rules('mimes:audio/mpeg')->required();
         $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'))->required();
         $form->hidden('slug');
         $form->text('description', __('Description'));
