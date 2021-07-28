@@ -24,6 +24,7 @@ Route::post('/user/update', 'UserController@update');
 Route::get('/user/purchase', 'UserController@purchase');
 Route::post('/user/updateAvatar', 'UserController@updateAvatar');
 Route::post('/page/addRating', 'UserController@addRating');
+Route::post('/page/addComment', 'UserController@addComment');
 Route::get('/payment/createPayment', 'PaymentController@createPayment');
 Route::get('/payment/vnpayReturn', 'PaymentController@vnpayReturn');
 Route::get('/payment/vnpayResult', 'PaymentController@vnpayResult');

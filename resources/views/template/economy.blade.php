@@ -60,7 +60,7 @@ use App\Admin\Controllers\Util;
                                 <div class="other-post-information">
                                     <span class="other-post-date-info">{{Util::vnDateFormat($page->published_at)}}</span>
                                     <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">3 bình luận</span>
+                                    <span class="other-post-comment-info">{{array_key_exists($page->id, $countComments) ? $countComments[$page->id] : 0}} bình luận</span>
                                 </div>
                                 <p class="other-post-description"><a href="{{ url('/page/'.$page->slug) }}">{!!$page->description!!}</a></p>
                             </div>

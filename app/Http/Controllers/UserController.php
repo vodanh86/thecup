@@ -7,6 +7,7 @@ use App\User;
 use App\Models\Plan;
 use App\Models\Order;
 use App\Models\Rating;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -90,6 +91,22 @@ class UserController extends Controller
         $rating->save();
         return response()->json([
             'rating' => $rating
+        ]);
+    }
+
+    public function addComment(Request $request){
+        $user_id =  \Auth::user()->id;
+        $user = User::find($user_id);
+
+        $comment = new Comment();
+        $comment->user_id = $user_id;
+        $comment->page_id = $request->page_id;
+        $comment->name = $user->name;
+        $comment->avatar = $user->avatar;
+        $comment->comment = $request->comment;
+        $comment->save();
+        return response()->json([
+            'comment' => $comment
         ]);
     }
 

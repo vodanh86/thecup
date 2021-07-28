@@ -21,6 +21,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'user/update',
         'user/updateAvatar',
+        'page/addComment',
         'page/addRating'
         
         //

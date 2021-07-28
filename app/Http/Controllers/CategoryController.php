@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Page;
 use Carbon\Carbon;
+use App\Models\Comment;
 
 class CategoryController extends Controller
 {
@@ -24,10 +25,15 @@ class CategoryController extends Controller
             if($sort == "author"){
                 $sortField = "created_at";
             }
-            $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(3);
+            $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(5);
             return view('template.economy', ["cat" => $cat, "pages" => $pages, "sort" => $sort]);
         }
-        $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(3);
-        return view('template.economy', ["cat" => $cat, "pages" => $pages]);
+        $countComments = Comment::where('verify', 1)
+        ->selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+
+        $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(5);
+        return view('template.economy', ["cat" => $cat, "pages" => $pages, 'countComments' => $countComments]);
     }
 }

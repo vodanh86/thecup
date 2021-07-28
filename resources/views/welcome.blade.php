@@ -170,7 +170,7 @@ use App\Models\Category;
                                 <div class="other-post-information">
                                     <span class="other-post-date-info">{{Util::vnDateFormat($page->published_at)}}</span>
                                     <div class="info-seperator"></div>
-                                    <span class="other-post-comment-info">3 bình luận</span>
+                                    <span class="other-post-comment-info">{{array_key_exists($page->id, $countComments) ? $countComments[$page->id] : 0}} bình luận</span>
                                 </div>
                                 <p class="other-post-description"><a href="{{ url('/page/'.$page->slug) }}">{!!$page->description!!}</a></p>
                             </div>
@@ -185,115 +185,7 @@ use App\Models\Category;
             <div class="news-newest col-md-4">
                 @include('layouts.newPages')
                 @include('layouts.newPodcasts')
-                <div class="comment">
-                    <div class="title">
-                        <p>Bình luận mới nhất</p>
-                    </div>
-                    <div class="comment-block">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="user-avatar"></div>
-                            </div>
-                            <div class="col-md-10">
-                                <p class="user-name">tranvanan122</p>
-                                <p class="comment-text">“Bài viết hay, bổ ích mới chỉ áp dụng được một phần thôi đã thấy
-                                    hiệu quả hẳn ra. Nếu áp dụng được hết chắc chắn sẽ thành công”</p>
-                                <a href="">
-                                    <p class="post">Kĩ năng sống trong công sở</p>
-                                </a>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-secondary dropdown-toggle comment-block-button fas fa-ellipsis-v"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Thích</a></li>
-                            <li><a class="dropdown-item" href="#">Không thích</a></li>
-                            <li><a class="dropdown-item" href="#">Báo cáo</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Ẩn</a></li>
-                        </ul>
-                    </div>
-                    <div class="comment-block">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="user-avatar"></div>
-                            </div>
-                            <div class="col-md-10">
-                                <p class="user-name">nguyenquan</p>
-                                <p class="comment-text">“Bài viết hay, bổ ích mới chỉ áp dụng được một phần thôi đã thấy
-                                    hiệu quả hẳn ra. Nếu áp dụng được hết chắc chắn sẽ thành công”</p>
-                                <a href="">
-                                    <p class="post">Giá trị thật sự của tiền ảo</p>
-                                </a>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-secondary dropdown-toggle comment-block-button fas fa-ellipsis-v"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Thích</a></li>
-                            <li><a class="dropdown-item" href="#">Không thích</a></li>
-                            <li><a class="dropdown-item" href="#">Báo cáo</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Ẩn</a></li>
-                        </ul>
-                    </div>
-                    <div class="comment-block">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="user-avatar"></div>
-                            </div>
-                            <div class="col-md-10">
-                                <p class="user-name">nguyenquan</p>
-                                <p class="comment-text">“Bài viết hay, bổ ích mới chỉ áp dụng được một phần thôi đã thấy
-                                    hiệu quả hẳn ra. Nếu áp dụng được hết chắc chắn sẽ thành công”</p>
-                                <a href="">
-                                    <p class="post">Giá trị thật sự của tiền ảo</p>
-                                </a>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-secondary dropdown-toggle comment-block-button fas fa-ellipsis-v"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Thích</a></li>
-                            <li><a class="dropdown-item" href="#">Không thích</a></li>
-                            <li><a class="dropdown-item" href="#">Báo cáo</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Ẩn</a></li>
-                        </ul>
-                    </div>
-                    <div class="comment-block">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="user-avatar"></div>
-                            </div>
-                            <div class="col-md-10">
-                                <p class="user-name">nguyenquan</p>
-                                <p class="comment-text">“Bài viết hay, bổ ích mới chỉ áp dụng được một phần thôi đã thấy
-                                    hiệu quả hẳn ra. Nếu áp dụng được hết chắc chắn sẽ thành công”</p>
-                                <a href="">
-                                    <p class="post">Giá trị thật sự của tiền ảo</p>
-                                </a>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-secondary dropdown-toggle comment-block-button fas fa-ellipsis-v"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Thích</a></li>
-                            <li><a class="dropdown-item" href="#">Không thích</a></li>
-                            <li><a class="dropdown-item" href="#">Báo cáo</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Ẩn</a></li>
-                        </ul>
-                    </div>
-                </div>
+                @include('layouts.newComments', ["comments" => $comments])
             </div>
         </div>
     </div>

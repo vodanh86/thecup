@@ -27,15 +27,13 @@ class CommentController extends AdminController
         $grid = new Grid(new Comment());
 
         $grid->column('id', __('Id'));
-        $grid->column('page_id', __('Page id'));
-        $grid->column('verify', __('Verify'));
-        $grid->column('user_id', __('User id'));
+        $grid->column('page.title', __('Bài viết'));
+        $grid->column('verify', __('Hiện bình luận'))->using(Constant::SHOW_STATUS);
         $grid->column('comment', __('Comment'));
-        $grid->column('avatar', __('Avatar'));
-        $grid->column('name', __('Name'));
+        $grid->column('name', __('Người đăng'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-
+        $grid->model()->orderBy('id', 'DESC');
         return $grid;
     }
 
@@ -70,14 +68,9 @@ class CommentController extends AdminController
     protected function form()
     {
         $form = new Form(new Comment());
-
-        $form->number('page_id', __('Page id'));
-        $form->number('verify', __('Verify'));
-        $form->number('user_id', __('User id'));
+        $form->text('name', __('Người đăng'));
         $form->text('comment', __('Comment'));
-        $form->image('avatar', __('Avatar'));
-        $form->text('name', __('Name'));
-
+        $form->switch('verify', __("Hiện bình luận"))->states(Constant::ON_STATE);
         return $form;
     }
 }

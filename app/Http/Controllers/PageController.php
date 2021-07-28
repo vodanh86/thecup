@@ -35,7 +35,7 @@ class PageController extends Controller
         $banner = Banner::where("position", 2)->where("show", 1)->first();
         $countRating = Rating::where('page_id', $page->id)->count();
         $sumRating = Rating::where('page_id', $page->id)->sum("rate");
-        $comments = Comment::where('page_id', $page->id)->where("verify", 1)->get();
+        $comments = Comment::where('page_id', $page->id)->where("verify", 1)->orderBy("id", "DESC")->limit(50)->get();
 
         $rate = null;
         if (\Auth::user()){

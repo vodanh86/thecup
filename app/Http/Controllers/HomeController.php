@@ -7,6 +7,7 @@ use App\Models\Payment;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Banner;
+use App\Models\Comment;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -30,13 +31,19 @@ class HomeController extends Controller
     {
         $topPages = Page::where('status', 1)->orderBy('feature', 'DESC')->orderBy("created_at", 'DESC')->limit(4)->get();
         $banner = Banner::where('show', 1)->where('position', 1)->first();
+        $comments = Comment::where('verify', 1)->orderBy("id", "DESC")->limit(5)->get();
         $ids = array();
         foreach($topPages as $page){
             $ids[] = $page->id;
         }
         $cats = Category::all()->pluck('title','id')->toArray();
         $pages = Page::where('status', 1)->whereNotIn('id', $ids)->orderBy("created_at", 'DESC')->paginate(5);
-        return view('welcome', ["pages" => $pages, 'topPages' => $topPages, 
-        'banner' => $banner, "cats" => $cats]);
+        $countComments = Comment::where('verify', 1)
+        ->selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+
+        return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "comments" => $comments,
+        'countComments' => $countComments, 'banner' => $banner, "cats" => $cats]);
     }
 }
