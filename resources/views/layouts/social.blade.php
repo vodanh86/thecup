@@ -7,6 +7,6 @@
         <a href="https://twitter.com/share?text=&url={{urlencode(url()->full())}}" target="_blank"><i class="fab fa-twitter"></i></a> 
     </div>
     <div class="social">
-        <i class="fab fa-instagram"></i>
+    <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo urlencode(url()->full()); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
     </div>
 </div>
