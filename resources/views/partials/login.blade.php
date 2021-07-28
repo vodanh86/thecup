@@ -9,14 +9,18 @@
                         @csrf
                 <p class="reg-title">Đăng nhập</p>
                 <div class="oauth-button">
-                    <button class="btn btn-primary btn-facebook">
-                        <img src="/thecup/resources/img/Button/facebook.svg" alt="">
-                        <span>Facebook</span>
-                    </button>
-                    <button class="btn btn-outline-success btn-google">
-                        <img src="/thecup/resources/img/Button/google.svg" alt="">
-                        <span>Google</span>
-                    </button>
+                    <a href="{{ url('/auth/redirect/facebook') }}">
+                        <div class="btn btn-primary btn-facebook">
+                            <img src="/thecup/resources/img/Button/facebook.svg" alt="">
+                            <span>Facebook</span>
+                        </div>
+                    </a>
+                    <a href="{{ url('/auth/redirect/google') }}">
+                        <div class="btn btn-outline-success btn-google">
+                            <img src="/thecup/resources/img/Button/google.svg" alt="">
+                            <span>Google</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="divider"></div>
                 <p class="username">Email hoặc tên đăng nhập</p>

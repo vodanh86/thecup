@@ -14,6 +14,7 @@
         "intervention/image": "^2.6",
         "laravel-admin-ext/ckeditor": "^1.0",
         "laravel/framework": "5.7.*",
+        "laravel/socialite": "3.0",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "1.0.8",
         "php-ffmpeg/php-ffmpeg": "^0.18.0"
