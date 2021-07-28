@@ -46,6 +46,11 @@ final class Util {
         return $newDate->format('d/m/Y');
     }
 
+    static function dateTimeFormat($orgDate){
+        $newDate = Carbon::parse($orgDate);  
+        return $newDate->format('h:m:s d/m/Y');
+    }
+
     static function fullTextWildcards($term)
    {
        // removing symbols used by MySQL

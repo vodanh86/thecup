@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Page;
 use Carbon\Carbon;
 use App\Models\Comment;
+use App\Models\Rating;
 
 class CategoryController extends Controller
 {
@@ -32,8 +33,15 @@ class CategoryController extends Controller
         ->selectRaw('page_id, count(*) as total')
         ->groupBy('page_id')
         ->pluck('total','page_id')->all();
+        $countRatings = Rating::selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+        $sumRatings = Rating::selectRaw('page_id, sum(rate) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
 
         $pages = Page::where('status', 1)->where('category_id', $cat->id)->orderBy($sortField, 'DESC')->paginate(5);
-        return view('template.economy', ["cat" => $cat, "pages" => $pages, 'countComments' => $countComments]);
+        return view('template.economy', ["cat" => $cat, "pages" => $pages, 'countComments' => $countComments,
+        'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }
 }

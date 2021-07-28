@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Page;
 use App\Models\Banner;
 use App\Models\Comment;
+use App\Models\Rating;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -42,8 +43,16 @@ class HomeController extends Controller
         ->selectRaw('page_id, count(*) as total')
         ->groupBy('page_id')
         ->pluck('total','page_id')->all();
+        $countRatings = Rating::selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+        $sumRatings = Rating::selectRaw('page_id, sum(rate) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+
 
         return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "comments" => $comments,
-        'countComments' => $countComments, 'banner' => $banner, "cats" => $cats]);
+        'countComments' => $countComments, 'banner' => $banner, "cats" => $cats,
+        'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }
 }

@@ -1,5 +1,8 @@
 <?php
-use App\Models\User; ?>
+use App\Models\User;
+use App\Admin\Controllers\Util;
+
+?>
 <div class="comment">
     <div class="comment-message">
     </div>
@@ -17,7 +20,7 @@ use App\Models\User; ?>
             <div class="col-md-11">
                 <p class="user-name">{{$comment->name}}</p>
                 <p class="comment-text">“{{$comment->comment}}”</p>
-                <p class="comment-date-time">{{$comment->created_at}}</p>
+                <p class="comment-date-time">{{Util::dateTimeFormat($comment->created_at)}}</p>
             </div>
         </div>
         <!--button class="btn btn-outline-secondary dropdown-toggle comment-block-button fas fa-ellipsis-v"
