@@ -742,9 +742,7 @@ p {
     .comment .post-comment .user-avatar {
       width: 60px;
       height: 60px;
-      border-radius: 30px;
-      background-repeat: no-repeat;
-      background-image: url("/thecup/resources/img/user-img/user-img-3.png"); }
+      border-radius: 30px; }
     .comment .post-comment .form-floating {
       width: 100%; }
       .comment .post-comment .form-floating textarea {
