@@ -72,8 +72,20 @@ class PageController extends Controller
     public function search()
     {
         $q = $_GET['q'];
+        $countComments = Comment::where('verify', 1)
+        ->selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+        $countRatings = Rating::selectRaw('page_id, count(*) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+        $sumRatings = Rating::selectRaw('page_id, sum(rate) as total')
+        ->groupBy('page_id')
+        ->pluck('total','page_id')->all();
+
         $pages = Page::whereRaw("MATCH (title, description, content) AGAINST (? IN BOOLEAN MODE)", Util::fullTextWildcards($q))->paginate(5);
-        return view("template.search", ["q" => $q, 'pages' => $pages]);
+        return view("template.search", ["q" => $q, 'pages' => $pages, 'countComments' => $countComments,
+        'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }
 
     public function contact()
