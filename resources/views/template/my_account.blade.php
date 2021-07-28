@@ -28,7 +28,7 @@ use App\Admin\Controllers\Constant;?>
           <div class="upload-avatar">
             <p class="text">Ảnh đại diện</p>
             <div class="upload-button">
-              <img src="<?=$user->avatar ? env('AWS_URL').$user->avatar : '../resources/img/user-img/avatar-icon.svg'?>" id="imgAvatar" alt="">
+              <img src="<?=$user->avatar ? (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : env('AWS_URL').$user->avatar) : '../resources/img/user-img/avatar-icon.svg'?>" id="imgAvatar" alt="">
             </div>
             <input type="file" class="input" accept="image/*" onchange="submitImage()" name="avatar" >
           </div>
