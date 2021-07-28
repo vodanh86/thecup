@@ -150,5 +150,8 @@ use App\Admin\Controllers\Util;
     <!--Life-Carousel-end-->
   </div>
 </div>
+@if($trial)
+@include('layouts.restrict')
+@endif
 @include('layouts.footer')
 @include('layouts.script')

@@ -3572,7 +3572,7 @@ p{
 }
 
 //Restrict layout
-.post-body{
+.post-body,.image-post-body,.podcast-episodes-body,.podcast-single-body{
   position: relative;
   .restrict-layer{
     transition: 0.8s ease;

@@ -2867,9 +2867,9 @@ p {
         padding: 14px 44px;
         border-radius: 8px; }
 
-.post-body {
+.post-body, .image-post-body, .podcast-episodes-body, .podcast-single-body {
   position: relative; }
-  .post-body .restrict-layer {
+  .post-body .restrict-layer, .image-post-body .restrict-layer, .podcast-episodes-body .restrict-layer, .podcast-single-body .restrict-layer {
     transition: 0.8s ease;
     visibility: hidden;
     position: absolute;
@@ -2879,7 +2879,7 @@ p {
     top: 0;
     left: 0;
     z-index: 10; }
-    .post-body .restrict-layer .restrict-layer-text {
+    .post-body .restrict-layer .restrict-layer-text, .image-post-body .restrict-layer .restrict-layer-text, .podcast-episodes-body .restrict-layer .restrict-layer-text, .podcast-single-body .restrict-layer .restrict-layer-text {
       transition: 0.4s ease;
       background-color: white;
       width: 100%;
@@ -2889,9 +2889,9 @@ p {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .post-body .restrict-layer .restrict-layer-text .wrapper {
+      .post-body .restrict-layer .restrict-layer-text .wrapper, .image-post-body .restrict-layer .restrict-layer-text .wrapper, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper {
         text-align: center; }
-        .post-body .restrict-layer .restrict-layer-text .wrapper .text1 {
+        .post-body .restrict-layer .restrict-layer-text .wrapper .text1, .image-post-body .restrict-layer .restrict-layer-text .wrapper .text1, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper .text1, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper .text1 {
           margin-bottom: 22px;
           font-style: normal;
           font-weight: bold;
@@ -2900,7 +2900,7 @@ p {
           /* identical to box height, or 34px */
           /* Neutral/200 */
           color: #333333; }
-        .post-body .restrict-layer .restrict-layer-text .wrapper .text2 {
+        .post-body .restrict-layer .restrict-layer-text .wrapper .text2, .image-post-body .restrict-layer .restrict-layer-text .wrapper .text2, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper .text2, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper .text2 {
           margin-bottom: 40px;
           font-style: normal;
           font-weight: normal;
@@ -2909,7 +2909,7 @@ p {
           /* or 25px */
           /* Neutral/200 */
           color: #333333; }
-        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg {
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg, .image-post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-reg {
           background-color: #2270E8;
           border-radius: 32px;
           padding: 16px 24px;
@@ -2917,14 +2917,14 @@ p {
           font-size: 18px;
           line-height: 21px;
           color: #FFFFFF; }
-        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder span {
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder span, .image-post-body .restrict-layer .restrict-layer-text .wrapper .button-holder span, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper .button-holder span, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper .button-holder span {
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
           line-height: 19px;
           color: #B3B3B3;
           margin: 0px 8px; }
-        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log {
+        .post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log, .image-post-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log, .podcast-episodes-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log, .podcast-single-body .restrict-layer .restrict-layer-text .wrapper .button-holder .button-log {
           background-color: transparent;
           font-weight: bold;
           border-radius: 32px;
@@ -2932,9 +2932,9 @@ p {
           line-height: 21px;
           color: #2270E8;
           padding: 16px 24px; }
-    .post-body .restrict-layer .transition {
+    .post-body .restrict-layer .transition, .image-post-body .restrict-layer .transition, .podcast-episodes-body .restrict-layer .transition, .podcast-single-body .restrict-layer .transition {
       transform: translateY(200px); }
-  .post-body .show {
+  .post-body .show, .image-post-body .show, .podcast-episodes-body .show, .podcast-single-body .show {
     visibility: visible; }
 
 .purchase-body .purchase-holder {

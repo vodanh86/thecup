@@ -33,16 +33,6 @@ $(document).ready(function(){
         $(".carousel-holder .owl-carousel .owl-next").trigger('click');
     });
 
-    //Change play button to pause and revert back
-    // $('#playBtn').click(function(){
-    //     if($(this).find('span').text().trim() == 'play_arrow'){
-    //         $(this).find('span').text('pause');
-    //         $(this).attr('id','pauseBtn');
-    //     } else {
-    //         $(this).find('span').text('play_arrow');
-    //         $(this).attr('id','playBtn');
-    //     }
-    // });
     $(document).on('click', '#purchaseHistory', function() {
         console.log("History Clicked!");
         popupPurchase.style.visibility = 'visible';
@@ -58,17 +48,20 @@ $(document).ready(function(){
     $(document).on('click', '#loginBtn', function() {
         loginBody.style.visibility = 'visible';
         loginBody.style.opacity= '1';
-        //progress.style.width = "50%";
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "hidden");
     });
     $(document).on('click', '#exitLoginFormBtn', function() {
         loginBody.style.visibility = 'hidden';
         loginBody.style.opacity= '0';
-        //progress.style.width = "50%";
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "auto");
     });
     $(document).on('click', '#registerBtn', function() {
         registerBody.style.visibility = 'visible';
         registerBody.style.opacity= '1';
-        //progress.style.width = "50%";
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "hidden");
     });
     $(document).on('click', '#exitRegFormBtn', function() {
         registerBody.style.visibility = 'hidden';
@@ -102,6 +95,19 @@ $(document).ready(function(){
         //prevent native touch activity like scrolling
         e.preventDefault();
     });
+
+    //Post q&a icon changer
+    // $(document).on('click', '.collapse-btn', function() {
+    //     $('.collapse-btn').addClass('clicked');
+    //     console.log($('.clicked').find('span').text().trim());
+    //     if ($('.collapse-btn.clicked').find('span').text().trim() == 'add'){
+    //         $('.collapse-btn.clicked').find('span').text('remove');
+    //         $('.collapse-btn .collapsed').find('span').text('add');
+    //     } else {
+    //
+    //     }
+    //
+    // });
 });
 
 
