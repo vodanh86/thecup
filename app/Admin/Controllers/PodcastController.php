@@ -11,6 +11,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Models\AuthUser;
 use Encore\Admin\Facades\Admin;
+use App\Admin\Actions\Podcast\ViewSongs;
 
 class PodcastController extends AdminController
 {
@@ -42,6 +43,9 @@ class PodcastController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         $grid->model()->where('type', 2);
+        $grid->actions(function (Grid\Displayers\Actions $actions) {
+            $actions->add(new ViewSongs($actions->row->id));
+        });
         return $grid;
     }
 

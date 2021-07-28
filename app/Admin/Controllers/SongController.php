@@ -41,6 +41,10 @@ class SongController extends AdminController
 
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+        if (isset($_GET['podcast_id']) ) {
+            $grid->model()->where('podcast_id', $_GET['podcast_id']);
+        }
+        $grid->model()->orderBy('id', 'DESC');
         return $grid;
     }
 
@@ -74,14 +78,23 @@ class SongController extends AdminController
     protected function form()
     {
         $form = new Form(new Song());
-
-        $form->text('title', __('Title'));
-        $form->file('link', __('Link'));
-        $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'));
+        $duration = 0;
+        $form->text('title', __('Title'))->required();
+        $form->file('link', __('Link'))->required();
+        $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'))->required();
         $form->hidden('slug');
         $form->text('description', __('Description'));
         $form->hidden('duration');
+        $form->submitted(function (Form $form) {
+            global $duration;
+            $file = $_FILES["link"]["tmp_name"];
+            $ratio = 16000; //bytespersec
+            $file_size = filesize($file);
+            $duration = ($file_size / $ratio);
+        });
         $form->saving(function ($form) {
+            global $duration;
+            $form->duration = $duration;
             if (!($form->model()->id && $form->model()->title == $form->title)){
                 $form->slug = Util::createSlug($form->title, Song::get());
             }
