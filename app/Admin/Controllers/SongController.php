@@ -32,7 +32,7 @@ class SongController extends AdminController
         $grid->column('title', __('Title'));
         $grid->column('link', __('Link'))->display(function ($title) {
             return "<audio controls>".
-                        '<source src="'.url(env('AWS_URL')).$title.'" type="audio/mpeg">'.
+                        '<source src="'.url(env('AWS_URL')).urlencode($title).'" type="audio/mpeg">'.
                     "</audio>";
         
         });
