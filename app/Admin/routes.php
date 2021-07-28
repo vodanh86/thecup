@@ -23,4 +23,5 @@ Route::group([
     $router->resource('authors', AuthorController::class);
     $router->resource('orders', OrderController::class);
     $router->resource('ratings', RatingController::class);
+    $router->resource('comments', CommentController::class);
 });

@@ -14,6 +14,7 @@ use App\Models\Plan;
 use App\Models\Rating;
 use App\Models\Banner;
 use App\Models\Order;
+use App\Models\Comment;
 use Carbon\Carbon;
 
 class PageController extends Controller
@@ -34,6 +35,8 @@ class PageController extends Controller
         $banner = Banner::where("position", 2)->where("show", 1)->first();
         $countRating = Rating::where('page_id', $page->id)->count();
         $sumRating = Rating::where('page_id', $page->id)->sum("rate");
+        $comments = Comment::where('page_id', $page->id)->where("verify", 1)->get();
+
         $rate = null;
         if (\Auth::user()){
             $rate = Rating::where("user_id", \Auth::user()->id)->where("page_id", $page->id)->first();
@@ -59,7 +62,7 @@ class PageController extends Controller
             }
         } 
         return view($view, ["page" => $page, "photos" => $photos, "songs" => $songs, "trial" => $trial,
-        "rate" => $rate,
+        "rate" => $rate, "comments" => $comments,
         "banner" => $banner, "rating" => array("number" => $countRating, "total" => $sumRating),
         "cat" => $cat, "author" => $author]);
     }
