@@ -148,7 +148,7 @@ class PageController extends Controller
                 //Giả sử: $order = mysqli_fetch_assoc($result);   
                 $order = Order::where("order_code", $orderId)->first();
                 if ($order != null) {
-                    if ($order->price == $inputData['vnp_Amount']) {
+                    if (strval($order->price) == $inputData['vnp_Amount']) {
                         if ($order["status"] != null && $order["status"] == 0) {
                             if ($inputData['vnp_ResponseCode'] == '00') {
                                 $status = 1;
