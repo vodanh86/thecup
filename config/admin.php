@@ -404,6 +404,11 @@ return [
             'config' => [
                 
             ]
+        ],
+        'cropper' => [
+    
+            // If you want to turn off this extension, set to false
+            'enable' => true,
         ]
 
     ],

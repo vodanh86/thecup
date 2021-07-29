@@ -82,7 +82,7 @@ class AlbumController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->image('image', __('Image'))->move('album');
+        $form->cropper('image', __('Image'))->move('album')->cRatio(70, 70);
         $form->hasMany('photos', function (Form\NestedForm $form) {
             $form->text('title', 'Nội dung');
             $form->image('image', 'Ảnh');
