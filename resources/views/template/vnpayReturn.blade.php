@@ -29,7 +29,7 @@
                 <p class="input-name">Số tiền</p>
                 <div class="input-group">
                     <input class="form-control" id="amount"
-                            name="amount"  value="<?=number_format($payment->amount). " VND"?>" readonly/>
+                            name="amount"  value="<?=number_format($payment->amount/100). " VND"?>" readonly/>
                 </div>
             </div>
             <div class="col-md-12">
