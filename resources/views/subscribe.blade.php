@@ -45,8 +45,7 @@
             </div>
             <p class="input-name">Nội dung thanh toán</p>
             <div class="input-group" style="position: relative">
-                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2" readonly>Thanh toan goi dich vu: {{$plan->duration + $plan->added_month}} thang
-Thoi han goi dich vu: {{$plan->duration + $plan->added_month}} thang
+                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2" readonly>Thanh toan goi dich vu {{$plan->duration + $plan->added_month}} thang. Thoi han goi dich vu {{$plan->duration + $plan->added_month}} thang
               </textarea>
             </div>
           </div>
