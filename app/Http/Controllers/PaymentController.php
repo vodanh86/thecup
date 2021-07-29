@@ -94,7 +94,7 @@ class PaymentController extends Controller
         $payment = new Payment();
         $payment->vnp_securehashtype = $_GET['vnp_SecureHashType'];
         $payment->vnp_securehash = $_GET['vnp_SecureHash'];
-        $payment->amount = $_GET["vnp_Amount"];
+        $payment->amount = (int) $_GET["vnp_Amount"];
         $payment->bank_code = $_GET["vnp_BankCode"];
         $payment->bank_tran_no = isset($_GET["vnp_BankTranNo"]) ? $_GET["vnp_BankTranNo"] : "";
         $payment->card_type = $_GET["vnp_CardType"];
