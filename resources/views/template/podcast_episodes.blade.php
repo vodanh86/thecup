@@ -20,9 +20,15 @@ use App\Admin\Controllers\Util;
                 <div class="podcast-infor">
                     <span class="infor">{{count($songs)}} phần</span>
                     <div class="dot-seperator"></div>
-                    <span class="infor">86 phút</span>
+                    <?php
+                        $totalMinutes = 0;
+                        foreach($songs as $song){
+                            $totalMinutes += $song->duration;
+                        }
+                    ?>
+                    <span class="infor">{{floor($totalMinutes/60)}} phút</span>
                     <div class="dot-seperator"></div>
-                    <span class="infor">3 bình luận</span>
+                    <span class="infor">{{count($comments)}} bình luận</span>
                     <div class="dot-seperator"></div>
                     @include('layouts.rating', ["rating" => $rating, "show" => 0])
                 </div>
@@ -74,7 +80,7 @@ use App\Admin\Controllers\Util;
                                 <div class="play-icon">
                                     <i class="fas fa-play"></i>
                                 </div>
-                                <p class="podcast-time">34 phút</p>
+                                <p class="podcast-time">{{floor($song->duration/60)}} phút</p>
                             </div>
                             <div class="col-md-9">
                                 <p class="post-date">{{Util::dateFormat($song->created_at)}}</p>
