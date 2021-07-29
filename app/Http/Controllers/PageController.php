@@ -147,46 +147,51 @@ class PageController extends Controller
                 //Việc kiểm tra trạng thái của đơn hàng giúp hệ thống không xử lý trùng lặp, xử lý nhiều lần một giao dịch
                 //Giả sử: $order = mysqli_fetch_assoc($result);   
                 $order = Order::where("order_code", $orderId)->first();
-                if ($order != NULL) {
-                    if ($order["status"] != NULL && $order["status"] == 0) {
-                        if ($inputData['vnp_ResponseCode'] == '00') {
-                            $status = 1;
+                if ($order != null) {
+                    if ($order->price == $inputData['vnp_Amount']) {
+                        if ($order["status"] != null && $order["status"] == 0) {
+                            if ($inputData['vnp_ResponseCode'] == '00') {
+                                $status = 1;
+                            } else {
+                                $status = 2;
+                            }
+                            $order->status = $status;
+                            $order->payment_type = $inputData['vnp_CardType'];
+                            $user = User::find($order->user_id);
+                            $plan = Plan::find($order->plan_id);
+                            if ($user->package_type == 1){
+                                // Người dùng vẫn đang sử dụng dịch vụ;
+                                $lastEndDate = new Carbon($user->expire_time);
+                                $newEndDate = new Carbon($user->expire_time);
+                                $newEndDate->addMonth($plan->duration + $plan->added_month);
+                                $order->start_date = $lastEndDate;
+                                $order->end_date= $newEndDate;
+                                $user->expire_time = $newEndDate;
+                            } else {
+                                $lastEndDate = Carbon::now();
+                                $newEndDate = Carbon::now();
+                                $newEndDate->addMonth($plan->duration + $plan->added_month);
+                                $order->start_date = $lastEndDate;
+                                $order->end_date= $newEndDate;
+                                $user->expire_time = $newEndDate;  
+                                $user->package_type = 1;
+                            }
+                            $user->save();
+                            $order->save();
+                            //Cài đặt Code cập nhật kết quả thanh toán, tình trạng đơn hàng vào DB
+                            //
+                            //
+                            //
+                            //Trả kết quả về cho VNPAY: Website TMĐT ghi nhận yêu cầu thành công                
+                            $returnData['RspCode'] = '00';
+                            $returnData['Message'] = 'Confirm Success';
                         } else {
-                            $status = 2;
+                            $returnData['RspCode'] = '02';
+                            $returnData['Message'] = 'Order already confirmed';
                         }
-                        $order->status = $status;
-                        $order->payment_type = $inputData['vnp_CardType'];
-                        $user = User::find($order->user_id);
-                        $plan = Plan::find($order->plan_id);
-                        if ($user->package_type == 1){
-                            // Người dùng vẫn đang sử dụng dịch vụ;
-                            $lastEndDate = new Carbon($user->expire_time);
-                            $newEndDate = new Carbon($user->expire_time);
-                            $newEndDate->addMonth($plan->duration + $plan->added_month);
-                            $order->start_date = $lastEndDate;
-                            $order->end_date= $newEndDate;
-                            $user->expire_time = $newEndDate;
-                        } else {
-                            $lastEndDate = Carbon::now();
-                            $newEndDate = Carbon::now();
-                            $newEndDate->addMonth($plan->duration + $plan->added_month);
-                            $order->start_date = $lastEndDate;
-                            $order->end_date= $newEndDate;
-                            $user->expire_time = $newEndDate;  
-                            $user->package_type = 1;
-                        }
-                        $user->save();
-                        $order->save();
-                        //Cài đặt Code cập nhật kết quả thanh toán, tình trạng đơn hàng vào DB
-                        //
-                        //
-                        //
-                        //Trả kết quả về cho VNPAY: Website TMĐT ghi nhận yêu cầu thành công                
-                        $returnData['RspCode'] = '00';
-                        $returnData['Message'] = 'Confirm Success';
                     } else {
-                        $returnData['RspCode'] = '02';
-                        $returnData['Message'] = 'Order already confirmed';
+                        $returnData['RspCode'] = '04';
+                        $returnData['Message'] = 'Invalid amount';
                     }
                 } else {
                     $returnData['RspCode'] = '01';
