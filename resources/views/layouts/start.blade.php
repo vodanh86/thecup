@@ -46,7 +46,7 @@ function addRating(obj, id, rating) {
 		}
 	});
 	$.ajax({
-        url: "addRating",
+        url: "{{url('user/addRating')}}",
         data:'page_id='+id+'&rating='+rating,
         type: "POST"
 	}).done(function(data) {

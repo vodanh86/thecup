@@ -76,7 +76,7 @@ function sendComment(obj, id, rating) {
           headers: {
               Accept: "application/json"
           },
-          url: "{{ url('page/addComment') }}",
+          url: "{{ url('user/addComment') }}",
           data: formData,
           success: () => {
             $(".comment-message").html('    <div class="alert alert-success alert-block">' + 

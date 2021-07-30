@@ -56,4 +56,14 @@ class HomeController extends Controller
         'countComments' => $countComments, 'banner' => $banner, "cats" => $cats, "podcast" => $podcast,
         'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }
+
+    public function forgot(){
+        $rules = ['captcha' => 'required|captcha'];
+        $validator = validator()->make(request()->all(), $rules);
+        if ($validator->fails()) {
+            echo '<p style="color: #ff0000;">Incorrect!</p>';
+        } else {
+            echo '<p style="color: #00ff30;">Matched :)</p>';
+        }
+    }
 }
