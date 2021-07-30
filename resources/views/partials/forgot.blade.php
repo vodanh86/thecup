@@ -8,17 +8,18 @@ use Mews\Captcha\Facades\Captcha;
     <div class="register-holder">
         <div class="upper">
             <form method="post" action="captcha-test" id="forgetForm">
+                <div id="forgot-message"></div>
                 <p class="reg-title">Quên mật khẩu</p>
                 <p class="username">Email bạn đã dùng để đăng ký</p>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email của bạn"
+                    <input type="email" class="form-control" placeholder="Email của bạn" required name="email"
                         aria-label="">
                 </div>
-                <div class="input-group">
+                <div class="input-group" id="forgot-captcha">
                     {!! Captcha::img(); !!}
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="captcha" placeholder="captcha" >
+                    <input type="text" class="form-control" name="captcha" required placeholder="captcha"  id="captcha">
                 </div>
                 <button class="btn btn-primary btn-reg">Gửi thông tin</button>
                 <div class="divider"></div>
@@ -72,7 +73,14 @@ $(function () {
             },
             url: "{{ url('user/forgot') }}",
             data: formData,
-            //success: () => window.location.assign("{{ route('home') }}"),
+            success: (data) => {
+                $("#forgot-captcha").html(data.data);
+                $("#captcha").val('');
+                $("#forgot-message").html('    <div class="alert ' + (data.status == 1 ? 'alert-success' : 'alert-danger') + ' alert-block">' + 
+                                    '<strong id="success-message">' + data.message + '</strong>'+
+                                    '<button type="button" class="close" style="float:right" data-dismiss="alert">×</button>	'+
+                                '</div>' );
+            },
             error: (response) => {
                 if(response.status === 422) {
                     let errors = response.responseJSON.errors;
@@ -81,9 +89,7 @@ $(function () {
                         $("#" + key + "Input").addClass("is-invalid");
                         $("#" + key + "Error").children("strong").text(errors[key][0]);
                     });
-                } else {
-                   // window.location.reload();
-                }
+                } 
 
             }
         })

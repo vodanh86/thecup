@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
+use Mews\Captcha\Facades\Captcha;
 use Illuminate\Http\Request;
+use App\Admin\Controllers\Util;
 use App\Models\Payment;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Banner;
 use App\Models\Comment;
 use App\Models\Rating;
+use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -60,10 +65,34 @@ class HomeController extends Controller
     public function forgot(){
         $rules = ['captcha' => 'required|captcha'];
         $validator = validator()->make(request()->all(), $rules);
-        if ($validator->fails()) {
-            echo '<p style="color: #ff0000;">Incorrect!</p>';
+        if ($validator->fails() && false) {
+            return response()->json([
+                'status' => 0,
+                'message' => "Captcha không chính xác",
+                'data' => Captcha::img()
+            ]);
         } else {
-            echo '<p style="color: #00ff30;">Matched :)</p>';
+            $email = $_REQUEST["email"];
+            $user = User::where("email", $email)->first();
+            if (is_null($user)){
+                return response()->json([
+                    'status' => 0,
+                    'message' => "Email không tồn tại",
+                    'data' => Captcha::img()
+                ]);
+            } else {
+                $password = Util::randomPassword();
+                $user->password = Hash::make($password);
+                $user->save();
+
+                Mail::raw('Mật khẩu mới của bạn là: '.$password, function($msg) use(&$email) { 
+                    $msg->to($email)->subject('Reset mật khẩu'); });
+                return response()->json([
+                    'status' => 1,
+                    'message' => "Đã reset lại mật khẩu, vui lòng kiểm tra email",
+                    'data' => Captcha::img()
+                ]);
+            }
         }
     }
 }
