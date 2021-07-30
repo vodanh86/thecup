@@ -1,6 +1,10 @@
 <?php
 use App\Admin\Controllers\Util;
 use App\Models\Category;
+use App\Models\Author;
+use App\Models\Song;
+use App\Models\Rating;
+use App\Models\Comment;
 
 ?>
 @include('layouts.header')
@@ -28,35 +32,24 @@ use App\Models\Category;
                     <img src="/thecup/resources/img/radio-frame.png" alt="">
                 </div>
                 <div class="col-md-9 radio-controller">
-                    <p class="title">Bí mật đằng sau thành công của cuộc cách mạng tháng 8</p>
-                    <p class="author">Nguyễn Thành Văn</p>
+                    <a href="{{ url('/page/'.$podcast->slug) }}">
+                        <p class="title">{{$podcast->title}}</p>
+                    </a>
+                    <?php 
+                    $author = Author::where("admin_user_id", $podcast->author_id)->first();
+                    ?>
+                    <a href="{{url('author/'.$author->slug)}}">
+                        <p class="author">{{$author->title}}</p>
+                    </a>
                     <div class="button-holder">
-                        <div class="podcast-infor">
-                            <span class="infor">8 phần</span>
-                            <div class="dot-seperator"></div>
-                            <span class="infor">86 phút</span>
-                            <div class="dot-seperator"></div>
-                            <span class="infor">3 bình luận</span>
-                            <div class="dot-seperator"></div>
-                            <div class="rating-holder">
-            <span class="material-icons material-icons-outlined">
-            star
-            </span>
-                                <span class="material-icons material-icons-outlined">
-            star
-            </span>
-                                <span class="material-icons material-icons-outlined">
-            star
-            </span>
-                                <span class="material-icons material-icons-outlined">
-            star
-            </span>
-                                <span class="material-icons material-icons-outlined">
-            star_half
-            </span>
-                                <span class="quantity">(23)</span>
-                            </div>
-                        </div>
+                        <?php 
+                            $songs = Song::where("podcast_id", $podcast->id)->orderBy("order")->get();
+                            $countRating = Rating::where('page_id', $podcast->id)->count();
+                            $sumRating = Rating::where('page_id', $podcast->id)->sum("rate");
+                            $comments = Comment::where('page_id', $podcast->id)->get();
+                            $rating = array("number" => $countRating, "total" => $sumRating)
+                        ?>
+                        @include('layouts.podcastInfor', ["songs" => $songs, "rating" => $rating, "comments" => $comments])
                         <div class="play-and-sharing">
                             <div class="row">
                                 <div class="col-12 col-md-4">
@@ -66,21 +59,7 @@ use App\Models\Category;
                                         <span class="ms-auto">Nghe tất cả</span>
                                     </button>
                                 </div>
-                                <div class="col-12 col-md-6 order-first order-md-last sharing">
-                                    <span>Chia sẻ</span>
-                                    <div class="social">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </div>
-                                    <div class="social">
-                                        <i class="fab fa-twitter"></i>
-                                    </div>
-                                    <div class="social">
-                                        <i class="fab fa-instagram"></i>
-                                    </div>
-                                    <div class="social">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
+                                @include('layouts.social')
                             </div>
                         </div>
                     </div>
@@ -89,18 +68,6 @@ use App\Models\Category;
         </div>
         <div class="radio-frame-behind1"></div>
         <div class="radio-frame-behind2"></div>
-        <div class="radio-nav">
-            <button class="btn btn-radio-prev">
-                <span class="material-icons material-icons-outlined">
-                chevron_left
-                </span>
-            </button>
-            <button class="btn btn-radio-next">
-                <span class="material-icons material-icons-outlined">
-                chevron_right
-                </span>
-            </button>
-        </div>
     </div>
 </div>
 <!--Radio-end-->

@@ -39,6 +39,7 @@ class HomeController extends Controller
         }
         $cats = Category::all()->pluck('title','id')->toArray();
         $pages = Page::where('status', 1)->whereNotIn('id', $ids)->orderBy("created_at", 'DESC')->paginate(5);
+        $podcast = Page::where('type', 2)->orderBy("view", 'DESC')->first();
         $countComments = Comment::where('verify', 1)
         ->selectRaw('page_id, count(*) as total')
         ->groupBy('page_id')
@@ -52,7 +53,7 @@ class HomeController extends Controller
 
 
         return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "comments" => $comments,
-        'countComments' => $countComments, 'banner' => $banner, "cats" => $cats,
+        'countComments' => $countComments, 'banner' => $banner, "cats" => $cats, "podcast" => $podcast,
         'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }
 }

@@ -17,21 +17,7 @@ use App\Admin\Controllers\Util;
             <div class="col-md-8 podcast-play">
                 <p class="category">{{$cat->title}}</p>
                 <p class="title">{{$page->title}}</p>
-                <div class="podcast-infor">
-                    <span class="infor">{{count($songs)}} phần</span>
-                    <div class="dot-seperator"></div>
-                    <?php
-                        $totalMinutes = 0;
-                        foreach($songs as $song){
-                            $totalMinutes += $song->duration;
-                        }
-                    ?>
-                    <span class="infor">{{floor($totalMinutes/60)}} phút</span>
-                    <div class="dot-seperator"></div>
-                    <span class="infor">{{count($comments)}} bình luận</span>
-                    <div class="dot-seperator"></div>
-                    @include('layouts.rating', ["rating" => $rating, "show" => 0])
-                </div>
+                @include('layouts.podcastInfor')
                 <div class="play-and-sharing">
                     <div class="row">
                         <div class="col-md-4">
