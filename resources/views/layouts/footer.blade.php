@@ -48,16 +48,16 @@ $parentId = $cats[0][0]->id;
             <div class="social-connect">
                 <span class="social-connect-text">Kết nối với chúng tôi</span>
                 <div class="social-connect-icon">
-                    <img src="/thecup/resources/img/icon/ic_facebook.svg" alt="">
+                    <img src="{{url('resources/img/icon/ic_facebook.svg')}}" alt="">
                 </div>
                 <div class="social-connect-icon">
-                    <img src="/thecup/resources/img/icon/ic_youtube.svg" alt="">
+                    <img src="{{url('resources/img/icon/ic_youtube.svg')}}" alt="">
                 </div>
                 <div class="social-connect-icon">
-                    <img src="/thecup/resources/img/icon/ic_instagram.svg" alt="">
+                    <img src="{{url('resources/img/icon/ic_instagram.svg')}}" alt="">
                 </div>
                 <div class="social-connect-icon">
-                    <img src="/thecup/resources/img/icon/ic_twitter.svg" alt="">
+                    <img src="{{url('resources/img/icon/ic_twitter.svg')}}" alt="">
                 </div>
             </div>
             <div class="divider"></div>

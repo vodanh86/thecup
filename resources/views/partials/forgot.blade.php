@@ -1,6 +1,6 @@
 <div id="forgotPassBody" class="register-body fixed-top">
     <div class="logo-thecup">
-        <img src="/thecup/resources/img/logo-login-register.svg" alt="">
+        <img src="{{url('resources/img/logo-login-register.svg')}}" alt="">
     </div>
     <div class="register-holder">
         <div class="upper">
@@ -14,11 +14,11 @@
             <div class="divider"></div>
             <div class="oauth-button">
                 <button class="btn btn-primary btn-facebook">
-                    <img src="/thecup/resources/img/Button/facebook.svg" alt="">
+                    <img src="{{url('resources/img/Button/facebook.svg')}}" alt="">
                     <span>Facebook</span>
                 </button>
                 <button class="btn btn-outline-success btn-google">
-                    <img src="/thecup/resources/img/Button/google.svg" alt="">
+                    <img src="{{url('resources/img/Button/google.svg')}}" alt="">
                     <span>Google</span>
                 </button>
             </div>
@@ -26,7 +26,7 @@
         <div class="lower">
             <div class="login-block">
                 <span class="text">Bỏ qua bước này?</span>
-                <a href="/thecup/">
+                <a href="{{url('')}}">
                     <span class="login">Về trang chủ</span>
                 </a>
             </div>

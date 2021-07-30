@@ -1,6 +1,6 @@
 <div id="registerBody" class="register-body fixed-top">
     <div class="logo-thecup">
-        <img src="/thecup/resources/img/logo-login-register.svg" alt="">
+        <img src="{{url('resources/img/logo-login-register.svg')}}" alt="">
     </div>
     <div class="register-holder">
         <div class="upper">
@@ -9,11 +9,11 @@
                 <p class="reg-title">Đăng ký</p>
                 <div class="oauth-button">
                     <button class="btn btn-primary btn-facebook">
-                        <img src="/thecup/resources/img/Button/facebook.svg" alt="">
+                        <img src="{{url('resources/img/Button/facebook.svg')}}" alt="">
                         <span>Facebook</span>
                     </button>
                     <button class="btn btn-outline-success btn-google">
-                        <img src="/thecup/resources/img/Button/google.svg" alt="">
+                        <img src="{{url('resources/img/Button/google.svg')}}" alt="">
                         <span>Google</span>
                     </button>
                 </div>

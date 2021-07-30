@@ -1,7 +1,7 @@
 <!--Login-start-->
 <div id="loginBody" class="login-body fixed-top">
     <div class="logo-thecup">
-        <img src="/thecup/resources/img/logo-login-register.svg" alt="">
+        <img src="{{url('resources/img/logo-login-register.svg')}}" alt="">
     </div>
     <div class="register-holder">
         <div class="upper">
@@ -11,13 +11,13 @@
                 <div class="oauth-button">
                     <a href="{{ url('/auth/redirect/facebook') }}">
                         <div class="btn btn-primary btn-facebook">
-                            <img src="/thecup/resources/img/Button/facebook.svg" alt="">
+                            <img src="{{url('resources/img/Button/facebook.svg')}}" alt="">
                             <span>Facebook</span>
                         </div>
                     </a>
                     <a href="{{ url('/auth/redirect/google') }}">
                         <div class="btn btn-outline-success btn-google">
-                            <img src="/thecup/resources/img/Button/google.svg" alt="">
+                            <img src="{{url('resources/img/Button/google.svg')}}" alt="">
                             <span>Google</span>
                         </div>
                     </a>
