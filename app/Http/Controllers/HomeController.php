@@ -65,7 +65,7 @@ class HomeController extends Controller
     public function forgot(){
         $rules = ['captcha' => 'required|captcha'];
         $validator = validator()->make(request()->all(), $rules);
-        if ($validator->fails() && false) {
+        if ($validator->fails()) {
             return response()->json([
                 'status' => 0,
                 'message' => "Captcha không chính xác",
