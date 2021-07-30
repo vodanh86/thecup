@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $topPages = Page::where('status', 1)->orderBy('feature', 'DESC')->orderBy("created_at", 'DESC')->limit(4)->get();
         $banner = Banner::where('show', 1)->where('position', 1)->first();
-        $comments = Comment::where('verify', 1)->orderBy("id", "DESC")->limit(5)->get();
+        $newComments = Comment::where('verify', 1)->orderBy("id", "DESC")->limit(5)->get();
         $ids = array();
         foreach($topPages as $page){
             $ids[] = $page->id;
@@ -52,7 +52,7 @@ class HomeController extends Controller
         ->pluck('total','page_id')->all();
 
 
-        return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "comments" => $comments,
+        return view('welcome', ["pages" => $pages, 'topPages' => $topPages, "newComments" => $newComments,
         'countComments' => $countComments, 'banner' => $banner, "cats" => $cats, "podcast" => $podcast,
         'countRatings' => $countRatings, 'sumRatings' => $sumRatings]);
     }

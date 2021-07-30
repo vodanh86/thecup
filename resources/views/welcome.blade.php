@@ -183,7 +183,7 @@ use App\Models\Comment;
             <div class="news-newest col-md-4">
                 @include('layouts.newPages')
                 @include('layouts.newPodcasts')
-                @include('layouts.newComments', ["comments" => $comments])
+                @include('layouts.newComments', ["comments" => $newComments])
             </div>
         </div>
     </div>
