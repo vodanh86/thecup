@@ -89,7 +89,7 @@ class HomeController extends Controller
                     $msg->to($email)->subject('Reset mật khẩu'); });
                 return response()->json([
                     'status' => 1,
-                    'message' => "Đã reset lại mật khẩu, vui lòng kiểm tra email",
+                    'message' => "Đã reset mật khẩu, vui lòng kiểm tra email",
                     'data' => Captcha::img()
                 ]);
             }
