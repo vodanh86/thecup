@@ -33,7 +33,7 @@ use App\Admin\Controllers\Util;
         <div class="row">
           @foreach($photos as $photo)
           <div class="col-4 col-md-3 img-block">
-            <img src="{{url(env('AWS_URL')).$photo->image}}" alt="{{$photo->title}}">
+            <img src="{{$trial ? url('resources/img/grid/grid-gray.png') : url(env('AWS_URL')).$photo->image}}" alt="{{$photo->title}}">
           </div>
           @endforeach
         </div>
@@ -59,7 +59,7 @@ use App\Admin\Controllers\Util;
         @else
           <div class="carousel-item">
         @endif
-          <img src="{{url(env('AWS_URL')).$photo->image}}" class="d-block" alt="{{$photo->title}}">
+          <img src="{{$trial ? url('resources/img/carousel/life-carousel-big-gray.png') : url(env('AWS_URL')).$photo->image}}" class="d-block" alt="{{$photo->title}}">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{$photo->title}}</h5>
             <p>{{Util::vnDateFormat($page->published_at)}}</p>
