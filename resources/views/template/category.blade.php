@@ -11,7 +11,7 @@ use App\Admin\Controllers\Util;
 <div class="category-banner">
     <div class="text-block">
         <p class="category">Chuyên mục</p>
-        <p class="eco">{{$cat->title}}</p>
+        <p class="eco">{{$title}}</p>
     </div>
 </div>
 <!--Economy-banner-end-->
@@ -43,13 +43,13 @@ use App\Admin\Controllers\Util;
                                     @if($page->type == 1)
                                     <div class="listenable-box">
                                         <img width="32" height="32" class="listenable-icon"
-                                            src="/thecup/resources/img/icon/ic_playlist.svg" alt="">
+                                            src="{{url('resources/img/icon/ic_playlist.svg')}}" alt="">
                                     </div>
                                     @endif
                                     @if($page->type == 2)
                                     <div class="listenable-box">
                                         <img width="14" height="18" class="listenable-icon play-icon"
-                                            src="/thecup/resources/img/icon/ic_play.svg" alt="">
+                                            src="{{url('resources/img/icon/ic_play.svg')}}" alt="">
                                     </div>
                                     @endif
                                 </a>
