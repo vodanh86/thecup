@@ -3,7 +3,8 @@
   .container {
     width: 1140px; } }
 html, body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; }
 
 a {
   text-decoration: none;
@@ -204,11 +205,15 @@ p {
       background-color: #F0F0F0; }
       .radio-holder .radio-frame .radio-frame-main .radio-img {
         display: inline-block;
-        width: 23%; }
+        width: 23%;
+        height: 100%;
+        overflow: hidden; }
         .radio-holder .radio-frame .radio-frame-main .radio-img img {
-          height: 100%; }
+          height: 100%;
+          width: 100%;
+          object-fit: cover; }
       .radio-holder .radio-frame .radio-frame-main .radio-controller {
-        padding: 25px 20px 20px 5px;
+        padding: 14px 20px 19px 5px;
         width: 77%;
         display: inline-block;
         height: 100%; }
@@ -226,98 +231,75 @@ p {
           line-height: 140%;
           color: #22539D; }
         .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder {
-          margin-top: 25px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between; }
-          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-button {
-            border: 1px solid #333333;
-            box-sizing: border-box;
-            width: 58px;
-            height: 58px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center; }
-          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .btn {
-            padding: 0;
-            display: inline-flex;
-            align-items: center; }
-          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog {
-            width: 58%;
-            height: 10px;
-            align-items: center;
-            display: inline-flex;
-            cursor: pointer; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider {
-              -webkit-appearance: none;
-              width: 100%;
-              height: 1px;
-              border-radius: 5px;
-              background: #000000;
-              outline: none;
-              opacity: 1;
-              cursor: pointer; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider::-webkit-slider-thumb {
-              -webkit-appearance: none;
-              appearance: none;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: #1B3864;
-              cursor: pointer; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider::-moz-range-thumb {
-              width: 25px;
-              height: 25px;
-              border-radius: 50%;
-              background: #04AA6D;
-              cursor: pointer; }
-          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .timer-holder {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 13px;
-            line-height: 140%;
-            color: #000000; }
-          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder {
-            display: inline-flex;
-            align-items: center;
-            position: relative;
-            cursor: pointer; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar {
-              position: absolute;
-              transform: rotateZ(-90deg);
-              top: -55px;
-              left: -30px;
-              display: none;
-              align-items: center;
-              width: 85px;
-              height: 20px;
-              padding: 10px;
-              border-radius: 10px;
-              background: white; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider {
-                width: 55px;
-                -webkit-appearance: none;
-                height: 1px;
-                border-radius: 5px;
-                background: #000000;
-                outline: none;
-                opacity: 1;
-                cursor: pointer; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: #1B3864;
-                cursor: pointer; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder .volume-bar .slider::-moz-range-thumb {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background: #04AA6D;
-                cursor: pointer; }
+          margin-top: 8px; }
+          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor {
+            width: 100%; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .infor {
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 16px;
+              color: #767676; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .dot-seperator {
+              width: 8px;
+              height: 8px;
+              border-radius: 4px;
+              background-color: #DDDDDD;
+              display: inline-block;
+              margin-left: 16px;
+              margin-right: 16px; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder {
+              display: inline-block; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder .material-icons {
+                font-size: 13px;
+                color: #FFA800;
+                vertical-align: middle; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder .quantity {
+                vertical-align: middle;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #767676; }
+          .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing {
+            margin-top: 12px; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button {
+              padding: 6px 20px 6px 20px;
+              height: 45px;
+              width: 170px;
+              border-radius: 100px;
+              background-color: #FF8C26;
+              border: none; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button i {
+                font-size: 19px; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button span {
+                text-transform: uppercase;
+                font-weight: 900;
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: 0.05em;
+                color: white; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing {
+              display: flex;
+              align-items: center; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing span {
+                margin-right: 10px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 140%;
+                color: #F0F0F0; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing .social {
+                margin-right: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 20px;
+                background: #DCEAFF; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing .social i {
+                  font-size: 16px; }
     .radio-holder .radio-frame .radio-frame-behind1 {
       position: absolute;
       z-index: 2;
@@ -427,11 +409,14 @@ p {
     font-weight: 500;
     line-height: 22.4px;
     color: #333333; }
-  .news-holder .news-main .hightlight-upper .upper-left {
-    width: 61%; }
-  .news-holder .news-main .hightlight-upper .upper-right {
-    width: 35%; }
+  .news-holder .news-main .hightlight-upper {
+    width: 100%; }
+    .news-holder .news-main .hightlight-upper .upper-left {
+      width: 61%; }
+    .news-holder .news-main .hightlight-upper .upper-right {
+      width: 35%; }
   .news-holder .news-main .hightlight-lower {
+    width: 100%;
     margin-top: 30px; }
     .news-holder .news-main .hightlight-lower .lower-left {
       width: 35%; }
@@ -556,8 +541,155 @@ p {
         color: #767676;
         font-weight: bold; }
 
+.podcast-player-holder {
+  width: 100%;
+  background-color: #092145;
+  height: 110px;
+  margin-top: 60px;
+  display: none; }
+  .podcast-player-holder .upper {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .podcast-player-holder .upper .podcast-title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #767676; }
+    .podcast-player-holder .upper .dot-seperator {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      background-color: #E0E0E0;
+      display: inline-block;
+      margin-left: 16px;
+      margin-right: 16px; }
+    .podcast-player-holder .upper .podcast-name {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #FFFFFF; }
+  .podcast-player-holder .divider {
+    border-color: #FFFFFF;
+    opacity: 0.1; }
+  .podcast-player-holder .lower {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center; }
+    .podcast-player-holder .lower .button-holder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 20px; }
+      .podcast-player-holder .lower .button-holder span {
+        font-size: 23px;
+        color: white; }
+      .podcast-player-holder .lower .button-holder .play-button {
+        width: 44px;
+        height: 44px;
+        border-radius: 25px;
+        border: 2px solid white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; }
+        .podcast-player-holder .lower .button-holder .play-button span {
+          font-size: 23px; }
+      .podcast-player-holder .lower .button-holder button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; }
+      .podcast-player-holder .lower .button-holder .play-speed {
+        font-size: 16px;
+        font-weight: bold; }
+      .podcast-player-holder .lower .button-holder .volume-holder {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer; }
+        .podcast-player-holder .lower .button-holder .volume-holder .volume-bar {
+          position: absolute;
+          transform: rotateZ(-90deg);
+          top: -50px;
+          left: -19px;
+          display: none;
+          align-items: center;
+          width: 85px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 10px;
+          background: white; }
+          .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider {
+            width: 55px;
+            -webkit-appearance: none;
+            height: 1px;
+            border-radius: 5px;
+            background: #000000;
+            outline: none;
+            opacity: 1;
+            cursor: pointer; }
+          .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #1B3864;
+            cursor: pointer; }
+          .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer; }
+    .podcast-player-holder .lower .progress-holder {
+      display: inline-flex;
+      align-items: center; }
+      .podcast-player-holder .lower .progress-holder .time-played, .podcast-player-holder .lower .progress-holder .total-time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 140%;
+        color: #767676; }
+      .podcast-player-holder .lower .progress-holder .prog {
+        width: 100%;
+        height: 10px;
+        padding: 0px 20px;
+        align-items: center;
+        display: inline-flex;
+        cursor: pointer; }
+        .podcast-player-holder .lower .progress-holder .prog .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 1px;
+          border-radius: 5px;
+          background: #ffffff;
+          outline: none;
+          opacity: 1;
+          cursor: pointer; }
+        .podcast-player-holder .lower .progress-holder .prog .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: #ffffff;
+          cursor: pointer; }
+        .podcast-player-holder .lower .progress-holder .prog .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #04AA6D;
+          cursor: pointer; }
+      .podcast-player-holder .lower .progress-holder .progress-bar {
+        transition: width 0.1s ease; }
+
 .footer-holder {
-  margin-top: 40px;
+  margin-top: 60px;
   overflow: hidden;
   clear: both; }
   .footer-holder .footer-upper {
@@ -566,7 +698,7 @@ p {
     background-color: #1B3864;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("/thecup/resources/img/footer-bg-frame.svg"); }
+    background-image: url("../../resources/img/footer-bg-frame.svg"); }
     .footer-holder .footer-upper .container {
       height: 100%; }
     .footer-holder .footer-upper .footer-upper-content {
@@ -1110,7 +1242,7 @@ p {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  background-image: url("/thecup/resources/img/podcast/podcast-player-bg.png"); }
+  background-image: url("../../resources/img/podcast/podcast-player-bg.png"); }
   .podcast-episodes-body .podcast-holder .podcast-player-inner {
     padding-left: 10px !important; }
     .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-image {
@@ -1443,7 +1575,7 @@ p {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  background-image: url("/thecup/resources/img/podcast/podcast-player-bg.png"); }
+  background-image: url("../../resources/img/podcast/podcast-player-bg.png"); }
   .podcast-single-body .podcast-holder .podcast-player-inner {
     padding-left: 10px !important; }
     .podcast-single-body .podcast-holder .podcast-player-inner .podcast-image {
@@ -2435,15 +2567,18 @@ p {
 .login-body .register-holder {
   height: 550px !important; }
   .login-body .register-holder .upper {
-    padding: 40px 40px 40px 40px !important; }
-  .login-body .register-holder .forgot-password {
-    margin-top: 20px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    color: #2270E8;
-    text-align: center; }
+    padding: 40px 40px 26px 40px !important; }
+  .login-body .register-holder .btn-forgot-password {
+    width: 100%;
+    margin-top: 20px; }
+    .login-body .register-holder .btn-forgot-password .forgot-password {
+      margin-top: 0px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      color: #2270E8;
+      text-align: center; }
 
 .register-body, .login-body {
   background-color: #E8EFFA;
@@ -2455,8 +2590,8 @@ p {
     margin-left: auto;
     margin-right: auto; }
   .register-body .register-holder, .login-body .register-holder {
-    width: 450px;
     height: 600px;
+    width: 450px;
     margin-top: 32px;
     margin-left: auto;
     margin-right: auto;
@@ -2618,6 +2753,9 @@ p {
       font-size: 15px;
       line-height: 18px;
       color: #767676; }
+
+#forgotPassBody .register-holder {
+  height: 455px !important; }
 
 .my-account-body {
   position: relative; }
@@ -2810,49 +2948,60 @@ p {
           color: #2270E8; }
       .my-account-body .contact-holder .left .trial-card {
         margin-top: 20px;
-        padding: 22px;
         height: 185px;
         width: 100%;
-        background-image: url("/thecup/resources/img/trial-card.svg");
-        background-repeat: no-repeat; }
+        position: relative; }
+        .my-account-body .contact-holder .left .trial-card img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0; }
       .my-account-body .contact-holder .left .sixmonth-card {
         margin-top: 35px;
-        padding: 22px;
         height: 185px;
         width: 100%;
-        background-image: url("/thecup/resources/img/sixmonth-card.svg");
-        background-repeat: no-repeat; }
+        position: relative; }
         .my-account-body .contact-holder .left .sixmonth-card .white {
           color: white !important; }
-      .my-account-body .contact-holder .left .card-inner .card-title {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 152.34%;
-        color: #22539D; }
-      .my-account-body .contact-holder .left .card-inner .card-scope {
-        margin-top: 14px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 152.34%;
-        color: #22539D; }
-      .my-account-body .contact-holder .left .card-inner .expire {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px; }
-        .my-account-body .contact-holder .left .card-inner .expire .text {
+      .my-account-body .contact-holder .left .card-inner {
+        padding: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%; }
+        .my-account-body .contact-holder .left .card-inner .card-title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 152.34%;
+          color: #22539D; }
+        .my-account-body .contact-holder .left .card-inner .card-scope {
+          margin-top: 14px;
           font-style: normal;
           font-weight: normal;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 152.34%;
-          color: #767676; }
-        .my-account-body .contact-holder .left .card-inner .expire .date {
-          font-style: normal;
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 152.34%;
-          color: #333333; }
+          color: #22539D; }
+        .my-account-body .contact-holder .left .card-inner .expire {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px; }
+          .my-account-body .contact-holder .left .card-inner .expire .text {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 152.34%;
+            color: #767676; }
+          .my-account-body .contact-holder .left .card-inner .expire .date {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 152.34%;
+            color: #333333; }
       .my-account-body .contact-holder .left .btn-primary {
         margin-top: 15px;
         width: 100%;

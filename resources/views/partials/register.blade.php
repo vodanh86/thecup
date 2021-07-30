@@ -57,9 +57,9 @@
         <div class="lower">
             <div class="login-block">
                 <span class="text">Bạn đã có tài khoản?</span>
-                <a href="/thecup/template/login.html">
+                <button class="btn btn-switchto-login" id="switchToLoginBtn">
                     <span class="login">Đăng nhập ngay</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>

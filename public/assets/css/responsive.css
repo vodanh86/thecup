@@ -174,7 +174,7 @@
 
   .radio-holder {
     margin-top: 60px;
-    height: 240px;
+    height: 310px;
     margin-left: auto;
     margin-right: auto; }
     .radio-holder .radio-title-frame {
@@ -204,7 +204,7 @@
         position: absolute;
         z-index: 3;
         width: 100%;
-        height: 200px;
+        height: 260px;
         overflow: hidden;
         margin-left: auto;
         margin-right: auto;
@@ -218,7 +218,7 @@
           .radio-holder .radio-frame .radio-frame-main .radio-img img {
             height: 100%; }
         .radio-holder .radio-frame .radio-frame-main .radio-controller {
-          padding: 15px 25px 25px 25px;
+          padding: 20px 20px 10px 24px;
           width: 100%;
           display: inline-block;
           height: 100%; }
@@ -236,61 +236,76 @@
             line-height: 140%;
             color: #22539D; }
           .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder {
-            margin-top: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-button {
-              border: 1px solid #333333;
-              box-sizing: border-box;
-              width: 58px;
-              height: 58px;
-              border-radius: 30px;
-              display: inline-flex;
-              align-items: center;
-              justify-content: center; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .btn {
-              padding: 0;
-              display: inline-flex;
-              align-items: center; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog {
-              width: 25%;
-              height: 10px;
-              align-items: center;
-              display: inline-flex;
-              cursor: pointer; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider {
-                -webkit-appearance: none;
-                width: 100%;
-                height: 1px;
-                border-radius: 5px;
-                background: #000000;
-                outline: none;
-                opacity: 1;
-                cursor: pointer; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background: #1B3864;
-                cursor: pointer; }
-              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .prog .slider::-moz-range-thumb {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background: #04AA6D;
-                cursor: pointer; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .timer-holder {
-              font-style: normal;
-              font-weight: normal;
-              font-size: 13px;
-              line-height: 140%;
-              color: #000000; }
-            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .volume-holder {
-              display: inline-flex;
-              align-items: center; }
+            display: block; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor {
+              width: 100%; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .infor {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #767676; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .dot-seperator {
+                width: 6px;
+                height: 6px;
+                border-radius: 4px;
+                background-color: #DDDDDD;
+                display: inline-block;
+                margin-left: 3px;
+                margin-right: 3px; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder {
+                display: inline-block; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder .material-icons {
+                  font-size: 13px;
+                  color: #FFA800;
+                  vertical-align: middle; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .podcast-infor .rating-holder .quantity {
+                  vertical-align: middle;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #767676; }
+            .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing {
+              margin-top: 12px; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button {
+                padding: 6px 20px 6px 20px;
+                height: 45px;
+                width: 170px;
+                border-radius: 100px;
+                background-color: #FF8C26;
+                border: none; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button i {
+                  font-size: 19px; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .play-button span {
+                  text-transform: uppercase;
+                  font-weight: 900;
+                  font-size: 14px;
+                  line-height: 140%;
+                  letter-spacing: 0.05em;
+                  color: white; }
+              .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px; }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing span {
+                  margin-right: 10px;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 14px;
+                  line-height: 140%;
+                  color: rgba(0, 0, 0, 0.8); }
+                .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing .social {
+                  margin-right: 10px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 20px;
+                  background: #DCEAFF; }
+                  .radio-holder .radio-frame .radio-frame-main .radio-controller .button-holder .play-and-sharing .sharing .social i {
+                    font-size: 16px; }
       .radio-holder .radio-frame .radio-frame-behind1 {
         position: absolute;
         z-index: 2;
@@ -323,7 +338,7 @@
       justify-content: center;
       position: absolute;
       left: 32%;
-      top: 105%;
+      top: 100%;
       transform: translateY(-50%);
       z-index: 4;
       width: 54px;
@@ -340,7 +355,7 @@
       justify-content: center;
       position: absolute;
       right: 32%;
-      top: 105%;
+      top: 100%;
       transform: translateY(-50%);
       z-index: 4;
       border-color: #E8EFFA;
@@ -535,8 +550,86 @@
       .news-holder .news-ads-banner img {
         width: 100%; }
 
+  .podcast-player-holder {
+    width: 100%;
+    background-color: #092145;
+    height: 160px;
+    margin-top: 40px; }
+    .podcast-player-holder .upper {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .podcast-player-holder .upper .podcast-title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #767676;
+        display: block; }
+      .podcast-player-holder .upper .dot-seperator {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: #E0E0E0;
+        display: none;
+        margin-left: 16px;
+        margin-right: 16px; }
+      .podcast-player-holder .upper .podcast-name {
+        margin-top: 5px;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF; }
+    .podcast-player-holder .divider {
+      border-color: #FFFFFF;
+      opacity: 0.1; }
+    .podcast-player-holder .lower {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center; }
+      .podcast-player-holder .lower .button-holder {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 5px; }
+        .podcast-player-holder .lower .button-holder span {
+          font-size: 23px;
+          color: white; }
+        .podcast-player-holder .lower .button-holder .play-button {
+          width: 44px;
+          height: 44px;
+          border-radius: 25px;
+          border: 2px solid white;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center; }
+          .podcast-player-holder .lower .button-holder .play-button span {
+            font-size: 23px; }
+      .podcast-player-holder .lower .progress-holder {
+        display: inline-flex;
+        align-items: center;
+        padding: 0px 20px;
+        margin-top: 14px; }
+        .podcast-player-holder .lower .progress-holder .time-played, .podcast-player-holder .lower .progress-holder .total-time {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 140%;
+          color: #767676; }
+        .podcast-player-holder .lower .progress-holder .progress {
+          display: inline-flex;
+          width: 100%;
+          height: 3px;
+          margin-left: 20px;
+          margin-right: 20px; }
+        .podcast-player-holder .lower .progress-holder .progress-bar {
+          transition: width 0.1s ease; }
+
   .footer-holder {
-    margin-top: 80px;
+    margin-top: 40px;
     overflow: hidden;
     clear: both; }
     .footer-holder .footer-upper {
@@ -3144,7 +3237,7 @@
       .post-body .news-holder .news-main .news-other-post .other-post .other-post-title {
         margin-top: 0px; }
 
-  .register-body, .login-body {
+  .login-body, .register-body {
     transition: 0.2s ease;
     position: absolute;
     width: 100%;
@@ -3152,32 +3245,43 @@
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 10; }
-
-  .login-body .register-holder, .register-body .register-holder {
-    height: 550px !important; }
-    .login-body .register-holder .upper, .register-body .register-holder .upper {
-      padding: 40px 40px 40px 40px !important; }
-    .login-body .register-holder .forgot-password, .register-body .register-holder .forgot-password {
-      margin-top: 20px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 16px;
-      color: #2270E8;
-      text-align: center; }
-
-  .register-body, .login-body {
+    z-index: 10;
     background-color: #E8EFFA;
     padding-top: 36px; }
-    .register-body .logo-thecup, .login-body .logo-thecup {
+    .login-body .logo-thecup, .register-body .logo-thecup {
       display: block;
       margin-left: auto;
       margin-right: auto; }
-      .register-body .logo-thecup img, .login-body .logo-thecup img {
+      .login-body .logo-thecup img, .register-body .logo-thecup img {
         width: 170px;
         height: 55px; }
-    .register-body .register-holder, .login-body .register-holder {
+    .login-body .exit-button, .register-body .exit-button {
+      width: 48px;
+      text-align: center;
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      transform: translateX(-50%); }
+      .login-body .exit-button .btn, .register-body .exit-button .btn {
+        padding: 0px; }
+      .login-body .exit-button .border, .register-body .exit-button .border {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 25px;
+        border: 1px solid #767676;
+        box-sizing: border-box; }
+      .login-body .exit-button p, .register-body .exit-button p {
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: #767676; }
+    .login-body .register-holder, .register-body .register-holder {
+      height: 550px !important;
       position: relative;
       width: 100%;
       margin-top: 15px;
@@ -3187,9 +3291,9 @@
       overflow: hidden;
       box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.07);
       border-radius: 5px; }
-      .register-body .register-holder .upper, .login-body .register-holder .upper {
+      .login-body .register-holder .upper, .register-body .register-holder .upper {
         padding: 30px 20px 10px 20px !important; }
-        .register-body .register-holder .upper .reg-title, .login-body .register-holder .upper .reg-title {
+        .login-body .register-holder .upper .reg-title, .register-body .register-holder .upper .reg-title {
           text-align: center;
           font-style: normal;
           font-weight: 900;
@@ -3199,23 +3303,23 @@
           letter-spacing: 0.03em;
           text-transform: uppercase;
           color: #2C3E50; }
-        .register-body .register-holder .upper .oauth-button, .login-body .register-holder .upper .oauth-button {
+        .login-body .register-holder .upper .oauth-button, .register-body .register-holder .upper .oauth-button {
           display: flex;
           justify-content: space-evenly;
           margin-top: 24px; }
-          .register-body .register-holder .upper .oauth-button .btn-facebook, .login-body .register-holder .upper .oauth-button .btn-facebook {
+          .login-body .register-holder .upper .oauth-button .btn-facebook, .register-body .register-holder .upper .oauth-button .btn-facebook {
             position: relative;
             width: 140px;
             height: 40px;
             background: #1773EA;
             border-radius: 8px;
             border: none; }
-            .register-body .register-holder .upper .oauth-button .btn-facebook img, .login-body .register-holder .upper .oauth-button .btn-facebook img {
+            .login-body .register-holder .upper .oauth-button .btn-facebook img, .register-body .register-holder .upper .oauth-button .btn-facebook img {
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               left: 16px; }
-            .register-body .register-holder .upper .oauth-button .btn-facebook span, .login-body .register-holder .upper .oauth-button .btn-facebook span {
+            .login-body .register-holder .upper .oauth-button .btn-facebook span, .register-body .register-holder .upper .oauth-button .btn-facebook span {
               margin-left: 10px;
               font-style: normal;
               font-weight: bold;
@@ -3223,17 +3327,17 @@
               line-height: 16px;
               text-align: center;
               color: #FFFFFF; }
-          .register-body .register-holder .upper .oauth-button .btn-google, .login-body .register-holder .upper .oauth-button .btn-google {
+          .login-body .register-holder .upper .oauth-button .btn-google, .register-body .register-holder .upper .oauth-button .btn-google {
             position: relative;
             width: 140px;
             height: 40px;
             border-radius: 8px; }
-            .register-body .register-holder .upper .oauth-button .btn-google img, .login-body .register-holder .upper .oauth-button .btn-google img {
+            .login-body .register-holder .upper .oauth-button .btn-google img, .register-body .register-holder .upper .oauth-button .btn-google img {
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               left: 16px; }
-            .register-body .register-holder .upper .oauth-button .btn-google span, .login-body .register-holder .upper .oauth-button .btn-google span {
+            .login-body .register-holder .upper .oauth-button .btn-google span, .register-body .register-holder .upper .oauth-button .btn-google span {
               margin-left: 10px;
               font-style: normal;
               font-weight: bold;
@@ -3241,13 +3345,13 @@
               line-height: 16px;
               text-align: center;
               color: #2C3E50; }
-        .register-body .register-holder .upper .divider, .login-body .register-holder .upper .divider {
+        .login-body .register-holder .upper .divider, .register-body .register-holder .upper .divider {
           width: 100%;
           height: 1px;
           border: 1px solid #E8E8E8;
           position: relative;
           margin-top: 34px; }
-          .register-body .register-holder .upper .divider:before, .login-body .register-holder .upper .divider:before {
+          .login-body .register-holder .upper .divider:before, .register-body .register-holder .upper .divider:before {
             padding: 0px 30px;
             content: "HOẶC";
             top: -10px;
@@ -3263,7 +3367,7 @@
             text-transform: uppercase;
             color: #B2B2B2;
             background: white; }
-        .register-body .register-holder .upper .username, .login-body .register-holder .upper .username {
+        .login-body .register-holder .upper .username, .register-body .register-holder .upper .username {
           margin-top: 34px;
           font-style: normal;
           font-weight: normal;
@@ -3272,7 +3376,7 @@
           display: flex;
           align-items: center;
           color: #2C3E50; }
-        .register-body .register-holder .upper .email, .register-body .register-holder .upper .password, .login-body .register-holder .upper .email, .login-body .register-holder .upper .password {
+        .login-body .register-holder .upper .email, .login-body .register-holder .upper .password, .register-body .register-holder .upper .email, .register-body .register-holder .upper .password {
           margin-top: 11px;
           font-style: normal;
           font-weight: normal;
@@ -3281,12 +3385,12 @@
           display: flex;
           align-items: center;
           color: #2C3E50; }
-        .register-body .register-holder .upper .input-group, .login-body .register-holder .upper .input-group {
+        .login-body .register-holder .upper .input-group, .register-body .register-holder .upper .input-group {
           margin-top: 5px; }
-          .register-body .register-holder .upper .input-group .form-control, .login-body .register-holder .upper .input-group .form-control {
+          .login-body .register-holder .upper .input-group .form-control, .register-body .register-holder .upper .input-group .form-control {
             font-size: 14px;
             color: #B2B2B2; }
-        .register-body .register-holder .upper .btn-reg, .login-body .register-holder .upper .btn-reg {
+        .login-body .register-holder .upper .btn-reg, .register-body .register-holder .upper .btn-reg {
           width: 100%;
           height: 44px;
           margin-top: 30px;
@@ -3299,56 +3403,42 @@
           align-items: center;
           text-align: center;
           color: #FFFFFF; }
-      .register-body .register-holder .lower, .login-body .register-holder .lower {
+        .login-body .register-holder .upper .btn-forgot-password, .register-body .register-holder .upper .btn-forgot-password {
+          width: 100%;
+          margin-top: 20px; }
+          .login-body .register-holder .upper .btn-forgot-password .forgot-password, .register-body .register-holder .upper .btn-forgot-password .forgot-password {
+            margin-top: 0px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            color: #2270E8;
+            text-align: center; }
+      .login-body .register-holder .lower, .register-body .register-holder .lower {
         position: absolute;
         width: 100%;
         bottom: 0;
         left: 0; }
-        .register-body .register-holder .lower .login-block, .login-body .register-holder .lower .login-block {
+        .login-body .register-holder .lower .login-block, .register-body .register-holder .lower .login-block {
           width: 100%;
           height: 50px;
           background: #DCEAFF;
           display: flex;
           align-items: center;
           justify-content: center; }
-          .register-body .register-holder .lower .login-block .text, .login-body .register-holder .lower .login-block .text {
+          .login-body .register-holder .lower .login-block .text, .register-body .register-holder .lower .login-block .text {
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 21px;
             color: #2C3E50; }
-          .register-body .register-holder .lower .login-block .login, .login-body .register-holder .lower .login-block .login {
+          .login-body .register-holder .lower .login-block .login, .register-body .register-holder .lower .login-block .login {
             margin-left: 4px;
             font-style: normal;
             font-weight: bold;
             font-size: 14px;
             line-height: 16px;
             color: #2270E8; }
-    .register-body .exit-button, .login-body .exit-button {
-      width: 48px;
-      text-align: center;
-      position: absolute;
-      top: 10px;
-      right: 0px;
-      transform: translateX(-50%); }
-      .register-body .exit-button .btn, .login-body .exit-button .btn {
-        padding: 0px; }
-      .register-body .exit-button .border, .login-body .exit-button .border {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        border-radius: 25px;
-        border: 1px solid #767676;
-        box-sizing: border-box; }
-      .register-body .exit-button p, .login-body .exit-button p {
-        margin-top: 8px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 18px;
-        color: #767676; }
 
   .search-popup-body {
     position: absolute;

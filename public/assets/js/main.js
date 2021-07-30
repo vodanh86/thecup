@@ -63,10 +63,40 @@ $(document).ready(function(){
         window.scrollTo(0, 0);
         $("body").css("overflow", "hidden");
     });
+
+    $(document).on('click', '#forgotPwBtn', function() {
+        loginBody.style.visibility = 'hidden';
+        loginBody.style.opacity= '0';
+        forgotPassBody.style.visibility = 'visible';
+        forgotPassBody.style.opacity= '1';
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "hidden");
+    });
+
+    $(document).on('click', '#switchToRegBtn', function() {
+        loginBody.style.visibility = 'hidden';
+        loginBody.style.opacity= '0';
+        registerBody.style.visibility = 'visible';
+        registerBody.style.opacity= '1';
+    });
+
+    $(document).on('click', '#switchToLoginBtn', function() {
+        registerBody.style.visibility = 'hidden';
+        registerBody.style.opacity= '0';
+        loginBody.style.visibility = 'visible';
+        loginBody.style.opacity= '1';
+    });
+
+    $(document).on('click', '#exitForgotPwFormBtn', function() {
+        forgotPassBody.style.visibility = 'hidden';
+        forgotPassBody.style.opacity= '0';
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "auto");
+    });
+
     $(document).on('click', '#exitRegFormBtn', function() {
         registerBody.style.visibility = 'hidden';
         registerBody.style.opacity= '0';
-        //progress.style.width = "50%";
     });
 
     $(document).on('click', '#searchBtn', function() {
@@ -82,6 +112,13 @@ $(document).ready(function(){
         homePageBody.style.overflow = "visible";
     });
 
+    //Home page playAll button
+    $(document).on('click', '#playAllBtn', function() {
+        $('.podcast-player-holder').css("display","block");
+        $('footer').css("margin-top","0px");
+        window.scrollTo(0,document.body.scrollHeight);
+    });
+
     //Disable move gesture on mobile
     $('#loginBody').on('touchmove', function(e){
         //prevent native touch activity like scrolling
@@ -92,6 +129,10 @@ $(document).ready(function(){
         e.preventDefault();
     });
     $('#searchPopupBody').on('touchmove', function(e){
+        //prevent native touch activity like scrolling
+        e.preventDefault();
+    });
+    $('#forgotPassBody').on('touchmove', function(e){
         //prevent native touch activity like scrolling
         e.preventDefault();
     });

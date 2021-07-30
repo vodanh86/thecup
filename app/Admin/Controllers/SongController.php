@@ -39,7 +39,7 @@ class SongController extends AdminController
         $grid->column('podcast.title', __('Podcast'));
         $grid->column('description', __('Description'));
         $grid->column('duration', __('Duration'));
-
+        $grid->column('order', __('Thứ tự'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         if (isset($_GET['podcast_id']) ) {
@@ -81,9 +81,10 @@ class SongController extends AdminController
         $form = new Form(new Song());
         $form->text('title', __('Title'))->required();
         $form->file('link', __('Link'))->rules('mimes:audio/mpeg')->required();
-        $form->select('podcast_id', __('Podcast '))->options(Podcast::all()->pluck('title', 'id'))->required();
+        $form->select('podcast_id', __('Podcast '))->options(Podcast::where("type", 2)->pluck('title', 'id'))->required();
         $form->hidden('slug');
         $form->text('description', __('Description'));
+        $form->number('order', __('Thứ tự'));
         $form->hidden('duration');
         $form->saving(function ($form) {
             if (!($form->model()->id && $form->model()->title == $form->title)){

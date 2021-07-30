@@ -47,17 +47,17 @@
                 <button type="submit" class="btn btn-primary btn-reg">
                     Đăng nhập
                 </button>
-                <a href="">
+                <button class="btn btn-forgot-password" id="forgotPwBtn">
                     <p class="forgot-password">Bạn quên mật khẩu?</p>
-                </a>
+                </button>
              </form>
         </div>
         <div class="lower">
             <div class="login-block">
                 <span class="text">Bạn chưa có tài khoản?</span>
-                <a href="/thecup/template/register.html">
+                <button class="btn btn-switchto-reg" id="switchToRegBtn">
                     <span class="login">Đăng ký ngay</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>

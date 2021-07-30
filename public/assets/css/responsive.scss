@@ -210,7 +210,7 @@ $navbar-color : #1B3864;
   }
   .radio-holder{
     margin-top: 60px;
-    height: 240px;
+    height: 310px;
     margin-left: auto;
     margin-right: auto;
     .radio-title-frame{
@@ -243,7 +243,7 @@ $navbar-color : #1B3864;
         position: absolute;
         z-index: 3;
         width: 100%;
-        height: 200px;
+        height: 260px;
         overflow: hidden;
         margin-left: auto;
         margin-right: auto;
@@ -259,7 +259,7 @@ $navbar-color : #1B3864;
           }
         }
         .radio-controller{
-          padding: 15px 25px 25px 25px;
+          padding: 20px 20px 10px 24px;
           width: 100%;
           display: inline-block;
           height: 100%;
@@ -279,72 +279,89 @@ $navbar-color : #1B3864;
             color: #22539D;
           }
           .button-holder{
-            margin-top: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            .play-button{
-              border: 1px solid #333333;
-              box-sizing: border-box;
-              width: 58px;
-              height: 58px;
-              border-radius: 30px;
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-            }
-            .btn{
-              padding: 0;
-              display: inline-flex;
-              align-items: center;
-            }
-            .prog{
-              width: 25%;
-              height: 10px;
-              align-items: center;
-              display: inline-flex;
-              cursor: pointer;
-              //background: white;
-              .slider {
-                -webkit-appearance: none;
-                width: 100%;
-                height: 1px;
-                border-radius: 5px;
-                background: #000000;
-                outline: none;
-                opacity: 1;
-                cursor: pointer;
-                //-webkit-transition: .2s;
-                //transition: opacity .2s;
+            display: block;
+            .podcast-infor{
+              width: 100%;
+              .infor{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 16px;
+                color: #767676;
               }
-              .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background: #1B3864;
-                cursor: pointer;
+              .dot-seperator{
+                width: 6px;
+                height: 6px;
+                border-radius: 4px;
+                background-color: #DDDDDD;
+                display: inline-block;
+                margin-left: 3px;
+                margin-right: 3px;
               }
-              .slider::-moz-range-thumb {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background: #04AA6D;
-                cursor: pointer;
+              .rating-holder{
+                display: inline-block;
+                .material-icons{
+                  font-size: 13px;
+                  color: #FFA800;
+                  vertical-align: middle;
+                }
+                .quantity{
+                  vertical-align: middle;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #767676;
+                }
               }
             }
-
-            .timer-holder{
-              font-style: normal;
-              font-weight: normal;
-              font-size: 13px;
-              line-height: 140%;
-              color: #000000;
-            }
-            .volume-holder{
-              display: inline-flex;
-              align-items: center;
+            .play-and-sharing{
+              margin-top: 12px;
+              .play-button{
+                padding: 6px 20px 6px 20px;
+                height: 45px;
+                width: 170px;
+                border-radius: 100px;
+                background-color: #FF8C26;
+                border: none;
+                i{
+                  font-size: 19px;
+                }
+                span{
+                  text-transform: uppercase;
+                  font-weight: 900;
+                  font-size: 14px;
+                  line-height: 140%;
+                  letter-spacing: 0.05em;
+                  color: white;
+                }
+              }
+              .sharing{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                span{
+                  margin-right: 10px;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 14px;
+                  line-height: 140%;
+                  color: rgba(0, 0, 0, 0.8);
+                }
+                .social{
+                  margin-right: 10px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 20px;
+                  background: #DCEAFF;
+                  i{
+                    font-size: 16px;
+                  }
+                }
+              }
             }
           }
         }
@@ -384,7 +401,7 @@ $navbar-color : #1B3864;
       justify-content: center;
       position: absolute;
       left: 32%;
-      top: 105%;
+      top: 100%;
       transform: translateY(-50%);
       z-index: 4;
       width: 54px;
@@ -403,7 +420,7 @@ $navbar-color : #1B3864;
       justify-content: center;
       position: absolute;
       right: 32%;
-      top: 105%;
+      top: 100%;
       transform: translateY(-50%);
       z-index: 4;
       border-color: #E8EFFA;
@@ -658,8 +675,100 @@ $navbar-color : #1B3864;
       }
     }
   }
+  .podcast-player-holder{
+    width: 100%;
+    background-color: #092145;
+    height: 160px;
+    margin-top: 40px;
+    .upper{
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .podcast-title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #767676;
+        display: block;
+      }
+      .dot-seperator{
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: #E0E0E0;
+        display: none;
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+      .podcast-name{
+        margin-top: 5px;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+      }
+    }
+    .divider{
+      border-color: #FFFFFF;
+      opacity: 0.1;
+    }
+    .lower{
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      .button-holder{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 5px;
+        span{
+          font-size: 23px;
+          color: white;
+        }
+        .play-button{
+          width: 44px;
+          height: 44px;
+          border-radius: 25px;
+          border: 2px solid white;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          span{
+            font-size: 23px;
+          }
+        }
+      }
+      .progress-holder{
+        display: inline-flex;
+        align-items: center;
+        padding: 0px 20px;
+        margin-top: 14px;
+        .time-played,.total-time{
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 140%;
+          color: #767676;
+        }
+        .progress{
+          display: inline-flex;
+          width: 100%;
+          height: 3px;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        .progress-bar{
+          transition: width 0.1s ease;
+        }
+      }
+    }
+  }
   .footer-holder{
-    margin-top: 80px;
+    margin-top: 40px;
     overflow: hidden;
     clear: both;
     .footer-upper{
@@ -3977,7 +4086,7 @@ $navbar-color : #1B3864;
   }
 
   // Register, Login CSS
-  .register-body,.login-body{
+  .login-body,.register-body{
     transition: 0.2s ease;
     position: absolute;
     width: 100%;
@@ -3986,25 +4095,6 @@ $navbar-color : #1B3864;
     top: 0;
     left: 0;
     z-index: 10;
-  }
-  .login-body,.register-body{
-    .register-holder{
-      height: 550px!important;
-      .upper{
-        padding: 40px 40px 40px 40px!important;
-      }
-      .forgot-password{
-        margin-top: 20px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 16px;
-        color: #2270E8;
-        text-align: center;
-      }
-    }
-  }
-  .register-body,.login-body{
     background-color: #E8EFFA;
     padding-top: 36px;
     .logo-thecup{
@@ -4016,7 +4106,37 @@ $navbar-color : #1B3864;
         height: 55px;
       }
     }
+    .exit-button{
+      width: 48px;
+      text-align: center;
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      transform: translateX(-50%);
+      .btn{
+        padding: 0px;
+      }
+      .border{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 25px;
+        border: 1px solid #767676;
+        box-sizing: border-box;
+      }
+      p{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: #767676;
+      }
+    }
     .register-holder{
+      height: 550px!important;
       position: relative;
       width: 100%;
       margin-top: 15px;
@@ -4153,6 +4273,19 @@ $navbar-color : #1B3864;
           text-align: center;
           color: #FFFFFF;
         }
+        .btn-forgot-password{
+          width: 100%;
+          margin-top: 20px;
+          .forgot-password{
+            margin-top: 0px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            color: #2270E8;
+            text-align: center;
+          }
+        }
       }
       .lower{
         position: absolute;
@@ -4182,35 +4315,6 @@ $navbar-color : #1B3864;
             color: #2270E8;
           }
         }
-      }
-    }
-    .exit-button{
-      width: 48px;
-      text-align: center;
-      position: absolute;
-      top: 10px;
-      right: 0px;
-      transform: translateX(-50%);
-      .btn{
-        padding: 0px;
-      }
-      .border{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        border-radius: 25px;
-        border: 1px solid #767676;
-        box-sizing: border-box;
-      }
-      p{
-        margin-top: 8px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 18px;
-        color: #767676;
       }
     }
   }

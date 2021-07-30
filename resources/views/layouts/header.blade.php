@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{url('resources/img/Logo.svg')}}"/>
+    <link rel="icon" type="image/png" href="{{url('resources/img/favicon/favicon.ico')}}"/>
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">

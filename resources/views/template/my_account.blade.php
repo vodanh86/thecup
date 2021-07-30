@@ -104,6 +104,7 @@ use App\Admin\Controllers\Constant;?>
         </div>
         @if($user->package_type == 1)
         <div class="sixmonth-card">
+        <img src="{{url('resources/img/sixmonth-card.svg')}}" alt="">
           <div class="card-inner">
             <p class="card-title white">Thành viên</p>
             <p class="card-scope">Trạng thái: <?php 
@@ -115,7 +116,10 @@ use App\Admin\Controllers\Constant;?>
             ?></p>
             <div class="expire">
               <span class="text white">Thời hạn sử dụng</span>
-              <span class="date">{{$user->expire_time}}</span>
+              <span class="date">              <?php 
+              $expire_time = strtotime($user->expire_time);
+              echo(date('H:i:s d/m/Y',$expire_time));
+              ?> </span>
             </div>
           </div>
         </div>
@@ -126,6 +130,7 @@ use App\Admin\Controllers\Constant;?>
         </a>
         @else
         <div class="trial-card">
+          <img src="{{url('resources/img/trial-card.svg')}}" alt="">
           <div class="card-inner">
             <p class="card-title">Dùng thử</p>
             <p class="card-scope">Trạng thái: <?php 
@@ -140,7 +145,7 @@ use App\Admin\Controllers\Constant;?>
               <span class="date">
               <?php 
               $expire_time = strtotime($user->expire_time);
-              echo(date('d/m/Y H:i:s',$expire_time));
+              echo(date('H:i:s d/m/Y',$expire_time));
               ?> </span>
             </div>
           </div>

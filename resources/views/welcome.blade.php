@@ -28,36 +28,61 @@ use App\Models\Category;
                     <img src="/thecup/resources/img/radio-frame.png" alt="">
                 </div>
                 <div class="col-md-9 radio-controller">
-                    <p class="title" id="track">Bí mật đằng sau thành công của cuộc cách mạng tháng 8</p>
+                    <p class="title">Bí mật đằng sau thành công của cuộc cách mạng tháng 8</p>
                     <p class="author">Nguyễn Thành Văn</p>
                     <div class="button-holder">
-                        <button class="play-button" id="playBtn">
-                            <span class="material-icons material-icons-outlined">play_arrow</span>
-                        </button>
-                        <button id="replay10s" class="btn">
-                            <span class="material-icons material-icons-outlined">replay_10</span>
-                        </button>
-                        <button id="forward10s" class="btn">
-                            <span class="material-icons material-icons-outlined">forward_10</span>
-                        </button>
-<!--                        <div class="prog" id="durationProgressWrapper">-->
-<!--                            <input type="range" id="progress" min="1" max="100" value="50" class="progress-bar">-->
-<!--                        </div>-->
-                        <div class="prog" id="durationProgressWrapper">
-                            <input type="range" min="0" max="100" value="0" class="slider" id="progress">
-                        </div>
-                        <div class="timer-holder">
-                            <span id="timer" class="time-played">0:00</span>
-                            <span> / </span>
-                            <span id="duration" class="total-time">0:00</span>
-                        </div>
-                        <button class="btn volume-holder">
-                            <span class="material-icons material-icons-outlined" id="volumeHolder">volume_up</span>
-                            <div class="volume-bar" id="volumeProgressWrapper" style="display: none">
-                                <input type="range" min="0" max="100" value="80" class="slider" id="volProgress">
+                        <div class="podcast-infor">
+                            <span class="infor">8 phần</span>
+                            <div class="dot-seperator"></div>
+                            <span class="infor">86 phút</span>
+                            <div class="dot-seperator"></div>
+                            <span class="infor">3 bình luận</span>
+                            <div class="dot-seperator"></div>
+                            <div class="rating-holder">
+            <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                                <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                                <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                                <span class="material-icons material-icons-outlined">
+            star
+            </span>
+                                <span class="material-icons material-icons-outlined">
+            star_half
+            </span>
+                                <span class="quantity">(23)</span>
                             </div>
-                        </button>
-                        </button>
+                        </div>
+                        <div class="play-and-sharing">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <button class="btn btn-primary play-button d-flex align-items-center"
+                                    id="playAllBtn">
+                                        <i class="fas fa-play"></i>
+                                        <span class="ms-auto">Nghe tất cả</span>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-6 order-first order-md-last sharing">
+                                    <span>Chia sẻ</span>
+                                    <div class="social">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </div>
+                                    <div class="social">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="social">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="social">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,12 +90,12 @@ use App\Models\Category;
         <div class="radio-frame-behind1"></div>
         <div class="radio-frame-behind2"></div>
         <div class="radio-nav">
-            <button class="btn btn-radio-prev" id="prevBtn">
+            <button class="btn btn-radio-prev">
                 <span class="material-icons material-icons-outlined">
                 chevron_left
                 </span>
             </button>
-            <button class="btn btn-radio-next" id="nextBtn">
+            <button class="btn btn-radio-next">
                 <span class="material-icons material-icons-outlined">
                 chevron_right
                 </span>

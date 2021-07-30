@@ -152,6 +152,7 @@ Player.prototype = {
 
         // Get the Howl we want to manipulate.
         var sound = self.playlist[self.index].howl;
+
         if (sound.playing()) {
             sound.rate(val);
         }
@@ -167,9 +168,10 @@ Player.prototype = {
         var sound = self.playlist[self.index].howl;
 
         // Convert the percent into a seek position.
-        if (sound.playing()) {
-            sound.seek(sound.duration() * per);
-        }
+        Howler.seek(val);
+        // if (sound.playing()) {
+        //     sound.seek(sound.duration() * per);
+        // }
     },
     seekForward10: function (){
         var self = this;
