@@ -553,7 +553,7 @@
   .podcast-player-holder {
     width: 100%;
     background-color: #092145;
-    height: 160px;
+    height: 200px;
     margin-top: 40px; }
     .podcast-player-holder .upper {
       text-align: center;
@@ -587,7 +587,7 @@
       opacity: 0.1; }
     .podcast-player-holder .lower {
       width: 100%;
-      height: 100px;
+      height: 110px;
       display: flex;
       align-items: center; }
       .podcast-player-holder .lower .button-holder {
@@ -612,19 +612,17 @@
         display: inline-flex;
         align-items: center;
         padding: 0px 20px;
-        margin-top: 14px; }
+        margin-top: 24px; }
         .podcast-player-holder .lower .progress-holder .time-played, .podcast-player-holder .lower .progress-holder .total-time {
           font-style: normal;
           font-weight: normal;
           font-size: 13px;
           line-height: 140%;
           color: #767676; }
-        .podcast-player-holder .lower .progress-holder .progress {
-          display: inline-flex;
-          width: 100%;
-          height: 3px;
-          margin-left: 20px;
-          margin-right: 20px; }
+        .podcast-player-holder .lower .progress-holder #timer {
+          margin-right: 10px; }
+        .podcast-player-holder .lower .progress-holder #duration {
+          margin-left: 10px; }
         .podcast-player-holder .lower .progress-holder .progress-bar {
           transition: width 0.1s ease; }
 
@@ -638,7 +636,7 @@
       background-color: #1B3864;
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url("../../resources/img/footer-bg-frame.png"); }
+      background-image: url("/thecup/resources/img/footer-bg-frame.png"); }
       .footer-holder .footer-upper .container {
         height: 100%;
         display: block !important; }
@@ -1275,7 +1273,7 @@
         box-sizing: border-box;
         border: 5px solid #DDDDDD;
         border-radius: 50px;
-        background-image: url("../../resources/img/author2.jpg");
+        background-image: url("/thecup/resources/img/author2.jpg");
         background-repeat: no-repeat;
         background-size: cover; }
       .author-body .author-holder .author-info .author-name {
@@ -1698,21 +1696,35 @@
             line-height: 150%;
             color: #2270E8; }
         .my-account-body .contact-holder .left .trial-card {
+          overflow: hidden;
           border-radius: 10px;
           margin-top: 20px;
           padding: 22px;
           height: 185px;
-          width: 100%;
-          background-image: url("../../resources/img/trial-card.svg");
-          background-repeat: no-repeat; }
+          width: 100%; }
+          .my-account-body .contact-holder .left .trial-card img {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; }
         .my-account-body .contact-holder .left .sixmonth-card {
+          overflow: hidden;
           border-radius: 10px;
           margin-top: 35px;
           padding: 22px;
           height: 185px;
-          width: 100%;
-          background-image: url("../../resources/img/sixmonth-card.svg");
-          background-repeat: no-repeat; }
+          width: 100%; }
+          .my-account-body .contact-holder .left .sixmonth-card img {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; }
           .my-account-body .contact-holder .left .sixmonth-card .white {
             color: white !important; }
         .my-account-body .contact-holder .left .card-inner .card-title {
@@ -1835,14 +1847,14 @@
     height: 585px;
     background-repeat: no-repeat;
     display: block;
-    background-image: url("../../resources/img/podcast/podcast-player-bg.png");
+    background-image: url("/thecup/resources/img/podcast/podcast-player-bg.png");
     background-size: cover; }
     .podcast-episodes-body .podcast-holder .podcast-player-inner {
       padding-left: 0px !important; }
       .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-image {
         width: 100%;
         height: 226px;
-        background-image: url("../../resources/img/podcast/podcast-img.png");
+        background-image: url("/thecup/resources/img/podcast/podcast-img.png");
         background-repeat: no-repeat;
         background-size: cover; }
       .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-play {
@@ -2111,7 +2123,7 @@
   .podcast-episodes-body .podcast-player-holder {
     width: 100%;
     background-color: #092145;
-    height: 160px;
+    height: 200px;
     margin-top: 40px; }
     .podcast-episodes-body .podcast-player-holder .upper {
       text-align: center;
@@ -2145,7 +2157,7 @@
       opacity: 0.1; }
     .podcast-episodes-body .podcast-player-holder .lower {
       width: 100%;
-      height: 100px;
+      height: 110px;
       display: flex;
       align-items: center; }
       .podcast-episodes-body .podcast-player-holder .lower .button-holder {
@@ -2170,13 +2182,17 @@
         display: inline-flex;
         align-items: center;
         padding: 0px 20px;
-        margin-top: 14px; }
+        margin-top: 20px; }
         .podcast-episodes-body .podcast-player-holder .lower .progress-holder .time-played, .podcast-episodes-body .podcast-player-holder .lower .progress-holder .total-time {
           font-style: normal;
           font-weight: normal;
           font-size: 13px;
           line-height: 140%;
           color: #767676; }
+        .podcast-episodes-body .podcast-player-holder .lower .progress-holder #timer {
+          margin-right: 10px; }
+        .podcast-episodes-body .podcast-player-holder .lower .progress-holder #duration {
+          margin-left: 10px; }
         .podcast-episodes-body .podcast-player-holder .lower .progress-holder .progress {
           display: inline-flex;
           width: 100%;
@@ -2193,14 +2209,14 @@
     height: 585px;
     background-repeat: no-repeat;
     display: block;
-    background-image: url("../../resources/img/podcast/podcast-player-bg.png");
+    background-image: url("/thecup/resources/img/podcast/podcast-player-bg.png");
     background-size: cover; }
     .podcast-single-body .podcast-holder .podcast-player-inner {
       padding-left: 0px !important; }
       .podcast-single-body .podcast-holder .podcast-player-inner .podcast-image {
         width: 100%;
         height: 226px;
-        background-image: url("../../resources/img/podcast/podcast-img.png");
+        background-image: url("/thecup/resources/img/podcast/podcast-img.png");
         background-repeat: no-repeat;
         background-size: cover; }
       .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play {
@@ -2535,6 +2551,10 @@
           font-size: 13px;
           line-height: 140%;
           color: #767676; }
+        .podcast-single-body .podcast-player-holder .lower .progress-holder #timer {
+          margin-right: 10px; }
+        .podcast-single-body .podcast-player-holder .lower .progress-holder #duration {
+          margin-left: 10px; }
         .podcast-single-body .podcast-player-holder .lower .progress-holder .progress {
           display: inline-flex;
           width: 100%;

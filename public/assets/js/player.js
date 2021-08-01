@@ -1,6 +1,5 @@
-
+let globalPlaylist = [];
 let playListIsLoaded = false;
-let player;
 function loadPlaylist(soundObj) {
     //console.log(soundObj.sound[0].id.toString());
     console.log("Da chay vao loadPlaylist");
@@ -9,10 +8,29 @@ function loadPlaylist(soundObj) {
     for (let i = 0; i < sound.length; i++) {
         playlist.push(sound[i]);
     }
+    globalPlaylist = playlist;
+
     playListIsLoaded = true;
     player = new Player(playlist);
 }
 
+function generateList(){
+    console.log("generateList Called!");
+    let soundlist = document.getElementById('soundListHolder');
+    console.log(globalPlaylist.length);
+    for (let i = 0; i < globalPlaylist.length; i++) {
+        let button = document.createElement("BUTTON");
+        button.setAttribute('class','btn');
+        button.setAttribute('onclick','playById(' +i+ ')');
+        button.innerHTML = (i+1) + '.' + ' ' + globalPlaylist[i].name;
+        soundlist.appendChild(button);
+    };
+}
+
+function playById(id){
+    Howler.stop();
+    player.play(id);
+}
 /**
  * Player class containing the state of our playlist and where we are in it.
  * Includes all methods for playing, skipping, updating the display, etc.
@@ -54,6 +72,7 @@ Player.prototype = {
                 html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
                 volume: 0.1,
                 onplay: function () {
+                    soundState.innerHTML = "(Đang phát)";
                     // Display the duration.
                     duration.innerHTML = self.formatTime(Math.round(sound.duration()));
 
@@ -61,20 +80,25 @@ Player.prototype = {
                     requestAnimationFrame(self.step.bind(self));
 
                 },
+                onplayerror: function (){
+                    soundState.innerHTML = '(Không thể phát track)';
+                },
+                onloaderror: function (){
+                    soundState.innerHTML = '(Không tải được track)';
+                },
                 onload: function () {
-
+                    soundState.innerHTML = "(Đang tải)";
                 },
                 onend: function () {
                     self.skip('next');
                 },
                 onpause: function () {
-
+                    soundState.innerHTML = "(Đang tạm dừng)";
                 },
                 onstop: function () {
 
                 },
                 onseek: function () {
-                    // Start updating the progress of the track.
                     requestAnimationFrame(self.step.bind(self));
                 }
             });
@@ -226,6 +250,7 @@ Player.prototype = {
 
         // Determine our current seek position.
         var seek = sound.seek() || 0;
+
         timer.innerHTML = self.formatTime(Math.round(seek));
         progress.value = (((seek / sound.duration()) * 100) || 0);
 
@@ -268,6 +293,8 @@ $(document).on('click', '#playAllBtn', function () {
     $('.podcast-player-holder').css("display", "block");
     $('footer').css("margin-top", "0px");
     window.scrollTo(0, document.body.scrollHeight);
+    generateList();
+    playBtn.click();
 });
 
 prevBtn.addEventListener('click', function () {
@@ -291,8 +318,10 @@ progress.addEventListener('change', function (event) {
     //console.log(progressWrapper.offsetWidth);
     player.seek(progress.value / 100);
 });
-progress.addEventListener('click', function (event) {
-    var progVal = event.offsetX / progress.offsetWidth;
+
+durationProgressWrapper.addEventListener('click', function (event) {
+
+    var progVal = event.offsetX / durationProgressWrapper.offsetWidth;
 
     if (progVal < 0){
         progVal = 0;
@@ -300,8 +329,23 @@ progress.addEventListener('click', function (event) {
     if (progVal > 1){
         progVal = 1;
     }
+
     player.seek(progVal);
 });
+durationProgressWrapper.addEventListener('touchstart', function (event) {
+
+    var progVal = (event.touches[0].pageX - event.touches[0].target.offsetLeft) / durationProgressWrapper.offsetWidth;
+
+    if (progVal < 0){
+        progVal = 0;
+    }
+    if (progVal > 1){
+        progVal = 1;
+    }
+
+    player.seek(progVal);
+});
+
 volProgress.addEventListener('change', function (event) {
     //console.log("Volume value: "+ event.offsetX / volumeProgressWrapper.offsetWidth);
     console.log(volProgress.value);
@@ -353,4 +397,22 @@ $(document).on('click', '#speedBtn2X', function () {
     $('#speedBtn2X').find('span').text('1X');
     $('#speedBtn2X').attr('id', 'speedBtn1X');
     player.rate(1);
+});
+
+//Toggle playlist btn
+$(document).on('click', '#togglePlaylist', function () {
+    console.log(soundListHolder.style.display.toString());
+    if (soundListHolder.style.visibility.toString() == 'hidden'){
+
+        $("#soundListHolder").css("transform","translateY(0px)");
+        $("#soundListHolder").css("opacity","1");
+        soundListHolder.style.visibility = 'visible';
+        $("#soundListHolder").css("height","140px");
+    } else {
+
+        $("#soundListHolder").css('transform','translateY(-50px)');
+        $("#soundListHolder").css("opacity","0");
+        soundListHolder.style.visibility = 'hidden';
+        $("#soundListHolder").css("height","0px");
+    }
 });

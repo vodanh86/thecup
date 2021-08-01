@@ -203,4 +203,3 @@ use App\Models\Comment;
 @include('partials.podcast', ["podcast" => $podcast, "songs" => $songs])
 @include('layouts.footer')
 @include('layouts.homeScript')
-@yield('scripts')

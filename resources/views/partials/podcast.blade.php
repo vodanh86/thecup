@@ -3,13 +3,14 @@
         <span class="podcast-title">{{$podcast->title}}</span>
         <div class="dot-seperator"></div>
         <span class="podcast-name" id="track">Phần 2: Quẳng gánh lo đi mà sống</span>
+        <span class="podcast-name" id="soundState">(Đang tạm dừng)</span>
     </div>
     <div class="divider"></div>
     <div class="lower">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 button-holder">
-                    <button class="btn">
+                    <button class="btn" id="togglePlaylist">
                         <span class="material-icons smaterial-icons-outlined">playlist_play</span>
                     </button>
                     <button class="btn btn-speed" id="speedBtn1X">
@@ -49,4 +50,7 @@
             </div>
         </div>
     </div>
+    <div class="divider"></div>
 </div>
+
+<div class="soundlist-holder" id="soundListHolder" style="visibility: hidden"></div>

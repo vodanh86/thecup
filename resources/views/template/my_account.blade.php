@@ -169,8 +169,8 @@ use App\Admin\Controllers\Constant;?>
         <img src="{{url('resources/img/icon/ic_x.svg')}}" width="16" height="16" alt="">
       </button>
     </div>
-    <div class="lower">
-      <table class="table table-hover">
+    <div class="lower table-responsive">
+      <table class="table table-hover table-bordered">
         <thead>
         <tr>
           <th scope="col">Ngày</th>
