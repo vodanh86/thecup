@@ -54,7 +54,7 @@ use App\Models\Comment;
                             <div class="row">
                                 <div class="col-12 col-md-4">
                                     <button class="btn btn-primary play-button d-flex align-items-center"
-                                    id="playAllBtn">
+                                    id="playAllBtn" onclick="loadPlaylist(soundObj)">
                                         <i class="fas fa-play"></i>
                                         <span class="ms-auto">Nghe tất cả</span>
                                     </button>
@@ -189,6 +189,18 @@ use App\Models\Comment;
     </div>
 </div>
 <!--News-end-->
+<script>
+    <?php 
+    $sound = array();
+    foreach($songs as $song){
+        $sound[] = array("name" => $song->title, "link" => env('AWS_URL').$song->link);
+    }
+    ?>
+    soundObj = {
+        sound: {!!json_encode($sound)!!}
+    };
+</script>
+@include('partials.podcast', ["podcast" => $podcast, "songs" => $songs])
 @include('layouts.footer')
 @include('layouts.homeScript')
 @yield('scripts')

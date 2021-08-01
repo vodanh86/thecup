@@ -1,6 +1,6 @@
 <div class="podcast-player-holder">
     <div class="upper">
-        <span class="podcast-title">Hài lòng với nhưng thứ đã có sẽ làm bạn hạnh phúc hơn</span>
+        <span class="podcast-title">{{$podcast->title}}</span>
         <div class="dot-seperator"></div>
         <span class="podcast-name" id="track">Phần 2: Quẳng gánh lo đi mà sống</span>
     </div>

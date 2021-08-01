@@ -97,6 +97,8 @@ $(document).ready(function(){
     $(document).on('click', '#exitRegFormBtn', function() {
         registerBody.style.visibility = 'hidden';
         registerBody.style.opacity= '0';
+        window.scrollTo(0, 0);
+        $("body").css("overflow", "auto");
     });
 
     $(document).on('click', '#searchBtn', function() {
@@ -113,11 +115,7 @@ $(document).ready(function(){
     });
 
     //Home page playAll button
-    $(document).on('click', '#playAllBtn', function() {
-        $('.podcast-player-holder').css("display","block");
-        $('footer').css("margin-top","0px");
-        window.scrollTo(0,document.body.scrollHeight);
-    });
+
 
     //Disable move gesture on mobile
     $('#loginBody').on('touchmove', function(e){
@@ -150,6 +148,5 @@ $(document).ready(function(){
     //
     // });
 });
-
 
 

@@ -11,7 +11,6 @@ $parentId = $cats[0][0]->id;
 @include('partials.login')
 @include('partials.register')
 @include('partials.forgot')
-@include('partials.podcast')
 <!--Footer-start-->
 <footer class="footer-holder">
     <div class="footer-upper">
