@@ -141,7 +141,7 @@ use App\Models\Comment;
                         <div class="row">
                             <div class="col-5">
                                 <a href="{{ url('/page/'.$page->slug) }}">
-                                    <img src="{{url(env('AWS_URL')).$page->image}}" alt="">
+                                    <img class="post-img" src="{{url(env('AWS_URL')).$page->image}}" alt="{{$page->title}}">
                                     @if($page->type == 1)
                                     <div class="listenable-box">
                                         <img width="32" height="32" class="listenable-icon"
