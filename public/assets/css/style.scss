@@ -500,7 +500,6 @@ p{
         width: 61%;
       }
     }
-
     .news-ads-banner{
       margin-top: 20px;
       width: 100%;
@@ -594,6 +593,42 @@ p{
         }
       }
     }
+    .paging-sector{
+      display: flex;
+      justify-content: flex-end;
+      .pagination{
+        .page-item{
+          margin-right: 4px;
+          border: 1px solid #DDDDDD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 4px;
+          .page-link{
+            border: none;
+            padding: 0px;
+          }
+        }
+        .page-item.active{
+          margin-right: 4px;
+          border: 1px solid #DDDDDD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 4px;
+          background-color: #22539D;
+          .page-link{
+            border: none;
+            padding: 0px;
+            background-color: transparent;
+          }
+        }
+      }
+    }
   }
   .news-newest{
     padding-left: 20px;
@@ -650,7 +685,6 @@ p{
         }
       }
     }
-
 }
 .podcast-player-holder{
   width: 100%;
