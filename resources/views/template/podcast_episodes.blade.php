@@ -60,7 +60,7 @@ use App\Admin\Controllers\Util;
         <div class="news-main">
             <div class="news-other-post">
                 @foreach($songs as $song)
-                <div class="podcast" onclick="playById(0)">
+                <div class="podcast" onclick="playById({{$loop->index}})">
                     <div class="row">
                         <div class="col-md-3 podcast-play">
                             <div class="play-icon">
@@ -101,22 +101,16 @@ use App\Admin\Controllers\Util;
 @include('layouts.restrict')
 @endif
 @include('layouts.footer')
-@include('layouts.script')@include('layouts.script')@include('layouts.script')<script>
+@include('layouts.script')@include('layouts.script')@include('layouts.script')
+<script>
+    <?php 
+    $sound = array();
+    foreach($songs as $song){
+        $sound[] = array("name" => $song->title, "link" => env('AWS_URL').$song->link);
+    }
+    ?>
     soundObj = {
-        sound: [
-            {
-                "name": "Anh oi o lai",
-                "link": "https://thecup.vn/public/music/3%20%c4%90i%20(%c4%90i.%20%c4%90i.%20%c4%90i)%20-%20K-ICM%20x%20T-ICM%20x%20Kelsey%20x%20Zickky%20-%20ICM%20TEAM%20%5bOFFICIAL%20VIDEO%5d.mp3"
-            },
-            {
-                "name": "Bài hát số 2",
-                "link": "https://thecuppodcast.s3.ap-southeast-1.amazonaws.com/files/07fb07f66f04d123460859d7f757fae2.mp3"
-            },
-            {
-                "name": "Hết thương cạn nhớ",
-                "link": "https://thecuppodcast.s3.ap-southeast-1.amazonaws.com/files/Hết Thương Cạn Nhớ - Đức Phúc [Audio Lyrics].mp3"
-            }
-        ]
+        sound: {!!json_encode($sound)!!}
     };
     loadPlaylist(soundObj);
     generateList();
