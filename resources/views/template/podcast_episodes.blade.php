@@ -101,7 +101,7 @@ use App\Admin\Controllers\Util;
 @include('layouts.restrict')
 @endif
 @include('layouts.footer')
-@include('layouts.script')@include('layouts.script')@include('layouts.script')
+@include('layouts.homeScript')
 <script>
     <?php 
     $sound = array();

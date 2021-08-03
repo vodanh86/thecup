@@ -2,7 +2,6 @@
 <script src="{{url('assets/js/jquery.min.js')}}"></script>
 <script src="{{url('assets/js/howler.min.js')}}"></script>
 <script src="{{url('assets/js/main.js')}}"></script>
-<script src="{{url('assets/js/player.js')}}"></script>
 <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{url('assets/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{url('assets/js/bootstrap-datepicker.vi.min.js')}}"></script>
