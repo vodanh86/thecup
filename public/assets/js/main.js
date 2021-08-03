@@ -105,13 +105,14 @@ $(document).ready(function(){
         searchPopupBody.style.visibility = 'visible';
         searchPopupBody.style.opacity= '1';
         searchInput.style.display = 'block';
-        homePageBody.style.overflow = "hidden";
+        //homePageBody.style.overflow = "hidden";
+        $("body").css("overflow", "hidden");
     });
     $(document).on('click', '#searchPopupBody', function() {
         searchPopupBody.style.visibility = 'hidden';
         searchPopupBody.style.opacity= '0';
         searchInput.style.display = 'none';
-        homePageBody.style.overflow = "visible";
+        $("body").css("overflow", "visible");
     });
 
     //Home page playAll button

@@ -2018,7 +2018,8 @@
         align-items: center; }
         .podcast-episodes-body .news-holder .news-main .news-other-post .podcast .row {
           height: 122px;
-          margin-right: 0px; }
+          margin-right: 0px;
+          width: 100%; }
         .podcast-episodes-body .news-holder .news-main .news-other-post .podcast .podcast-play {
           display: inline-grid;
           justify-content: center;

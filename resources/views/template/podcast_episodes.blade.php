@@ -21,7 +21,8 @@ use App\Admin\Controllers\Util;
                 <div class="play-and-sharing">
                     <div class="row">
                         <div class="col-md-4">
-                            <button class="btn btn-primary play-button d-flex align-items-center">
+                            <button class="btn btn-primary play-button d-flex align-items-center"
+                                    id="playAllBtn">
                                 <i class="fas fa-play"></i>
                                 <span class="ms-auto">Nghe tất cả</span>
                             </button>
@@ -59,22 +60,20 @@ use App\Admin\Controllers\Util;
         <div class="news-main">
             <div class="news-other-post">
                 @foreach($songs as $song)
-                <div class="podcast">
-                    <a href="{{ url('/episode/'.$song->slug) }}">
-                        <div class="row">
-                            <div class="col-md-3 podcast-play">
-                                <div class="play-icon">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                                <p class="podcast-time">{{floor($song->duration/60)}} phút</p>
+                <div class="podcast" onclick="playById(0)">
+                    <div class="row">
+                        <div class="col-md-3 podcast-play">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
                             </div>
-                            <div class="col-md-9">
-                                <p class="post-date">{{Util::dateFormat($song->created_at)}}</p>
-                                <p class="podcast-title">{{$song->title}}</p>
-                                <p class="podcast-description">{{$song->description}}</p>
-                            </div>
+                            <p class="podcast-time">{{floor($song->duration/60)}} phút</p>
                         </div>
-                    </a>
+                        <div class="col-md-9">
+                            <p class="post-date">{{Util::dateFormat($song->created_at)}}</p>
+                            <p class="podcast-title">{{$song->title}}</p>
+                            <p class="podcast-description">{{$song->description}}</p>
+                        </div>
+                    </div>
                 </div>
                 @endforeach
             </div>
@@ -92,50 +91,33 @@ use App\Admin\Controllers\Util;
                     <img src="{{url(env('AWS_URL')).$banner->img}}" alt="{{$banner->name}}">
                 </a>
             </div>
-            @include('layouts.comment', ["comments" => $comments, "page" => $page])
         </div>
     </div>
 </div>
 <!--Post-end-->
-<!--Podcast-player-start-->
-<div class="podcast-player-holder">
-    <div class="upper">
-        <span class="podcast-title">Hài lòng với nhưng thứ đã có sẽ làm bạn hạnh phúc hơn</span>
-        <div class="dot-seperator"></div>
-        <span class="podcast-name">Phần 2: Quẳng gánh lo đi mà sống</span>
-    </div>
-    <div class="divider"></div>
-    <div class="lower">
-        <div class="container">
-           <div class="row">
-               <div class="col-md-4 button-holder">
-                   <span class="material-icons smaterial-icons-outlined">playlist_play</span>
-                   <span class="material-icons material-icons-outlined">1x_mobiledata</span>
-                   <span class="material-icons material-icons-outlined">volume_up</span>
-                   <span class="material-icons material-icons-outlined">skip_previous</span>
-                   <span class="material-icons material-icons-outlined">replay_10</span>
-                   <div class="play-button">
-                       <span class="material-icons material-icons-outlined">
-                        play_arrow
-                        </span>
-                   </div>
-                   <span class="material-icons material-icons-outlined">forward_10</span>
-                   <span class="material-icons material-icons-outlined">skip_next</span>
-               </div>
-               <div class="col-md-8 progress-holder">
-                    <span class="time-played">18:42</span>
-                    <div class="progress">
-                       <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                   <span class="total-time">34:43</span>
-               </div>
-           </div>
-        </div>
-    </div>
-</div>
+@include('partials.podcast', ["podcast" => $page, "songs" => $songs])
 <!--Podcast-player-end-->
 @if($trial)
 @include('layouts.restrict')
 @endif
 @include('layouts.footer')
-@include('layouts.script')
+@include('layouts.script')@include('layouts.script')@include('layouts.script')<script>
+    soundObj = {
+        sound: [
+            {
+                "name": "Anh oi o lai",
+                "link": "https://thecup.vn/public/music/3%20%c4%90i%20(%c4%90i.%20%c4%90i.%20%c4%90i)%20-%20K-ICM%20x%20T-ICM%20x%20Kelsey%20x%20Zickky%20-%20ICM%20TEAM%20%5bOFFICIAL%20VIDEO%5d.mp3"
+            },
+            {
+                "name": "Bài hát số 2",
+                "link": "https://thecuppodcast.s3.ap-southeast-1.amazonaws.com/files/07fb07f66f04d123460859d7f757fae2.mp3"
+            },
+            {
+                "name": "Hết thương cạn nhớ",
+                "link": "https://thecuppodcast.s3.ap-southeast-1.amazonaws.com/files/Hết Thương Cạn Nhớ - Đức Phúc [Audio Lyrics].mp3"
+            }
+        ]
+    };
+    loadPlaylist(soundObj);
+    generateList();
+</script>

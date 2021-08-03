@@ -1,7 +1,7 @@
 let globalPlaylist = [];
 let playListIsLoaded = false;
+
 function loadPlaylist(soundObj) {
-    //console.log(soundObj.sound[0].id.toString());
     console.log("Da chay vao loadPlaylist");
     var playlist = [];
     var sound = soundObj.sound;
@@ -28,7 +28,9 @@ function generateList(){
 }
 
 function playById(id){
+    playAllBtn.click();
     Howler.stop();
+    window.scrollTo(0, document.body.scrollHeight);
     player.play(id);
 }
 /**
@@ -293,7 +295,6 @@ $(document).on('click', '#playAllBtn', function () {
     $('.podcast-player-holder').css("display", "block");
     $('footer').css("margin-top", "0px");
     window.scrollTo(0, document.body.scrollHeight);
-    generateList();
     playBtn.click();
 });
 
@@ -375,10 +376,10 @@ $(document).on('click', '#volumeHolder', function () {
     console.log("volumeHolder CALLED!");
     if (volumeProgressWrapper.style.display.toString() == 'none') {
         volumeProgressWrapper.style.display = 'flex';
-        homePageBody.style.touchAction = 'none';
+        playerPageBody.style.touchAction = 'none';
     } else {
         volumeProgressWrapper.style.display = 'none';
-        homePageBody.style.touchAction = 'auto';
+        playerPageBody.style.touchAction = 'auto';
     }
 });
 

@@ -8,7 +8,7 @@ use App\Models\Comment;
 
 ?>
 @include('layouts.header')
-<body class="homepage-body" id="homePageBody" style="touch-action: auto">
+<body class="homepage-body" id="playerPageBody" style="touch-action: auto">
 @include('layouts.nav')
 @include('layouts.carousel')
 <!--Radio-start-->
@@ -189,6 +189,10 @@ use App\Models\Comment;
     </div>
 </div>
 <!--News-end-->
+@include('partials.podcast', ["podcast" => $podcast, "songs" => $songs])
+@include('layouts.footer')
+@include('layouts.homeScript')
+
 <script>
     <?php 
     $sound = array();
@@ -199,7 +203,6 @@ use App\Models\Comment;
     soundObj = {
         sound: {!!json_encode($sound)!!}
     };
+    loadPlaylist(soundObj);
+    generateList();
 </script>
-@include('partials.podcast', ["podcast" => $podcast, "songs" => $songs])
-@include('layouts.footer')
-@include('layouts.homeScript')

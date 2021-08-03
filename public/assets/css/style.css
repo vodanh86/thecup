@@ -1350,7 +1350,8 @@ p {
           .podcast-episodes-body .podcast-holder .podcast-player-inner .podcast-play .play-and-sharing .sharing .social i {
             font-size: 16px; }
 .podcast-episodes-body .news-holder {
-  margin-top: 60px; }
+  margin-top: 60px;
+  margin-bottom: 40px; }
   .podcast-episodes-body .news-holder .search-result {
     display: flex;
     justify-content: space-between;
@@ -1422,10 +1423,12 @@ p {
       box-sizing: border-box;
       border-radius: 16px;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      cursor: pointer; }
       .podcast-episodes-body .news-holder .news-main .news-other-post .podcast .row {
         height: 122px;
-        margin-right: 20px; }
+        margin-right: 20px;
+        width: 754px; }
       .podcast-episodes-body .news-holder .news-main .news-other-post .podcast .podcast-play {
         display: inline-grid;
         justify-content: center;
@@ -1516,8 +1519,9 @@ p {
 .podcast-episodes-body .podcast-player-holder {
   width: 100%;
   background-color: #092145;
-  height: 110px;
-  margin-top: 60px; }
+  height: 112px;
+  margin-top: 60px;
+  display: none; }
   .podcast-episodes-body .podcast-player-holder .upper {
     text-align: center;
     padding-top: 10px;
@@ -1565,9 +1569,58 @@ p {
         border: 2px solid white;
         display: inline-flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        background-color: transparent; }
         .podcast-episodes-body .podcast-player-holder .lower .button-holder .play-button span {
           font-size: 23px; }
+      .podcast-episodes-body .podcast-player-holder .lower .button-holder button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; }
+      .podcast-episodes-body .podcast-player-holder .lower .button-holder .play-speed {
+        font-size: 16px;
+        font-weight: bold; }
+      .podcast-episodes-body .podcast-player-holder .lower .button-holder .volume-holder {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer; }
+        .podcast-episodes-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar {
+          position: absolute;
+          transform: rotateZ(-90deg);
+          top: -50px;
+          left: -19px;
+          display: none;
+          align-items: center;
+          width: 85px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 10px;
+          background: white; }
+          .podcast-episodes-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider {
+            width: 55px;
+            -webkit-appearance: none;
+            height: 1px;
+            border-radius: 5px;
+            background: #000000;
+            outline: none;
+            opacity: 1;
+            cursor: pointer; }
+          .podcast-episodes-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #1B3864;
+            cursor: pointer; }
+          .podcast-episodes-body .podcast-player-holder .lower .button-holder .volume-holder .volume-bar .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer; }
     .podcast-episodes-body .podcast-player-holder .lower .progress-holder {
       display: inline-flex;
       align-items: center; }
@@ -1581,14 +1634,52 @@ p {
         margin-right: 20px; }
       .podcast-episodes-body .podcast-player-holder .lower .progress-holder #duration {
         margin-left: 20px; }
-      .podcast-episodes-body .podcast-player-holder .lower .progress-holder .progress {
-        display: inline-flex;
+      .podcast-episodes-body .podcast-player-holder .lower .progress-holder .prog {
         width: 100%;
-        height: 3px;
-        margin-left: 20px;
-        margin-right: 20px; }
+        height: 20px;
+        align-items: center;
+        display: inline-flex;
+        cursor: pointer; }
+        .podcast-episodes-body .podcast-player-holder .lower .progress-holder .prog .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 1px;
+          border-radius: 5px;
+          background: #ffffff;
+          outline: none;
+          opacity: 1;
+          cursor: pointer; }
+        .podcast-episodes-body .podcast-player-holder .lower .progress-holder .prog .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #ffffff;
+          cursor: pointer; }
+        .podcast-episodes-body .podcast-player-holder .lower .progress-holder .prog .slider::-moz-range-thumb {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: #04AA6D;
+          cursor: pointer; }
       .podcast-episodes-body .podcast-player-holder .lower .progress-holder .progress-bar {
         transition: width 0.1s ease; }
+.podcast-episodes-body .soundlist-holder {
+  background-color: #092145;
+  width: 100%;
+  height: 0px;
+  overflow-y: scroll;
+  align-items: center;
+  transition: 0.2s ease;
+  transform: translateY(-30px);
+  opacity: 0; }
+  .podcast-episodes-body .soundlist-holder .btn {
+    display: block;
+    margin: 5px auto;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500; }
 .podcast-episodes-body .footer-holder {
   margin-top: 0; }
 
@@ -1653,7 +1744,7 @@ p {
       .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play .play-and-sharing {
         margin-top: 60px; }
         .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play .play-and-sharing .play-button {
-          padding: 6px 20px 6px 26px;
+          padding: 6px 20px 6px 20px;
           height: 52px;
           width: 188px;
           border-radius: 100px;
@@ -1664,7 +1755,7 @@ p {
           .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play .play-and-sharing .play-button span {
             text-transform: uppercase;
             font-weight: 900;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 140%;
             letter-spacing: 0.05em;
             color: white; }
@@ -1687,7 +1778,8 @@ p {
           .podcast-single-body .podcast-holder .podcast-player-inner .podcast-play .play-and-sharing .sharing .social i {
             font-size: 16px; }
 .podcast-single-body .news-holder {
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 40px; }
   .podcast-single-body .news-holder .search-result {
     display: flex;
     justify-content: space-between;
@@ -1853,8 +1945,9 @@ p {
 .podcast-single-body .podcast-player-holder {
   width: 100%;
   background-color: #092145;
-  height: 110px;
-  margin-top: 60px; }
+  height: 112px;
+  margin-top: 60px;
+  display: none; }
   .podcast-single-body .podcast-player-holder .upper {
     text-align: center;
     padding-top: 10px;
@@ -1963,15 +2056,56 @@ p {
         font-size: 13px;
         line-height: 140%;
         color: #767676; }
-      .podcast-single-body .podcast-player-holder .lower .progress-holder .progress {
-        display: inline-flex;
+      .podcast-single-body .podcast-player-holder .lower .progress-holder #timer {
+        margin-right: 20px; }
+      .podcast-single-body .podcast-player-holder .lower .progress-holder #duration {
+        margin-left: 20px; }
+      .podcast-single-body .podcast-player-holder .lower .progress-holder .prog {
         width: 100%;
-        height: 3px;
-        margin-left: 20px;
-        margin-right: 20px;
+        height: 20px;
+        align-items: center;
+        display: inline-flex;
         cursor: pointer; }
+        .podcast-single-body .podcast-player-holder .lower .progress-holder .prog .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 1px;
+          border-radius: 5px;
+          background: #ffffff;
+          outline: none;
+          opacity: 1;
+          cursor: pointer; }
+        .podcast-single-body .podcast-player-holder .lower .progress-holder .prog .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #ffffff;
+          cursor: pointer; }
+        .podcast-single-body .podcast-player-holder .lower .progress-holder .prog .slider::-moz-range-thumb {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: #04AA6D;
+          cursor: pointer; }
       .podcast-single-body .podcast-player-holder .lower .progress-holder .progress-bar {
         transition: width 0.1s ease; }
+.podcast-single-body .soundlist-holder {
+  background-color: #092145;
+  width: 100%;
+  height: 0px;
+  overflow-y: scroll;
+  align-items: center;
+  transition: 0.2s ease;
+  transform: translateY(-30px);
+  opacity: 0; }
+  .podcast-single-body .soundlist-holder .btn {
+    display: block;
+    margin: 5px auto;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500; }
 .podcast-single-body .footer-holder {
   margin-top: 0; }
 

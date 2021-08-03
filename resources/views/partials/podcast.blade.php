@@ -51,6 +51,6 @@
         </div>
     </div>
     <div class="divider"></div>
-</div>
 
+</div>
 <div class="soundlist-holder" id="soundListHolder" style="visibility: hidden"></div>
