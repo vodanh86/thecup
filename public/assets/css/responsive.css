@@ -34,8 +34,8 @@
       background-color: #22539D; }
       .paging-sector .pagination .page-item.active .page-link {
         border: none;
-        padding: 0px;
-        background-color: transparent; }
+        background-color: transparent;
+        color: white; }
 
   .navbar {
     background-color: #1B3864;
@@ -2003,32 +2003,6 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 22px; }
-    .podcast-episodes-body .news-holder .paging-sector {
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px; }
-      .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #DDDDDD;
-        box-sizing: border-box;
-        border-radius: 4px;
-        margin-right: 4px; }
-        .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element p {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 21px;
-          text-align: center; }
-      .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element.selected {
-        background-color: #22539D; }
-        .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-          color: white; }
     .podcast-episodes-body .news-holder .podcast-caption p {
       font-style: normal;
       font-weight: normal;
@@ -2366,32 +2340,6 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 22px; }
-    .podcast-single-body .news-holder .paging-sector {
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px; }
-      .podcast-single-body .news-holder .paging-sector .paging-group .paging-element {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #DDDDDD;
-        box-sizing: border-box;
-        border-radius: 4px;
-        margin-right: 4px; }
-        .podcast-single-body .news-holder .paging-sector .paging-group .paging-element p {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 21px;
-          text-align: center; }
-      .podcast-single-body .news-holder .paging-sector .paging-group .paging-element.selected {
-        background-color: #22539D; }
-        .podcast-single-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-          color: white; }
     .podcast-single-body .news-holder .podcast-caption p {
       font-style: normal;
       font-weight: normal;
@@ -2629,32 +2577,6 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 22px; }
-    .search-body .news-holder .paging-sector {
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px; }
-      .search-body .news-holder .paging-sector .paging-group .paging-element {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #DDDDDD;
-        box-sizing: border-box;
-        border-radius: 4px;
-        margin-right: 4px; }
-        .search-body .news-holder .paging-sector .paging-group .paging-element p {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 21px;
-          text-align: center; }
-      .search-body .news-holder .paging-sector .paging-group .paging-element.selected {
-        background-color: #22539D; }
-        .search-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-          color: white; }
     .search-body .news-holder .news-main .hightlight-large-block {
       margin-top: 28px; }
       .search-body .news-holder .news-main .hightlight-large-block .hightlight-arcticle {
@@ -3005,32 +2927,6 @@
           font-size: 16px;
           font-weight: 500;
           line-height: 22px; }
-    .post-body .news-holder .paging-sector {
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px; }
-      .post-body .news-holder .paging-sector .paging-group .paging-element {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #DDDDDD;
-        box-sizing: border-box;
-        border-radius: 4px;
-        margin-right: 4px; }
-        .post-body .news-holder .paging-sector .paging-group .paging-element p {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 21px;
-          text-align: center; }
-      .post-body .news-holder .paging-sector .paging-group .paging-element.selected {
-        background-color: #22539D; }
-        .post-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-          color: white; }
     .post-body .news-holder .news-main .post-holder .post-title .title-name {
       font-style: normal;
       font-weight: bold;

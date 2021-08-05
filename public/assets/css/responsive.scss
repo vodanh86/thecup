@@ -40,8 +40,8 @@ $navbar-color : #1B3864;
         background-color: #22539D;
         .page-link{
           border: none;
-          padding: 0px;
           background-color: transparent;
+          color: white;
         }
       }
     }
@@ -2521,39 +2521,7 @@ $navbar-color : #1B3864;
           }
         }
       }
-      .paging-sector{
-        width: 100%;
-        height: 36px;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 10px;
-        margin-top: 30px;
-        .paging-group{
-          .paging-element{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #DDDDDD;
-            box-sizing: border-box;
-            border-radius: 4px;
-            margin-right: 4px;
-            p{
-              font-size: 14px;
-              font-weight: 700;
-              line-height: 21px;
-              text-align: center;
-            }
-          }
-          .paging-element.selected{
-            background-color: #22539D;
-            p{
-              color: white;
-            }
-          }
-        }
-      }
+
       .podcast-caption{
         p{
           font-style: normal;
@@ -2971,39 +2939,7 @@ $navbar-color : #1B3864;
           }
         }
       }
-      .paging-sector{
-        width: 100%;
-        height: 36px;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 10px;
-        margin-top: 30px;
-        .paging-group{
-          .paging-element{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #DDDDDD;
-            box-sizing: border-box;
-            border-radius: 4px;
-            margin-right: 4px;
-            p{
-              font-size: 14px;
-              font-weight: 700;
-              line-height: 21px;
-              text-align: center;
-            }
-          }
-          .paging-element.selected{
-            background-color: #22539D;
-            p{
-              color: white;
-            }
-          }
-        }
-      }
+
       .podcast-caption{
         p{
           font-style: normal;
@@ -3301,39 +3237,7 @@ $navbar-color : #1B3864;
           }
         }
       }
-      .paging-sector{
-        width: 100%;
-        height: 36px;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 10px;
-        margin-top: 30px;
-        .paging-group{
-          .paging-element{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #DDDDDD;
-            box-sizing: border-box;
-            border-radius: 4px;
-            margin-right: 4px;
-            p{
-              font-size: 14px;
-              font-weight: 700;
-              line-height: 21px;
-              text-align: center;
-            }
-          }
-          .paging-element.selected{
-            background-color: #22539D;
-            p{
-              color: white;
-            }
-          }
-        }
-      }
+
       .news-main{
         .hightlight-large-block{
           margin-top: 28px;
@@ -3791,39 +3695,7 @@ $navbar-color : #1B3864;
           }
         }
       }
-      .paging-sector{
-        width: 100%;
-        height: 36px;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 10px;
-        margin-top: 30px;
-        .paging-group{
-          .paging-element{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #DDDDDD;
-            box-sizing: border-box;
-            border-radius: 4px;
-            margin-right: 4px;
-            p{
-              font-size: 14px;
-              font-weight: 700;
-              line-height: 21px;
-              text-align: center;
-            }
-          }
-          .paging-element.selected{
-            background-color: #22539D;
-            p{
-              color: white;
-            }
-          }
-        }
-      }
+
       .news-main{
         .post-holder{
           .post-title{

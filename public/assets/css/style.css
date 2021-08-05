@@ -53,8 +53,8 @@ p {
     background-color: #22539D; }
     .paging-sector .pagination .page-item.active .page-link {
       border: none;
-      padding: 0px;
-      background-color: transparent; }
+      background-color: transparent;
+      color: white; }
 
 .homepage-body {
   position: relative; }
@@ -531,39 +531,6 @@ p {
         line-height: 19.6px;
         color: #4F4F4F;
         font-weight: 400; }
-  .news-holder .news-main .paging-sector {
-    display: flex;
-    justify-content: flex-end; }
-    .news-holder .news-main .paging-sector .pagination .page-item {
-      margin-right: 4px;
-      border: 1px solid #DDDDDD;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 4px; }
-      .news-holder .news-main .paging-sector .pagination .page-item .page-link {
-        border: none;
-        color: black;
-        font-size: 14px;
-        font-weight: 700;
-        width: 100%;
-        height: 100%; }
-    .news-holder .news-main .paging-sector .pagination .page-item.active {
-      margin-right: 4px;
-      border: 1px solid #DDDDDD;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 4px;
-      background-color: #22539D; }
-      .news-holder .news-main .paging-sector .pagination .page-item.active .page-link {
-        border: none;
-        padding: 0px;
-        background-color: transparent; }
   .news-holder .news-newest {
     padding-left: 20px; }
     .news-holder .news-newest .new-podcast-block {
@@ -1028,32 +995,6 @@ p {
         font-size: 16px;
         font-weight: 500;
         line-height: 22px; }
-  .economy-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .economy-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .economy-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .economy-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .economy-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .economy-body .news-holder .news-main .news-other-post .other-post {
     margin-top: 0px;
     margin-bottom: 20px; }
@@ -1122,32 +1063,6 @@ p {
         font-size: 16px;
         font-weight: 500;
         line-height: 22px; }
-  .life-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .life-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .life-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .life-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .life-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .life-body .news-holder .news-main .news-other-post .other-post {
     margin-top: 0px;
     margin-bottom: 20px; }
@@ -1182,32 +1097,6 @@ p {
           font-size: 16px;
           font-weight: 500;
           line-height: 22px; }
-  .search-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .search-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .search-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .search-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .search-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .search-body .news-holder .news-main {
     max-width: 754px;
     display: block;
@@ -1291,32 +1180,6 @@ p {
         font-size: 16px;
         font-weight: 500;
         line-height: 22px; }
-  .author-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .author-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .author-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .author-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .author-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .author-body .news-holder .news-main .news-other-post .other-post {
     margin-top: 0px;
     margin-bottom: 20px; }
@@ -1446,32 +1309,6 @@ p {
           font-size: 16px;
           font-weight: 500;
           line-height: 22px; }
-  .podcast-episodes-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .podcast-episodes-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .podcast-episodes-body .news-holder .podcast-caption p {
     font-style: normal;
     font-weight: normal;
@@ -1874,32 +1711,6 @@ p {
           font-size: 16px;
           font-weight: 500;
           line-height: 22px; }
-  .podcast-single-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .podcast-single-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .podcast-single-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .podcast-single-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .podcast-single-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .podcast-single-body .news-holder .podcast-caption p {
     font-style: normal;
     font-weight: normal;
@@ -2355,32 +2166,6 @@ p {
         font-size: 16px;
         font-weight: 500;
         line-height: 22px; }
-  .image-post-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .image-post-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .image-post-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .image-post-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .image-post-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .image-post-body .news-holder .news-main .news-other-post .other-post {
     margin-top: 0px;
     margin-bottom: 20px; }
@@ -2522,32 +2307,6 @@ p {
         font-size: 16px;
         font-weight: 500;
         line-height: 22px; }
-  .post-body .news-holder .paging-sector {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    margin-top: 30px; }
-    .post-body .news-holder .paging-sector .paging-group .paging-element {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid #DDDDDD;
-      box-sizing: border-box;
-      border-radius: 4px;
-      margin-right: 4px; }
-      .post-body .news-holder .paging-sector .paging-group .paging-element p {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-        text-align: center; }
-    .post-body .news-holder .paging-sector .paging-group .paging-element.selected {
-      background-color: #22539D; }
-      .post-body .news-holder .paging-sector .paging-group .paging-element.selected p {
-        color: white; }
   .post-body .news-holder .news-main .post-holder .post-title .title-name {
     font-style: normal;
     font-weight: bold;
