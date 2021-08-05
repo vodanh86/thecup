@@ -4,6 +4,49 @@ $navbar-color : #1B3864;
   html,body{
     overflow-x: hidden;
   }
+
+  //Paging
+  .paging-sector{
+    display: flex;
+    justify-content: center;
+    .pagination{
+      .page-item{
+        margin-right: 4px;
+        border: 1px solid #DDDDDD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        .page-link{
+          border: none;
+          color: black;
+          font-size: 14px;
+          font-weight: 700;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .page-item.active{
+        margin-right: 4px;
+        border: 1px solid #DDDDDD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        background-color: #22539D;
+        .page-link{
+          border: none;
+          padding: 0px;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
   .navbar{
     background-color: $navbar-color;
     height: auto;
