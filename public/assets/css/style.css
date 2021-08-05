@@ -532,7 +532,8 @@ p {
         font-size: 14px;
         line-height: 19.6px;
         color: #4F4F4F;
-        font-weight: 400; }
+        font-weight: 400;
+        display: block; }
   .news-holder .news-newest {
     padding-left: 20px; }
     .news-holder .news-newest .new-podcast-block {
