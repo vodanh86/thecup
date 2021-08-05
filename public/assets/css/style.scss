@@ -61,8 +61,8 @@ p{
       background-color: #22539D;
       .page-link{
         border: none;
-        padding: 0px;
         background-color: transparent;
+        color: white;
       }
     }
   }
@@ -638,46 +638,6 @@ p{
         }
       }
     }
-    .paging-sector{
-      display: flex;
-      justify-content: flex-end;
-      .pagination{
-        .page-item{
-          margin-right: 4px;
-          border: 1px solid #DDDDDD;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border-radius: 4px;
-          .page-link{
-            border: none;
-            color: black;
-            font-size: 14px;
-            font-weight: 700;
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .page-item.active{
-          margin-right: 4px;
-          border: 1px solid #DDDDDD;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border-radius: 4px;
-          background-color: #22539D;
-          .page-link{
-            border: none;
-            padding: 0px;
-            background-color: transparent;
-          }
-        }
-      }
-    }
   }
   .news-newest{
     padding-left: 20px;
@@ -1243,39 +1203,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       .news-other-post{
         .other-post{
@@ -1368,39 +1296,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       .news-other-post{
         .other-post{
@@ -1452,39 +1348,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       max-width: 754px;
       display: block;
@@ -1592,39 +1456,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       .news-other-post{
         .other-post{
@@ -1792,39 +1624,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .podcast-caption{
       p{
         font-style: normal;
@@ -2324,39 +2124,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .podcast-caption{
       p{
         font-style: normal;
@@ -2924,39 +2692,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       .news-other-post{
         .other-post{
@@ -3145,39 +2881,7 @@ p{
         }
       }
     }
-    .paging-sector{
-      width: 100%;
-      height: 36px;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 10px;
-      margin-top: 30px;
-      .paging-group{
-        .paging-element{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1px solid #DDDDDD;
-          box-sizing: border-box;
-          border-radius: 4px;
-          margin-right: 4px;
-          p{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 21px;
-            text-align: center;
-          }
-        }
-        .paging-element.selected{
-          background-color: #22539D;
-          p{
-            color: white;
-          }
-        }
-      }
-    }
+
     .news-main{
       .post-holder{
         .post-title{
