@@ -5,7 +5,7 @@
 
   .navbar {
     background-color: #1B3864;
-    height: 62px;
+    height: auto;
     width: 100%; }
     .navbar .navbar-brand {
       margin-left: 20px; }
@@ -36,53 +36,53 @@
     .navbar .navbar-toggler.collapsed {
       border: 1px solid white;
       background-color: #1B3864; }
-    .navbar .navbar-collapse .nav-register {
-      margin-left: 22px;
-      margin-bottom: 20px; }
-    .navbar .nav-item {
-      margin-left: 22px;
-      margin-right: 30px; }
-      .navbar .nav-item .nav-link {
-        color: white !important;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 16px; }
-      .navbar .nav-item .fa-search {
-        color: white !important;
-        font-size: 14px; }
-    .navbar .navbar-nav {
-      align-items: start; }
-      .navbar .navbar-nav .dropdown-menu {
-        transition: all 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-        display: block;
-        height: 0;
-        padding: 0;
-        background-color: #1B3864;
-        border: none; }
-        .navbar .navbar-nav .dropdown-menu .dropdown-item {
-          font-weight: 500;
-          font-size: 14px;
-          color: white; }
-        .navbar .navbar-nav .dropdown-menu .dropdown-divider {
-          margin-left: 1rem;
-          color: white;
-          width: 40%; }
-      .navbar .navbar-nav .dropdown-menu.show {
-        transition: all 0.3s ease;
-        visibility: visible;
-        opacity: 1;
-        height: auto; }
+    .navbar .navbar-collapse {
+      z-index: 10;
+      background-color: #1B3864; }
+      .navbar .navbar-collapse .navbar-nav {
+        align-items: start; }
+        .navbar .navbar-collapse .navbar-nav .nav-item {
+          margin-left: 22px;
+          margin-right: 30px; }
+          .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+            color: white !important;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 16px; }
+          .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: block;
+            height: 0;
+            padding: 0;
+            background-color: #1B3864;
+            border: none; }
+            .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+              font-weight: 500;
+              font-size: 14px;
+              color: white; }
+            .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu .dropdown-divider {
+              margin-left: 1rem;
+              color: white;
+              width: 40%; }
+          .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu.show {
+            transition: all 0.3s ease;
+            visibility: visible;
+            opacity: 1;
+            height: auto; }
+          .navbar .navbar-collapse .navbar-nav .nav-item .fa-search {
+            color: white !important;
+            font-size: 14px; }
+      .navbar .navbar-collapse .nav-register {
+        margin-left: 22px;
+        margin-bottom: 20px; }
     .navbar .btn-light {
       border-radius: 16px;
       color: #1B3864;
       font-size: 14px;
       padding-left: 16px;
       padding-right: 16px; }
-    .navbar .navbar-collapse {
-      z-index: 10;
-      background-color: #1B3864; }
 
   .carousel-holder {
     position: relative;

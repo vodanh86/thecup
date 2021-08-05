@@ -6,7 +6,7 @@ $navbar-color : #1B3864;
   }
   .navbar{
     background-color: $navbar-color;
-    height: 62px;
+    height: auto;
     width: 100%;
     .navbar-brand{
       margin-left: 20px;
@@ -44,55 +44,57 @@ $navbar-color : #1B3864;
       background-color: $navbar-color;
     }
     .navbar-collapse{
+      z-index: 10;
+      background-color: $navbar-color;
+      .navbar-nav{
+        align-items: start;
+        .nav-item{
+          margin-left: 22px;
+          margin-right: 30px;
+          .nav-link{
+            color: rgba(255,255,255,1)!important;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 16px;
+          }
+          .dropdown-menu{
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: block;
+            height: 0;
+            padding: 0;
+            background-color: $navbar-color;
+            border: none;
+            .dropdown-item{
+              font-weight: 500;
+              font-size: 14px;
+              color: white;
+            }
+            .dropdown-divider{
+              margin-left: 1rem;
+              color: white;
+              width: 40%;
+            }
+          }
+          .dropdown-menu.show{
+            transition: all 0.3s ease;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+          }
+          .fa-search{
+            color: white!important;
+            font-size: 14px;
+          }
+        }
+      }
       .nav-register{
         margin-left: 22px;
         margin-bottom: 20px;
       }
     }
-    .nav-item{
-      margin-left: 22px;
-      margin-right: 30px;
-      .nav-link{
-        color: rgba(255,255,255,1)!important;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 16px;
-      }
-      .fa-search{
-        color: white!important;
-        font-size: 14px;
-      }
-    }
-    .navbar-nav{
-      align-items: start;
-      .dropdown-menu{
-        transition: all 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-        display: block;
-        height: 0;
-        padding: 0;
-        background-color: $navbar-color;
 
-        border: none;
-        .dropdown-item{
-          font-weight: 500;
-          font-size: 14px;
-          color: white;
-        }
-        .dropdown-divider{
-          margin-left: 1rem;
-          color: white;
-          width: 40%;
-        }
-      }
-      .dropdown-menu.show{
-        transition: all 0.3s ease;
-        visibility: visible;
-        opacity: 1;
-        height: auto;
-      }
-    }
     .btn-light{
       border-radius: 16px;
       color: $navbar-color;
@@ -100,10 +102,7 @@ $navbar-color : #1B3864;
       padding-left: 16px;
       padding-right: 16px;
     }
-    .navbar-collapse{
-      z-index: 10;
-      background-color: $navbar-color;
-    }
+
   }
   .carousel-holder{
     position: relative;
