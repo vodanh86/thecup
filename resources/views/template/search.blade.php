@@ -27,7 +27,7 @@ use App\Admin\Controllers\Util;
       <div class="news-main">
         <div class="news-other-post">
         @foreach($pages as $page)
-          <div class="other-post" style="min-height:250px">
+          <div class="other-post">
               <div class="row">
                   <div class="col-5">
                       <a href="{{ url('/page/'.$page->slug) }}">
