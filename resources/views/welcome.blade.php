@@ -59,7 +59,7 @@ use App\Models\Comment;
                                         <span class="ms-auto">Nghe tất cả</span>
                                     </button>
                                 </div>
-                                @include('layouts.social')
+                                @include('layouts.social', ["class" => "col-12 order-first order-md-last"])
                             </div>
                         </div>
                     </div>

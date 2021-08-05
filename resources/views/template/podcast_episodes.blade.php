@@ -27,7 +27,7 @@ use App\Admin\Controllers\Util;
                                 <span class="ms-auto">Nghe tất cả</span>
                             </button>
                         </div>
-                        @include('layouts.social')
+                        @include('layouts.social', ["class" => ""])
                     </div>
                 </div>
             </div>

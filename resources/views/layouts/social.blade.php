@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 order-first order-md-last sharing">
+<div class="col-md-6 sharing {{$class}}">
     <span>Chia sẻ</span>
     <div class="social">
         <a href="https://www.facebook.com/sharer/sharer.php?u={{urlencode(url()->full())}}&display=popup" target="_blank"><i class="fab fa-facebook-f"></i></a>
