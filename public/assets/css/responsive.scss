@@ -8,7 +8,7 @@ $navbar-color : #1B3864;
   //Paging
   .paging-sector{
     display: flex;
-    justify-content: center;
+    justify-content: center!important;
     .pagination{
       .page-item{
         margin-right: 4px;
@@ -19,6 +19,7 @@ $navbar-color : #1B3864;
         width: 36px;
         height: 36px;
         border-radius: 4px;
+        overflow: hidden;
         .page-link{
           border: none;
           color: black;
@@ -38,6 +39,7 @@ $navbar-color : #1B3864;
         height: 36px;
         border-radius: 4px;
         background-color: #22539D;
+        overflow: hidden;
         .page-link{
           border: none;
           background-color: transparent;
@@ -473,7 +475,7 @@ $navbar-color : #1B3864;
     }
   }
   .news-holder{
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: 8px;
     margin-right: 8px;
     .news-main{
@@ -898,14 +900,15 @@ $navbar-color : #1B3864;
           .row{
             margin-right: auto;
             margin-left: auto;
+            max-width: 410px;
             .col-6{
-              margin-top: 20px;
+              margin-top: 22px;
             }
             .end{
               justify-content: flex-end;
             }
             .start{
-              justify-content: start;
+              justify-content: flex-start;
             }
             .center{
               justify-content: center;

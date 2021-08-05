@@ -23,7 +23,7 @@ $parentId = $cats[0][0]->id;
                 <div class="col-md-9 fix-margin">
                     <div class="row row-cols-auto">
                         @foreach($cats[$parentId] as $cat) 
-                        <div class="col-4 col-md d-flex end">
+                        <div class="{{$loop->index < 3 ? 'col-4' : 'col-6'}} col-md d-flex {{ $loop->index % 3 == 0 ? 'end' : ($loop->index % 3 == 1 ? 'center' : 'start')}}">
                             <a href="{{ url('/category/'.$cat->slug) }}">
                                 <div class="footer-content-box">
                                     <div class="footer-content-box-inner">

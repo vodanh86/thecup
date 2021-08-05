@@ -5,7 +5,7 @@
 
   .paging-sector {
     display: flex;
-    justify-content: center; }
+    justify-content: center !important; }
     .paging-sector .pagination .page-item {
       margin-right: 4px;
       border: 1px solid #DDDDDD;
@@ -14,7 +14,8 @@
       justify-content: center;
       width: 36px;
       height: 36px;
-      border-radius: 4px; }
+      border-radius: 4px;
+      overflow: hidden; }
       .paging-sector .pagination .page-item .page-link {
         border: none;
         color: black;
@@ -31,7 +32,8 @@
       width: 36px;
       height: 36px;
       border-radius: 4px;
-      background-color: #22539D; }
+      background-color: #22539D;
+      overflow: hidden; }
       .paging-sector .pagination .page-item.active .page-link {
         border: none;
         background-color: transparent;
@@ -399,7 +401,7 @@
       border-radius: 40px; }
 
   .news-holder {
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: 8px;
     margin-right: 8px; }
     .news-holder .news-main .hightlight-large-block {
@@ -741,13 +743,14 @@
           padding-left: 10px !important; }
           .footer-holder .footer-upper .footer-upper-content .fix-margin .row {
             margin-right: auto;
-            margin-left: auto; }
+            margin-left: auto;
+            max-width: 410px; }
             .footer-holder .footer-upper .footer-upper-content .fix-margin .row .col-6 {
-              margin-top: 20px; }
+              margin-top: 22px; }
             .footer-holder .footer-upper .footer-upper-content .fix-margin .row .end {
               justify-content: flex-end; }
             .footer-holder .footer-upper .footer-upper-content .fix-margin .row .start {
-              justify-content: start; }
+              justify-content: flex-start; }
             .footer-holder .footer-upper .footer-upper-content .fix-margin .row .center {
               justify-content: center; }
     .footer-holder .footer-lower .social-connect {
