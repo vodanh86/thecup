@@ -40,12 +40,12 @@ use App\Admin\Controllers\Util;
     <?php $user = User::find(\Auth::user()->id) ?>
     <div class="post-comment">
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-2 col-md-1">
                 <div class="user-avatar">
                     <img src="{{Util::getAvatar($user)}}" alt="{{$user->name}}" width="50px">
                 </div>
             </div>
-            <div class="col-md-11">
+            <div class="col-10 col-md-11">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" maxlength="1000"
                     id="commentTextarea"></textarea>
