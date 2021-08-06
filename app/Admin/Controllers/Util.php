@@ -154,4 +154,11 @@ final class Util {
         return implode($pass); //turn the array into a string
     }
 
+    static function getAvatar($user){
+        if ($user->avatar){
+            return url(env('AWS_URL')).$user->avatar;
+        };
+        return url('/resources/img/logo.png');
+    }
+
 }

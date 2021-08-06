@@ -42,7 +42,7 @@ use App\Admin\Controllers\Util;
         <div class="row">
             <div class="col-md-1">
                 <div class="user-avatar">
-                    <img src="{{url(env('AWS_URL')).$user->avatar}}" alt="{{$user->name}}" width="50px">
+                    <img src="{{Util::getAvatar($user)}}" alt="{{$user->name}}" width="50px">
                 </div>
             </div>
             <div class="col-md-11">
