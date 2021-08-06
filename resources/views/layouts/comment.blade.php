@@ -12,12 +12,12 @@ use App\Admin\Controllers\Util;
     @foreach($comments as $comment)
     <div class="comment-block">
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-2">
                 <div class="user-avatar">
                     <img src="{{url(env('AWS_URL')).$comment->avatar}}" alt="{{$comment->name}}" width="40px">
                 </div>
             </div>
-            <div class="col-md-11">
+            <div class="col-10">
                 <p class="user-name">{{$comment->name}}</p>
                 <p class="comment-text">“{{$comment->comment}}”</p>
                 <p class="comment-date-time">{{Util::dateTimeFormat($comment->created_at)}}</p>
