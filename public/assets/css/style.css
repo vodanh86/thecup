@@ -2066,7 +2066,8 @@ p {
 
 .image-post-body .life-carousel-holder {
   height: 884px;
-  width: 100%; }
+  width: 100%;
+  padding-left: 30px; }
   .image-post-body .life-carousel-holder .carousel-indicators {
     bottom: 3%; }
     .image-post-body .life-carousel-holder .carousel-indicators button {
@@ -2087,52 +2088,62 @@ p {
       transition: opacity .6s ease; }
     .image-post-body .life-carousel-holder .carousel-indicators .active {
       background-color: white; }
-  .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption {
-    position: absolute;
-    left: 30px;
-    bottom: 30px;
-    padding-top: 0;
-    padding-bottom: 0;
-    color: #fff;
-    text-align: left;
-    z-index: 4; }
-    .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption h5 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 28px;
-      letter-spacing: 0.04em;
-      color: #FFFFFF; }
-    .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption p {
-      margin-top: 13px;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 15px;
-      color: #B3B3B3; }
-  .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos {
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-    text-align: right;
-    z-index: 4; }
-    .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos p {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 28px;
-      letter-spacing: 0.04em;
-      color: #FFFFFF; }
-  .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-gradient-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 119px;
-    width: 100%;
-    background: black;
-    z-index: 1;
-    background: black;
-    background: linear-gradient(0deg, black 0%, rgba(38, 38, 38, 0) 93%); }
+  .image-post-body .life-carousel-holder .carousel-inner {
+    height: 100%;
+    width: 100%; }
+    .image-post-body .life-carousel-holder .carousel-inner .carousel-item {
+      height: 100%;
+      width: 100%; }
+      .image-post-body .life-carousel-holder .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+      .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption {
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: #fff;
+        text-align: left;
+        z-index: 4; }
+        .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption h5 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 28px;
+          letter-spacing: 0.04em;
+          color: #FFFFFF; }
+        .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption p {
+          margin-top: 13px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 15px;
+          color: #B3B3B3; }
+      .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        text-align: right;
+        z-index: 4; }
+        .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos p {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 28px;
+          letter-spacing: 0.04em;
+          color: #FFFFFF; }
+      .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-gradient-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 119px;
+        width: 100%;
+        background: black;
+        z-index: 1;
+        background: black;
+        background: linear-gradient(0deg, black 0%, rgba(38, 38, 38, 0) 93%); }
   .image-post-body .life-carousel-holder .carousel-control-prev {
     width: 48px;
     height: 48px;
@@ -2240,13 +2251,14 @@ p {
         justify-content: center;
         padding: 0px 5px; }
         .image-post-body .image-post-holder .image-grid-holder .img-grid .img-block img {
-          width: 100%; }
+          width: 100%;
+          max-width: 103px;
+          max-height: 103px;
+          object-fit: cover; }
     .image-post-body .image-post-holder .image-grid-holder .comment {
       margin-top: 40px; }
       .image-post-body .image-post-holder .image-grid-holder .comment .comment-block {
         margin-top: 7px; }
-  .image-post-body .image-post-holder .life-carousel-holder {
-    padding-left: 30px; }
 
 .post-body .life-carousel-holder {
   height: 650px;

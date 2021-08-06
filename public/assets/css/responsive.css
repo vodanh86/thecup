@@ -2765,7 +2765,7 @@
         padding: 0px 10px;
         position: absolute;
         left: 0px;
-        bottom: 34px;
+        bottom: 12px;
         padding-top: 0;
         padding-bottom: 0;
         color: #fff;
@@ -2774,7 +2774,7 @@
         .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-caption h5 {
           font-style: normal;
           font-weight: bold;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 28px;
           letter-spacing: 0.04em;
           color: #FFFFFF; }
@@ -2788,21 +2788,21 @@
       .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos {
         position: absolute;
         right: 10px;
-        bottom: 34px;
+        bottom: 12px;
         text-align: right;
         z-index: 4; }
         .image-post-body .life-carousel-holder .carousel-inner .carousel-item .item-pos p {
           font-style: normal;
           font-weight: bold;
-          font-size: 15px;
+          font-size: 14px;
           line-height: 22px;
           letter-spacing: 0.04em;
           color: #FFFFFF; }
       .image-post-body .life-carousel-holder .carousel-inner .carousel-item .carousel-gradient-bottom {
         position: absolute;
-        bottom: 20px;
+        bottom: 0px;
         left: 0;
-        height: 110px;
+        height: 100px;
         width: 100%;
         background: black;
         z-index: 1; }
@@ -2893,7 +2893,8 @@
           justify-content: center;
           padding: 0px 5px; }
           .image-post-body .image-post-holder .image-grid-holder .img-grid .img-block img {
-            width: 100%; }
+            width: 100%;
+            max-width: 100%; }
       .image-post-body .image-post-holder .image-grid-holder .comment {
         margin-top: 40px; }
         .image-post-body .image-post-holder .image-grid-holder .comment .comment-block {
