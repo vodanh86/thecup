@@ -95,7 +95,7 @@ use App\Admin\Controllers\Util;
                                         ?>
                                         @include('layouts.rating', ["rating" => array("total" => $total, "number" => $number), "show" => 0])
                                     </div>
-                                    <p class="other-post-description"><a href="{{ url('/page/'.$page->slug) }}">{!!$page->description!!}</a></p>
+                                    <div class="other-post-description"><a href="{{ url('/page/'.$page->slug) }}">{!!$page->description!!}</a></div>
                                 </div>
                             </div>
                         </div>
