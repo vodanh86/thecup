@@ -44,6 +44,10 @@
                     </span>
                     @endif
                 </div>
+                <div class="input-group">
+                    <label>Nhớ tài khoản </label>
+                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} style="margin: 5px 10px">
+                </div>
                 <button type="submit" class="btn btn-primary btn-reg">
                     Đăng nhập
                 </button>
