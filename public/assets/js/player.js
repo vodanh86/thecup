@@ -2,6 +2,8 @@ let globalPlaylist = [];
 let playListIsLoaded = false;
 let playAllBtnIsClicked = false;
 let playBtnState = 'pause';
+let indexOfErrorTrack = [];
+let currentIndex;
 
 function loadPlaylist(soundObj) {
     //console.log("Da chay vao loadPlaylist");
@@ -80,6 +82,8 @@ Player.prototype = {
 
         // If we already loaded this track, use the current one.
         // Otherwise, setup and load a new Howl.
+
+
         if (data.howl) {
             sound = data.howl;
         } else {
@@ -87,9 +91,14 @@ Player.prototype = {
                 src: ['' + self.playlist[index].link],
                 format: "mp3",
                 html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
-                volume: 0.1,
                 onplay: function () {
-                    soundState.innerHTML = "(Đang phát)";
+                    console.log("onplay Called!");
+                    //if(indexOfErrorTrack.includes(currentIndex)){
+                    //    soundState.innerHTML = "(Audio bị lỗi)";
+                    //} else {
+                        soundState.innerHTML = "(Đang phát)";
+                    //}
+
                     // Display the duration.
                     duration.innerHTML = self.formatTime(Math.round(sound.duration()));
 
@@ -97,20 +106,26 @@ Player.prototype = {
                     requestAnimationFrame(self.step.bind(self));
 
                 },
-                onplayerror: function (){
-                    soundState.innerHTML = '(Không thể phát track)';
+                onplayerror: function (id, err){
+                    console.log('onplayerror fired');
+                    soundState.innerHTML = '(Không thể phát audio)';
                 },
-                onloaderror: function (){
-                    soundState.innerHTML = '(Không tải được track)';
+                onloaderror: function (id, err){
+                    console.log('onloaderror fired tại');
+                    console.log("index: " + index);
+                    indexOfErrorTrack.push(parseInt(index));
+
+                    soundState.innerHTML = '(Không tải được audio)';
                 },
                 onload: function () {
+                    console.log('onload fired');
                     soundState.innerHTML = "(Đang tải)";
                 },
                 onend: function () {
                     self.skip('next');
                 },
                 onpause: function () {
-                    soundState.innerHTML = "(Đang tạm dừng)";
+                    //soundState.innerHTML = "(Đang tạm dừng)";
                 },
                 onstop: function () {
 
@@ -129,6 +144,14 @@ Player.prototype = {
 
         // Keep track of the index we are currently playing.
         self.index = index;
+
+        //Xác định vị trí index hiện tại, kiểm tra xem giá trị này có nằm trong mảng Audio lỗi hay không
+        currentIndex = index;
+        if (indexOfErrorTrack.includes(currentIndex)){
+            // Bắn thông báo ra ngoài
+            soundState.innerHTML = '(Audio bị lỗi)';
+        }
+
         console.log("Current index: " +index);
     },
 
@@ -146,6 +169,8 @@ Player.prototype = {
 
         // Show the play button.
         playBtn.style.display = 'inline-flex';
+
+        soundState.innerHTML = "(Đang tạm dừng)";
     },
 
     /**
