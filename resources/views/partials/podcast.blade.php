@@ -3,7 +3,7 @@
         <span class="podcast-title">{{$podcast->title}}</span>
         <div class="dot-seperator"></div>
         <span class="podcast-name" id="track">Phần 2: Quẳng gánh lo đi mà sống</span>
-        <span class="podcast-name" id="soundState">(Đang tạm dừng)</span>
+        <span class="podcast-name" id="soundState">(Đang tải audio)</span>
     </div>
     <div class="divider"></div>
     <div class="lower">

@@ -93,11 +93,8 @@ Player.prototype = {
                 html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
                 onplay: function () {
                     console.log("onplay Called!");
-                    //if(indexOfErrorTrack.includes(currentIndex)){
-                    //    soundState.innerHTML = "(Audio bị lỗi)";
-                    //} else {
-                        soundState.innerHTML = "(Đang phát)";
-                    //}
+
+                    soundState.innerHTML = "(Đang phát)";
 
                     // Display the duration.
                     duration.innerHTML = self.formatTime(Math.round(sound.duration()));
@@ -125,7 +122,7 @@ Player.prototype = {
                     self.skip('next');
                 },
                 onpause: function () {
-                    //soundState.innerHTML = "(Đang tạm dừng)";
+
                 },
                 onstop: function () {
 
@@ -170,7 +167,6 @@ Player.prototype = {
         // Show the play button.
         playBtn.style.display = 'inline-flex';
 
-        soundState.innerHTML = "(Đang tạm dừng)";
     },
 
     /**
@@ -343,6 +339,9 @@ $(document).on('click', '#pauseBtn', function () {
     $('#pauseBtn').find('span').text('play_arrow');
     $('#pauseBtn').attr('id', 'playBtn');
     playBtnState = 'pause';
+
+    soundState.innerHTML = "(Đang tạm dừng)";
+
     player.pause();
 });
 
