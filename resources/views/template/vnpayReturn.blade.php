@@ -6,15 +6,15 @@
 @section('content')
 <div class="success-purchase-body fixed-top" style="visibility: visible; opacity: 1">
   <div class="logo-thecup">
-    <img src="/thecup/resources/img/logo-login-register.svg" alt="">
+    <img src="{{url('resources/img/logo-login-register.svg')}}" alt="">
   </div>
   <div class="register-holder">
     <div class="upper failed">
       @if ($payment->vnp_checkhash && $payment->response_code == "00")
-        <img class="success-purchase-img" src="/thecup/resources/img/success-ic.svg" alt="">
+        <img class="success-purchase-img" src="{{url('resources/img/success-ic.svg')}}" alt="">
         <p class="reg-title success">Thanh toán thành công</p>
       @else
-        <img class="failed-purchase-img" src="/thecup/resources/img/failed-ic.svg" alt="">
+        <img class="failed-purchase-img" src="{{url('resources/img/failed-ic.svg')}}" alt="">
          <p class="reg-title failed">Thanh toán thất bại</p>
       @endif
       <p class="purchase-text">Số tiền thanh toán</p>

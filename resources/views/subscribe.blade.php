@@ -15,7 +15,7 @@
 @include('layouts.message')
 <div id="loginBody" class="login-body fixed-top" style="visibility: visible; opacity: 1">
     <div class="logo-thecup">
-        <img src="/thecup/resources/img/logo-login-register.svg" alt="">
+        <img src="{{url('resources/img/logo-login-register.svg')}}" alt="">
     </div>
     <div class="register-holder">
         <div class="upper">
