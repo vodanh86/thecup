@@ -73,17 +73,6 @@ p{
 .homepage-body{
   position: relative;
 }
-.register-body,.login-body{
-  transition: 0.2s ease;
-  position: absolute;
-  width: 100%;
-  height: 1080px;
-  opacity: 0;
-  visibility: hidden;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
 .navbar{
   background-color: $navbar-color;
   height: 62px;
@@ -3214,16 +3203,87 @@ p{
   }
 }
 
-//Register & Login Page
-.login-body{
+//Register & Login & Confirm & Success Purchase Page
+
+.success-purchase-body{
   .register-holder{
-    height: 550px!important;
+    .upper{
+      background-image: url("/thecup/resources/img/success-purchase.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      .success-purchase-img{
+        width: 84px;
+        height: 84px;
+      }
+      .reg-title.success{
+        margin-top: 22px;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #3BC92F;
+      }
+      .custom-divider{
+        position: absolute;
+        left: 0;
+        top: 270px!important;
+        width: 100%;
+        height: 2px;
+        border-bottom: 2px dashed #DDDDDD;
+      }
+      .custom-decor-left{
+        width: 24px;
+        height: 24px;
+        border-radius: 14px;
+        position: absolute;
+        top: 260px!important;
+        left: -10px;
+        background-color: #E8EFFA;
+      }
+
+      .custom-decor-right{
+        width: 24px;
+        height: 24px;
+        border-radius: 14px;
+        position: absolute;
+        top: 260px!important;
+        right: -10px;
+        background-color: #E8EFFA;
+      }
+    }
+    .upper.failed{
+      background-image: none;
+      padding: 20px 40px 26px 40px !important;
+      .failed-purchase-img{
+        width: 150px;
+        height: 100px;
+      }
+      .reg-title.failed{
+        margin-top: 22px;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #FF2D2D;
+      }
+      .oauth-button{
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.login-body,.confirm-purchase-body,.success-purchase-body{
+  .register-holder{
     .upper{
       padding: 40px 40px 26px 40px!important;
     }
     .btn-forgot-password{
       width: 100%;
-      margin-top: 20px;
       .forgot-password{
         margin-top: 0px;
         font-style: normal;
@@ -3236,9 +3296,18 @@ p{
     }
   }
 }
-.register-body,.login-body{
+.register-body,.login-body,.confirm-purchase-body,.success-purchase-body{
   background-color: #E8EFFA;
-  padding-top: 134px;
+  padding-top: 10vh;
+  transition: 0.2s ease;
+  position: absolute;
+  width: 100%;
+  height: 1080px;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
   .logo-thecup{
     display: block;
     width: 198px;
@@ -3247,17 +3316,88 @@ p{
     margin-right: auto;
   }
   .register-holder{
-    height: 600px;
+    height: auto;
     width: 450px;
     margin-top: 32px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     overflow: hidden;
-    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.07);
+    //box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.07);
     border-radius: 5px;
     .upper{
-      padding: 40px 40px 54px 40px;
+      width: 100%;
+      height: 100%;
+      padding: 30px 40px 10px 40px;
+      text-align: center;
+      position: relative;
+      .purchase-text{
+        margin-top: 26px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 152.34%;
+        color: #767676;
+      }
+      .purchase-amount{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 152.34%;
+        color: #2270E8;
+      }
+
+      .custom-divider{
+        position: absolute;
+        left: 0;
+        top: 165px;
+        width: 100%;
+        height: 2px;
+        border-bottom: 2px dashed #DDDDDD;
+      }
+
+      .custom-decor-left{
+        width: 24px;
+        height: 24px;
+        border-radius: 14px;
+        position: absolute;
+        top: 155px;
+        left: -10px;
+        background-color: #E8EFFA;
+      }
+
+      .custom-decor-right{
+        width: 24px;
+        height: 24px;
+        border-radius: 14px;
+        position: absolute;
+        top: 155px;
+        right: -10px;
+        background-color: #E8EFFA;
+      }
+
+      .purchase-information-holder{
+        width: 100%;
+        text-align: left;
+        margin-top: 60px;
+        .line{
+          margin-top: 16px;
+          .title{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            color: #767676;
+          }
+          .value{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 152.34%;
+            color: #2C3E50;
+          }
+        }
+      }
       .reg-title{
         text-align: center;
         font-style: normal;
@@ -3269,6 +3409,7 @@ p{
         text-transform: uppercase;
         color: #2C3E50;
       }
+
       .oauth-button{
         display: flex;
         justify-content: space-between;
@@ -3315,6 +3456,59 @@ p{
             align-items: center;
             text-align: center;
             color: #2C3E50;
+          }
+        }
+
+        .btn-cancel-purchase{
+          position: relative;
+          width: 180px;
+          height: 40px;
+          border-radius: 8px;
+          img{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 16px;
+          }
+          span{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            align-items: center;
+            text-align: center;
+            color: #232323;
+          }
+          &:hover{
+            span{
+              color: white;
+            }
+          }
+        }
+        .btn-accept-purchase{
+          position: relative;
+          width: 180px;
+          height: 40px;
+          border-radius: 8px;
+          background-color: #1773EA;
+          img{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 16px;
+          }
+          span{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+          }
+          &:hover{
+            background-color: #1a7fff;
+            border: none;
           }
         }
       }
@@ -3373,6 +3567,7 @@ p{
         width: 100%;
         height: 44px;
         margin-top: 30px;
+        margin-bottom: 30px;
         background-color: #22539D;
         border-radius: 8px;
         font-style: normal;

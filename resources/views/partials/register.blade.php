@@ -20,7 +20,7 @@
                 <div class="divider"></div>
                 <p class="username">Họ và tên</p>
                 <div class="input-group">
-                <input id="nameInput" type="text" class="form-control" name="name" 
+                <input id="nameInput" type="text" class="form-control" name="name" onfocusout="scrollT()"
                 value="{{ old('name') }}"  autocomplete="name" autofocus>
 
                 <span class="invalid-feedback" role="alert" id="nameError">
@@ -29,7 +29,7 @@
                 </div>
                 <p class="email">Email</p>
                 <div class="input-group">
-                <input id="emailInput" type="email" class="form-control" placeholder="email@gmail.com"
+                <input id="emailInput" type="email" class="form-control" placeholder="email@gmail.com" onfocusout="scrollT()"
                 name="email" value="{{ old('email') }}" required autocomplete="email">
                 <span class="invalid-feedback" role="alert" id="emailError">
                     <strong></strong>
@@ -37,7 +37,7 @@
                 </div>
                 <p class="password">Mật khẩu</p>
                 <div class="input-group">
-                    <input id="passwordInput" type="password" class="form-control" placeholder="Mật khẩu của bạn"
+                    <input id="passwordInput" type="password" class="form-control" placeholder="Mật khẩu của bạn" onfocusout="scrollT()"
                     name="password" required autocomplete="new-password">
 
                     <span class="invalid-feedback" role="alert" id="passwordError">
@@ -46,7 +46,7 @@
                 </div>
                 <p class="password">Nhập lại mật khẩu</p>
                 <div class="input-group">
-                    <input id="password-confirm" type="password" class="form-control" placeholder="Mật khẩu của bạn"
+                    <input id="password-confirm" type="password" class="form-control" placeholder="Mật khẩu của bạn" onfocusout="scrollT()"
                     name="password_confirmation" required autocomplete="new-password">
                 </div>
                 <button type="submit" class="btn btn-primary btn-reg">

@@ -148,6 +148,16 @@ $(document).ready(function(){
     //     }
     //
     // });
+
+    // function scrollT(){
+    //     //$('.register-body').scrollTo(0, 0);
+    //     console.log("clicked");
+    // }
+
 });
 
+function scrollT(){
+    $('html').animate({scrollTop: '0px'}, 300);
+    //console.log("clicked");
+}
 

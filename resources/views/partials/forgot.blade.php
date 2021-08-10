@@ -13,7 +13,7 @@ use Mews\Captcha\Facades\Captcha;
                 <p class="username">Email bạn đã dùng để đăng ký</p>
                 <div class="input-group">
                     <input type="email" class="form-control" placeholder="Email của bạn" required name="email"
-                        aria-label="">
+                        aria-label="" onfocusout="scrollT()">
                 </div>
                 <div class="input-group" id="forgot-captcha">
                     {!! Captcha::img(); !!}

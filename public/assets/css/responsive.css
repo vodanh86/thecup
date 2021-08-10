@@ -3178,34 +3178,35 @@
       .post-body .news-holder .news-main .news-other-post .other-post .other-post-title {
         margin-top: 0px; }
 
-  .login-body, .register-body {
+  .login-body, .register-body, .confirm-purchase-body, .success-purchase-body {
     transition: 0.2s ease;
     position: absolute;
     width: 100%;
+    height: 920px;
     opacity: 0;
     visibility: hidden;
     top: 0;
     left: 0;
     z-index: 10;
     background-color: #E8EFFA;
-    padding-top: 36px; }
-    .login-body .logo-thecup, .register-body .logo-thecup {
+    padding-top: 24px; }
+    .login-body .logo-thecup, .register-body .logo-thecup, .confirm-purchase-body .logo-thecup, .success-purchase-body .logo-thecup {
       display: block;
       margin-left: auto;
       margin-right: auto; }
-      .login-body .logo-thecup img, .register-body .logo-thecup img {
-        width: 170px;
-        height: 55px; }
-    .login-body .exit-button, .register-body .exit-button {
+      .login-body .logo-thecup img, .register-body .logo-thecup img, .confirm-purchase-body .logo-thecup img, .success-purchase-body .logo-thecup img {
+        width: 150px;
+        height: 50px; }
+    .login-body .exit-button, .register-body .exit-button, .confirm-purchase-body .exit-button, .success-purchase-body .exit-button {
       width: 48px;
       text-align: center;
       position: absolute;
       top: 10px;
       right: 0px;
       transform: translateX(-50%); }
-      .login-body .exit-button .btn, .register-body .exit-button .btn {
+      .login-body .exit-button .btn, .register-body .exit-button .btn, .confirm-purchase-body .exit-button .btn, .success-purchase-body .exit-button .btn {
         padding: 0px; }
-      .login-body .exit-button .border, .register-body .exit-button .border {
+      .login-body .exit-button .border, .register-body .exit-button .border, .confirm-purchase-body .exit-button .border, .success-purchase-body .exit-button .border {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3214,15 +3215,16 @@
         border-radius: 25px;
         border: 1px solid #767676;
         box-sizing: border-box; }
-      .login-body .exit-button p, .register-body .exit-button p {
+      .login-body .exit-button p, .register-body .exit-button p, .confirm-purchase-body .exit-button p, .success-purchase-body .exit-button p {
         margin-top: 8px;
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
         line-height: 18px;
-        color: #767676; }
-    .login-body .register-holder, .register-body .register-holder {
-      height: 550px !important;
+        color: #767676;
+        display: none; }
+    .login-body .register-holder, .register-body .register-holder, .confirm-purchase-body .register-holder, .success-purchase-body .register-holder {
+      height: auto !important;
       position: relative;
       width: 100%;
       margin-top: 15px;
@@ -3232,9 +3234,9 @@
       overflow: hidden;
       box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.07);
       border-radius: 5px; }
-      .login-body .register-holder .upper, .register-body .register-holder .upper {
-        padding: 30px 20px 10px 20px !important; }
-        .login-body .register-holder .upper .reg-title, .register-body .register-holder .upper .reg-title {
+      .login-body .register-holder .upper, .register-body .register-holder .upper, .confirm-purchase-body .register-holder .upper, .success-purchase-body .register-holder .upper {
+        padding: 24px 20px 10px 20px !important; }
+        .login-body .register-holder .upper .reg-title, .register-body .register-holder .upper .reg-title, .confirm-purchase-body .register-holder .upper .reg-title, .success-purchase-body .register-holder .upper .reg-title {
           text-align: center;
           font-style: normal;
           font-weight: 900;
@@ -3244,23 +3246,65 @@
           letter-spacing: 0.03em;
           text-transform: uppercase;
           color: #2C3E50; }
-        .login-body .register-holder .upper .oauth-button, .register-body .register-holder .upper .oauth-button {
+        .login-body .register-holder .upper .oauth-button, .register-body .register-holder .upper .oauth-button, .confirm-purchase-body .register-holder .upper .oauth-button, .success-purchase-body .register-holder .upper .oauth-button {
           display: flex;
           justify-content: space-evenly;
-          margin-top: 24px; }
-          .login-body .register-holder .upper .oauth-button .btn-facebook, .register-body .register-holder .upper .oauth-button .btn-facebook {
+          margin-top: 18px; }
+          .login-body .register-holder .upper .oauth-button .btn-cancel-purchase, .register-body .register-holder .upper .oauth-button .btn-cancel-purchase, .confirm-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase, .success-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase {
+            position: relative;
+            width: 140px;
+            height: 40px;
+            border-radius: 8px; }
+            .login-body .register-holder .upper .oauth-button .btn-cancel-purchase img, .register-body .register-holder .upper .oauth-button .btn-cancel-purchase img, .confirm-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase img, .success-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase img {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 16px; }
+            .login-body .register-holder .upper .oauth-button .btn-cancel-purchase span, .register-body .register-holder .upper .oauth-button .btn-cancel-purchase span, .confirm-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase span, .success-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase span {
+              font-style: normal;
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 16px;
+              align-items: center;
+              text-align: center;
+              color: #232323; }
+            .login-body .register-holder .upper .oauth-button .btn-cancel-purchase:hover span, .register-body .register-holder .upper .oauth-button .btn-cancel-purchase:hover span, .confirm-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase:hover span, .success-purchase-body .register-holder .upper .oauth-button .btn-cancel-purchase:hover span {
+              color: white; }
+          .login-body .register-holder .upper .oauth-button .btn-accept-purchase, .register-body .register-holder .upper .oauth-button .btn-accept-purchase, .confirm-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase, .success-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase {
+            position: relative;
+            width: 140px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #1773EA; }
+            .login-body .register-holder .upper .oauth-button .btn-accept-purchase img, .register-body .register-holder .upper .oauth-button .btn-accept-purchase img, .confirm-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase img, .success-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase img {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 16px; }
+            .login-body .register-holder .upper .oauth-button .btn-accept-purchase span, .register-body .register-holder .upper .oauth-button .btn-accept-purchase span, .confirm-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase span, .success-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase span {
+              font-style: normal;
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 16px;
+              align-items: center;
+              text-align: center;
+              color: #ffffff; }
+            .login-body .register-holder .upper .oauth-button .btn-accept-purchase:hover, .register-body .register-holder .upper .oauth-button .btn-accept-purchase:hover, .confirm-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase:hover, .success-purchase-body .register-holder .upper .oauth-button .btn-accept-purchase:hover {
+              background-color: #1a7fff;
+              border: none; }
+          .login-body .register-holder .upper .oauth-button .btn-facebook, .register-body .register-holder .upper .oauth-button .btn-facebook, .confirm-purchase-body .register-holder .upper .oauth-button .btn-facebook, .success-purchase-body .register-holder .upper .oauth-button .btn-facebook {
             position: relative;
             width: 140px;
             height: 40px;
             background: #1773EA;
             border-radius: 8px;
             border: none; }
-            .login-body .register-holder .upper .oauth-button .btn-facebook img, .register-body .register-holder .upper .oauth-button .btn-facebook img {
+            .login-body .register-holder .upper .oauth-button .btn-facebook img, .register-body .register-holder .upper .oauth-button .btn-facebook img, .confirm-purchase-body .register-holder .upper .oauth-button .btn-facebook img, .success-purchase-body .register-holder .upper .oauth-button .btn-facebook img {
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               left: 16px; }
-            .login-body .register-holder .upper .oauth-button .btn-facebook span, .register-body .register-holder .upper .oauth-button .btn-facebook span {
+            .login-body .register-holder .upper .oauth-button .btn-facebook span, .register-body .register-holder .upper .oauth-button .btn-facebook span, .confirm-purchase-body .register-holder .upper .oauth-button .btn-facebook span, .success-purchase-body .register-holder .upper .oauth-button .btn-facebook span {
               margin-left: 10px;
               font-style: normal;
               font-weight: bold;
@@ -3268,17 +3312,17 @@
               line-height: 16px;
               text-align: center;
               color: #FFFFFF; }
-          .login-body .register-holder .upper .oauth-button .btn-google, .register-body .register-holder .upper .oauth-button .btn-google {
+          .login-body .register-holder .upper .oauth-button .btn-google, .register-body .register-holder .upper .oauth-button .btn-google, .confirm-purchase-body .register-holder .upper .oauth-button .btn-google, .success-purchase-body .register-holder .upper .oauth-button .btn-google {
             position: relative;
             width: 140px;
             height: 40px;
             border-radius: 8px; }
-            .login-body .register-holder .upper .oauth-button .btn-google img, .register-body .register-holder .upper .oauth-button .btn-google img {
+            .login-body .register-holder .upper .oauth-button .btn-google img, .register-body .register-holder .upper .oauth-button .btn-google img, .confirm-purchase-body .register-holder .upper .oauth-button .btn-google img, .success-purchase-body .register-holder .upper .oauth-button .btn-google img {
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               left: 16px; }
-            .login-body .register-holder .upper .oauth-button .btn-google span, .register-body .register-holder .upper .oauth-button .btn-google span {
+            .login-body .register-holder .upper .oauth-button .btn-google span, .register-body .register-holder .upper .oauth-button .btn-google span, .confirm-purchase-body .register-holder .upper .oauth-button .btn-google span, .success-purchase-body .register-holder .upper .oauth-button .btn-google span {
               margin-left: 10px;
               font-style: normal;
               font-weight: bold;
@@ -3286,13 +3330,13 @@
               line-height: 16px;
               text-align: center;
               color: #2C3E50; }
-        .login-body .register-holder .upper .divider, .register-body .register-holder .upper .divider {
+        .login-body .register-holder .upper .divider, .register-body .register-holder .upper .divider, .confirm-purchase-body .register-holder .upper .divider, .success-purchase-body .register-holder .upper .divider {
           width: 100%;
           height: 1px;
           border: 1px solid #E8E8E8;
           position: relative;
-          margin-top: 34px; }
-          .login-body .register-holder .upper .divider:before, .register-body .register-holder .upper .divider:before {
+          margin-top: 28px; }
+          .login-body .register-holder .upper .divider:before, .register-body .register-holder .upper .divider:before, .confirm-purchase-body .register-holder .upper .divider:before, .success-purchase-body .register-holder .upper .divider:before {
             padding: 0px 30px;
             content: "HOẶC";
             top: -10px;
@@ -3308,8 +3352,8 @@
             text-transform: uppercase;
             color: #B2B2B2;
             background: white; }
-        .login-body .register-holder .upper .username, .register-body .register-holder .upper .username {
-          margin-top: 34px;
+        .login-body .register-holder .upper .username, .register-body .register-holder .upper .username, .confirm-purchase-body .register-holder .upper .username, .success-purchase-body .register-holder .upper .username {
+          margin-top: 28px;
           font-style: normal;
           font-weight: normal;
           font-size: 14px;
@@ -3317,7 +3361,7 @@
           display: flex;
           align-items: center;
           color: #2C3E50; }
-        .login-body .register-holder .upper .email, .login-body .register-holder .upper .password, .register-body .register-holder .upper .email, .register-body .register-holder .upper .password {
+        .login-body .register-holder .upper .email, .login-body .register-holder .upper .password, .register-body .register-holder .upper .email, .register-body .register-holder .upper .password, .confirm-purchase-body .register-holder .upper .email, .confirm-purchase-body .register-holder .upper .password, .success-purchase-body .register-holder .upper .email, .success-purchase-body .register-holder .upper .password {
           margin-top: 11px;
           font-style: normal;
           font-weight: normal;
@@ -3326,15 +3370,15 @@
           display: flex;
           align-items: center;
           color: #2C3E50; }
-        .login-body .register-holder .upper .input-group, .register-body .register-holder .upper .input-group {
+        .login-body .register-holder .upper .input-group, .register-body .register-holder .upper .input-group, .confirm-purchase-body .register-holder .upper .input-group, .success-purchase-body .register-holder .upper .input-group {
           margin-top: 5px; }
-          .login-body .register-holder .upper .input-group .form-control, .register-body .register-holder .upper .input-group .form-control {
+          .login-body .register-holder .upper .input-group .form-control, .register-body .register-holder .upper .input-group .form-control, .confirm-purchase-body .register-holder .upper .input-group .form-control, .success-purchase-body .register-holder .upper .input-group .form-control {
             font-size: 14px;
             color: #B2B2B2; }
-        .login-body .register-holder .upper .btn-reg, .register-body .register-holder .upper .btn-reg {
+        .login-body .register-holder .upper .btn-reg, .register-body .register-holder .upper .btn-reg, .confirm-purchase-body .register-holder .upper .btn-reg, .success-purchase-body .register-holder .upper .btn-reg {
           width: 100%;
           height: 44px;
-          margin-top: 30px;
+          margin-top: px;
           background-color: #22539D;
           border-radius: 8px;
           font-style: normal;
@@ -3344,10 +3388,10 @@
           align-items: center;
           text-align: center;
           color: #FFFFFF; }
-        .login-body .register-holder .upper .btn-forgot-password, .register-body .register-holder .upper .btn-forgot-password {
+        .login-body .register-holder .upper .btn-forgot-password, .register-body .register-holder .upper .btn-forgot-password, .confirm-purchase-body .register-holder .upper .btn-forgot-password, .success-purchase-body .register-holder .upper .btn-forgot-password {
           width: 100%;
           margin-top: 20px; }
-          .login-body .register-holder .upper .btn-forgot-password .forgot-password, .register-body .register-holder .upper .btn-forgot-password .forgot-password {
+          .login-body .register-holder .upper .btn-forgot-password .forgot-password, .register-body .register-holder .upper .btn-forgot-password .forgot-password, .confirm-purchase-body .register-holder .upper .btn-forgot-password .forgot-password, .success-purchase-body .register-holder .upper .btn-forgot-password .forgot-password {
             margin-top: 0px;
             font-style: normal;
             font-weight: bold;
@@ -3355,25 +3399,22 @@
             line-height: 16px;
             color: #2270E8;
             text-align: center; }
-      .login-body .register-holder .lower, .register-body .register-holder .lower {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0; }
-        .login-body .register-holder .lower .login-block, .register-body .register-holder .lower .login-block {
+      .login-body .register-holder .lower, .register-body .register-holder .lower, .confirm-purchase-body .register-holder .lower, .success-purchase-body .register-holder .lower {
+        width: 100%; }
+        .login-body .register-holder .lower .login-block, .register-body .register-holder .lower .login-block, .confirm-purchase-body .register-holder .lower .login-block, .success-purchase-body .register-holder .lower .login-block {
           width: 100%;
           height: 50px;
           background: #DCEAFF;
           display: flex;
           align-items: center;
           justify-content: center; }
-          .login-body .register-holder .lower .login-block .text, .register-body .register-holder .lower .login-block .text {
+          .login-body .register-holder .lower .login-block .text, .register-body .register-holder .lower .login-block .text, .confirm-purchase-body .register-holder .lower .login-block .text, .success-purchase-body .register-holder .lower .login-block .text {
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 21px;
             color: #2C3E50; }
-          .login-body .register-holder .lower .login-block .login, .register-body .register-holder .lower .login-block .login {
+          .login-body .register-holder .lower .login-block .login, .register-body .register-holder .lower .login-block .login, .confirm-purchase-body .register-holder .lower .login-block .login, .success-purchase-body .register-holder .lower .login-block .login {
             margin-left: 4px;
             font-style: normal;
             font-weight: bold;
