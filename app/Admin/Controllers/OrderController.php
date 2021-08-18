@@ -36,6 +36,7 @@ class OrderController extends AdminController
         $grid->column('updated_at', __('Updated at'));
         $grid->disableCreateButton();
         $grid->disableActions();
+        $grid->model()->orderBy('id', 'DESC');
         return $grid;
     }
 

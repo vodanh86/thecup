@@ -32,7 +32,7 @@ class RatingController extends AdminController
         $grid->column('user_id', __('User id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-
+        $grid->model()->orderBy('id', 'DESC');
         return $grid;
     }
 

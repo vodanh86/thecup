@@ -46,6 +46,7 @@ class PodcastController extends AdminController
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->add(new ViewSongs($actions->row->id));
         });
+        $grid->model()->orderBy('id', 'DESC');
         return $grid;
     }
 
