@@ -72,9 +72,9 @@ class AuthorController extends AdminController
         $form = new Form(new Author());
 
         $form->text('title', __('Nghệ danh'));
-        $form->image('avatar', __('Avatar'))->move('avatar');
+        $form->image('avatar', __('Avatar'))->move('avatar')->required();
         $form->date('birth_date', __('Birth date'))->default(date('Y-m-d'));
-        $form->textarea('quote', __('Quote'));
+        $form->textarea('quote', __('Quote'))->required();
         $form->hidden('slug', __('Slug'));
         $form->select('admin_user_id')->options(AuthUser::all()->pluck('name','id'))->required();
         $form->saving(function ($form) {

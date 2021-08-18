@@ -26,7 +26,7 @@ use App\Admin\Controllers\Util;
                 <div class="row">
                     <div class="col-md-4">
                         <div class="rounded-avatar">
-                            <img src="{{url(env('AWS_URL')).$author->avatar}}'" alt="">
+                            <img src="{{url(env('AWS_URL')).$author->avatar}}" alt="">
 
                         </div>
                     </div>
