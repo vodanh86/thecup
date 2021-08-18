@@ -96,7 +96,11 @@ class PageController extends AdminController
         $form->switch('free', __("Bài miễn phí"))->states(Constant::ON_STATE);
         $form->switch('trial', __("Bài cho tài khoản đọc thử"))->states(Constant::ON_STATE);
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
-        $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
+        if (Admin::user()->isRole('manager')) {
+            $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2)->default(0);
+        } else {
+            $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2)->default(0)->readonly();
+        }
         $form->saving(function ($form) {
             if (!($form->model()->id && $form->model()->title == $form->title)){
                 $form->slug = Util::createSlug($form->title, Page::get());

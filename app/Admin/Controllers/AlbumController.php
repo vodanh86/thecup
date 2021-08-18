@@ -94,7 +94,11 @@ class AlbumController extends AdminController
         $form->hidden('type')->default(1);
         $form->select('category_id', __('Danh mục'))->options(Category::all()->pluck('title', 'id'))->setWidth(3, 2)->required();
         $form->datetime('published_at', __('Published at'))->default(date('Y-m-d H:i:s'));
-        $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2);
+        if (Admin::user()->isRole('manager')) {
+            $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2)->default(0);
+        } else {
+            $form->select('status', __('Status'))->options(Constant::PAGE_STATUS)->setWidth(3, 2)->default(0)->readonly();
+        }
         $form->saving(function ($form) {
             if (!($form->model()->id && $form->model()->title == $form->title)){
                 $form->slug = Util::createSlug($form->title, Album::get());
