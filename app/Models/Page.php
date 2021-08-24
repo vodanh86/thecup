@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use App\Models\AuthUser;
 use App\Models\Category;
 
 class Page extends Model
@@ -15,7 +15,7 @@ class Page extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id');
+        return $this->belongsTo(AuthUser::class, 'author_id');
     }
 
     public function category()
