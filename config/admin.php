@@ -402,7 +402,7 @@ return [
             
             // Editor configuration
             'config' => [
-                
+                "extraPlugins" => 'videodetector'
             ]
         ],
         'cropper' => [
