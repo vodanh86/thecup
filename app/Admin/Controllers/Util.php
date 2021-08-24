@@ -161,4 +161,8 @@ final class Util {
         return url('/resources/img/logo.png');
     }
 
+    static function extractContent($title){
+        return strlen($title) < 200 ? $title : (substr($title, 0, 200). "...");
+    }
+
 }

@@ -28,17 +28,22 @@ class AlbumController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Album());
+        $grid = new Grid(new Page());
 
-        $grid->column('id', __('Id'));
-        $grid->column('title', __('Title'));
-        $grid->column('description', __('Description'));
-        $grid->column('image', __('Image'))->image(url('http://d12uuz3kv8rnlp.cloudfront.net'), 50, 50);
-        $grid->column('author_id', __('Author id'));
-        $grid->column('view', __('View'));
-        $grid->column('category_id', __('Category id'));
-        $grid->column('published_at', __('Published at'));
-        $grid->column('status', __('Status'))->using(Constant::PAGE_STATUS);
+        $grid->column('id', __('Id'))->sortable();
+        $grid->column('title', __('Title'))->style('max-width:200px;');
+        $grid->column('description', __('Description'))->style('max-width:300px;')->display(function ($title) {
+            return "<span>". Util::extractContent($title) . "</span>";
+        });
+        $grid->column('image', __('Image'))->image(url(env("AWS_URL")), 50, 50);
+        $grid->column('author.name', __('Author'))->sortable();
+        $grid->column('feature', __('Feature'))->using(Constant::YES_NO_STATUS)->sortable();
+        $grid->column('view', __('View'))->sortable();
+        $grid->column('category.title', __('Category'))->sortable();
+        $grid->column('status', __('Status'))->using(Constant::PAGE_STATUS)->sortable();
+        $grid->column('slug', __('Preview'))->display(function ($slug) {
+            return "<a href='".url('/page/'.$slug)."' target='_blank'>Link</span>";
+        });
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         $grid->model()->where('type', 1);
