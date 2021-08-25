@@ -402,7 +402,9 @@ return [
             
             // Editor configuration
             'config' => [
-                "extraPlugins" => 'videodetector'
+                "extraPlugins" => 'videodetector',
+                "extraAllowedContent" => 'iframe[*]'
+
             ]
         ],
         'cropper' => [
