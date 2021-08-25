@@ -47,12 +47,15 @@ use App\Admin\Controllers\Util;
     <!--Life-Carousel-start-->
     <div id="life-carousel" class="carousel slide carousel-fade life-carousel-holder" data-bs-ride="none">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+        <@foreach($photos as $photo)
+          @if ($loop->first)
+            <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+          @else
+            <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="{{$loop->index}}"
+                  aria-label="Slide {{$loop->index}}"></button>
+          @endif
+        @endforeach>
       </div>
       <div class="carousel-inner">
         <@foreach($photos as $photo)
