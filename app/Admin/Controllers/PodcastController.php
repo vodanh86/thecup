@@ -37,10 +37,10 @@ class PodcastController extends AdminController
             return "<span>". Util::extractContent($title) . "</span>";
         });
         $grid->column('image', __('Image'))->image(url(env("AWS_URL")), 50, 50);
-        $grid->column('author.name', __('Author'))->sortable();
+        $grid->column('author.name', __('Author'));
         $grid->column('feature', __('Feature'))->using(Constant::YES_NO_STATUS)->sortable();
         $grid->column('view', __('View'))->sortable();
-        $grid->column('category.title', __('Category'))->sortable();
+        $grid->column('category.title', __('Category'));
         $grid->column('status', __('Status'))->using(Constant::PAGE_STATUS)->sortable();
         $grid->column('slug', __('Preview'))->display(function ($slug) {
             return "<a href='".url('/page/'.$slug)."' target='_blank'>Link</span>";
@@ -89,7 +89,7 @@ class PodcastController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->image('image', __('Image'))->move('podcast');
+        $form->image('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-left', 10, 10);
         /*$form->hasMany('songs', function (Form\NestedForm $form) {
             $form->text('title', 'Tiêu đề');
             $form->file('link', 'Bài hát')->rules('mimes:audio/mpeg');

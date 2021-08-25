@@ -22,7 +22,7 @@ final class Util {
             if (! $allSlugs->contains('slug', $newSlug)) {
                 return $newSlug;
             }
-        } while (TRUE);
+        } while (true);
     }
 
     static function getCat($catId){

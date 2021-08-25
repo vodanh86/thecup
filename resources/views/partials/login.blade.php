@@ -25,7 +25,7 @@
                 <div class="divider"></div>
                 <p class="username">Email hoặc tên đăng nhập</p>
                 <div class="input-group">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email hoặc tên đăng nhập"
+                    <input id="email" type="email" class="form-control " placeholder="Email hoặc tên đăng nhập"
                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus onfocusout="scrollT()">
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
@@ -35,7 +35,7 @@
                 </div>
                 <p class="password">Mật khẩu</p>
                 <div class="input-group">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mật khẩu của bạn"
+                    <input id="password" type="password" class="form-control " placeholder="Mật khẩu của bạn"
                     name="password" required autocomplete="current-password" onfocusout="scrollT()">
 
                     @if ($errors->has('password'))
