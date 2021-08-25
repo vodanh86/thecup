@@ -89,7 +89,7 @@ class PageController extends AdminController
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
         $form->ckeditor('content', __('Content'))->required();
-        $form->image('image', __('Image'))->insert("aaaa", "center");
+        $form->image('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-left', 10, 10);
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->hidden('slug');
         $form->hidden('type')->default(0);
