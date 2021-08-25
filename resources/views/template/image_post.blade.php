@@ -65,7 +65,7 @@ use App\Admin\Controllers\Util;
             <p>{{Util::vnDateFormat($page->published_at)}}</p>
           </div>
           <div class="item-pos">
-            <p>{{$loop->index + 1}}/3</p>
+            <p>{{$loop->index + 1}}/{{count($photos)}}</p>
           </div>
           <div class="carousel-gradient-bottom"></div>
         </div>
