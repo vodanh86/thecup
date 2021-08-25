@@ -50,10 +50,10 @@ use App\Admin\Controllers\Util;
         <@foreach($photos as $photo)
           @if ($loop->first)
             <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
+                  id="img0" aria-current="true" aria-label="Slide 1"></button>
           @else
             <button type="button" data-bs-target="#life-carousel" data-bs-slide-to="{{$loop->index}}"
-                  aria-label="Slide {{$loop->index}}"></button>
+                  id="img{{$loop->index}}" aria-label="Slide {{$loop->index}}"></button>
           @endif
         @endforeach>
       </div>
