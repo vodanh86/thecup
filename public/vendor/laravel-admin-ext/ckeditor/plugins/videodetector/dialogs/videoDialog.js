@@ -48,6 +48,8 @@ CKEDITOR.dialog.add( 'videoDialog', function( editor ) {
 
             var iframe = new CKEDITOR.dom.element('iframe');
             iframe.setAttribute('src', url);
+            iframe.setAttribute('width', "100%");
+            iframe.setAttribute('height', "300");
             iframe.setAttribute('frameborder', '0');
             p.append(iframe);
 

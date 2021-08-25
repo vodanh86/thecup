@@ -45,7 +45,6 @@ use App\Admin\Controllers\Util;
                         <p class="short-description">{!!$page->description!!}</p>
                         <img src="{{url(env('AWS_URL')).$page->image}}" alt="" class="image">
                         @if($trial)
-                        <p class="post-text">{!!Util::cutContent($page->content)!!}</p>
                         @else
                         <p class="post-text">{!!$page->content!!}</p>
                         @endif
