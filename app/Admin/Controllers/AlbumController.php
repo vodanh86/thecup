@@ -88,10 +88,10 @@ class AlbumController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->cropper('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-right', 30, 10);
+        $form->image('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-right', 30, 10);
         $form->hasMany('photos', function (Form\NestedForm $form) {
             $form->text('title', 'Nội dung');
-            $form->image('image', 'Ảnh');
+            $form->image('image', 'Ảnh')->insert(public_path('resources/watermark.png'), 'bottom-right', 30, 10);
         });
         $form->select('author_id', __('Tác giả'))->options(AuthUser::all()->pluck('name', 'id'))->default(Admin::user()->id)->setWidth(3, 2);
         $form->hidden('slug');
