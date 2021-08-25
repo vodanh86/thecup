@@ -88,7 +88,7 @@ class AlbumController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->cropper('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-left', 10, 10);
+        $form->cropper('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-right', 30, 10);
         $form->hasMany('photos', function (Form\NestedForm $form) {
             $form->text('title', 'Nội dung');
             $form->image('image', 'Ảnh');

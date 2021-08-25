@@ -89,7 +89,7 @@ class PodcastController extends AdminController
 
         $form->text('title', __('Title'))->required();
         $form->ckeditor('description', __('Description'))->required();
-        $form->image('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-left', 10, 10);
+        $form->image('image', __('Image'))->insert(public_path('resources/watermark.png'), 'bottom-right', 30, 10);
         /*$form->hasMany('songs', function (Form\NestedForm $form) {
             $form->text('title', 'Tiêu đề');
             $form->file('link', 'Bài hát')->rules('mimes:audio/mpeg');
