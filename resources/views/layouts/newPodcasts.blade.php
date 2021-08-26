@@ -27,7 +27,9 @@ $pages = Page::where('status', 1)
                 <a href="{{ url('/page/'.$page->slug) }}">
                     <p class="new-post-title">{{$page->title}}</p>
                 </a>
-                <p class="new-post-category"><a class="dropdown-item" href="{{ url('/category/'.$cat->slug) }}">{{$cat->title}}</a></p>
+                <p class="new-post-category">
+                    <a class="dropdown-item" href="{{ url('/category/'.$cat->slug) }}" style="padding: 0">{{$cat->title}}</a>
+                </p>
             </div>
         </div>
     </div>
