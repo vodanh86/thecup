@@ -29,7 +29,7 @@ use App\Models\Comment;
         <div class="radio-frame-main">
             <div class="row">
                 <div class="col-md-3 radio-img">
-                    <img src="{{url('resources/img/radio-frame.png')}}" alt="">
+                    <img src="{{url(env('AWS_URL')).$podcast->image}}" alt="">
                 </div>
                 <div class="col-md-9 radio-controller">
                     <a href="{{ url('/page/'.$podcast->slug) }}">
