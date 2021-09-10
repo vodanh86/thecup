@@ -238,9 +238,10 @@ $(function () {
           },
           url: "{{ url('user/update') }}",
           data: formData,
-          success: () => {
+          success: (data) => {
             $(".messages").html('    <div class="alert alert-success alert-block">' + 
                                     '<strong id="success-message">Cập nhật thành công</strong>'+
+                                    (data.verify == 1 ? "<br/><strong id='success-message'>Bạn được tặng thêm 3 tháng thành viên do cập nhật đầy đủ thông tin cá nhân.</strong>" : "") +
                                     '<button type="button" class="close" style="float:right" data-dismiss="alert">×</button>	'+
                                 '</div>' );
             //window.location.assign("{{ route('home') }}")
