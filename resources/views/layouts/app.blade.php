@@ -11,4 +11,3 @@ use App\Models\Category;
 
 @include('layouts.footer')
 @include('layouts.script')
-@yield('scripts')
