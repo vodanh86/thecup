@@ -4,6 +4,7 @@ use App\Admin\Controllers\Util;
 
 $pages = Page::where('status', 1)
         ->where('slide', 1)
+        ->orderBy('created_at', 'DESC')
         ->get();
 
 ?>
