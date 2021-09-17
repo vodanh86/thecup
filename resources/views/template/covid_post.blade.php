@@ -41,7 +41,7 @@ use App\Admin\Controllers\Util;
                             @include('layouts.rating', ["rating" => $rating, "show" => 1])
                         </div>
                     </div>
-                    <div class="post-content">
+                    <div class="post-content" style="text-align: justify">
                         <p class="short-description">{!!$page->description!!}</p>
                         <img src="{{url(env('AWS_URL')).$page->image}}" alt="" class="image">
                         @if($trial)
