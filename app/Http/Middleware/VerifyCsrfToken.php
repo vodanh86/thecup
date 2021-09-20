@@ -23,7 +23,7 @@ class VerifyCsrfToken extends Middleware
         'user/updateAvatar',
         'user/addComment',
         'user/addRating',
-        'user/forgot'
-        //
+        'user/forgot',
+        'admin/image/upload'
     ];
 }

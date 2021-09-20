@@ -403,7 +403,8 @@ return [
             // Editor configuration
             'config' => [
                 "extraPlugins" => 'videodetector',
-                "extraAllowedContent" => 'iframe[*]'
+                "extraAllowedContent" => 'iframe[*]',
+                'filebrowserImageUploadUrl' => url('').'/admin/image/upload', // your url 
 
             ]
         ],

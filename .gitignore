@@ -21,3 +21,17 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+public/uploads/base64img/20210729/5f0c4301a4033be06bb7a7cb51f590c3.png
+public/vendor/laravel-admin-ext/cropper/cropper.min.css
+public/vendor/laravel-admin-ext/cropper/cropper.min.js
+public/vendor/laravel-admin-ext/cropper/layer/layer.js
+public/vendor/laravel-admin-ext/cropper/layer/mobile/layer.js
+public/vendor/laravel-admin-ext/cropper/layer/mobile/need/layer.css
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/icon-ext.png
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/icon.png
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/layer.css
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/loading-0.gif
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/loading-1.gif
+public/vendor/laravel-admin-ext/cropper/layer/theme/default/loading-2.gif
+resources/lang/en/admin_cropper.php
+resources/lang/zh-CN/admin_cropper.php

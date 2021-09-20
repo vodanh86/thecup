@@ -12,6 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->post('/image/upload', 'ImageController@upload')->name('home');
     $router->resource('categories', CategoryController::class);
     $router->resource('banners', BannerController::class);
     $router->resource('pages', PageController::class);
