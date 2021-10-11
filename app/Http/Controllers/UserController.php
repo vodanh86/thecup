@@ -118,6 +118,7 @@ class UserController extends Controller
         $comment->name = $user->name;
         $comment->avatar = $user->avatar;
         $comment->comment = $request->comment;
+        $comment->verify = 1;
         $comment->save();
         return response()->json([
             'comment' => $comment
