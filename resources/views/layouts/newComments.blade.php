@@ -1,5 +1,7 @@
 <?php
-use App\Models\Page; ?>
+use App\Models\Page; 
+use App\Admin\Controllers\Util;
+?>
 
 <div class="comment">
     <div class="title">
@@ -12,7 +14,7 @@ use App\Models\Page; ?>
                 <div class="row">
                     <div class="col-md-2">
                         <div class="user-avatar">
-                        <img src="{{url(env('AWS_URL')).$comment->avatar}}" alt="{{$comment->name}}" width="40px">
+                        <img src="{{Util::getAvatar($comment->avatar)}}" alt="{{$comment->name}}" width="40px">
                         </div>
                     </div>
                     <div class="col-md-10">

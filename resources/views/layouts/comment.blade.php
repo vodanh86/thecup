@@ -14,7 +14,7 @@ use App\Admin\Controllers\Util;
         <div class="row">
             <div class="col-2">
                 <div class="user-avatar">
-                    <img src="{{url(env('AWS_URL')).$comment->avatar}}" alt="{{$comment->name}}" width="40px">
+                    <img src="{{Util::getAvatar($comment->avatar)}}" alt="{{$comment->name}}" width="40px">
                 </div>
             </div>
             <div class="col-10">
@@ -42,7 +42,7 @@ use App\Admin\Controllers\Util;
         <div class="row">
             <div class="col-2 col-md-1">
                 <div class="user-avatar">
-                    <img src="{{Util::getAvatar($user)}}" alt="{{$user->name}}" width="50px">
+                    <img src="{{Util::getAvatar($user->avatar)}}" alt="{{$user->name}}" width="50px">
                 </div>
             </div>
             <div class="col-10 col-md-11">
