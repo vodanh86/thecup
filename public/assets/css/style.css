@@ -2532,6 +2532,9 @@ p {
       text-align: center; }
       .post-body .news-holder .news-main .post-holder .post-content a {
         color: #0d6efd; }
+      .post-body .news-holder .news-main .post-holder .post-content img {
+          width: 100%!important;
+          height: auto!important }
     .post-body .news-holder .news-main .post-holder .post-content .rating-holder .send-rating {
       align-self: center;
       border-radius: 0px;
