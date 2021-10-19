@@ -405,7 +405,7 @@ return [
                 "extraPlugins" => 'videodetector',
                 "extraAllowedContent" => 'iframe[*]',
                 'filebrowserImageUploadUrl' => url('').'/admin/image/upload', // your url 
-
+                'extraPlugins' => [ 'justify' ]
             ]
         ],
         'cropper' => [
