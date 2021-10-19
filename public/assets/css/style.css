@@ -3374,3 +3374,6 @@ p {
       display: block; }
 
 /*# sourceMappingURL=style.css.map */
+body {
+  font-size: 1.1rem !important;
+}
