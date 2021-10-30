@@ -23,9 +23,9 @@
                     </a>
                 </div>
                 <div class="divider"></div>
-                <p class="username">Email hoặc tên đăng nhập</p>
+                <p class="username">Email</p>
                 <div class="input-group">
-                    <input id="email" type="email" class="form-control " placeholder="Email hoặc tên đăng nhập"
+                    <input id="email" type="email" class="form-control " placeholder="Email"
                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus onfocusout="scrollT()">
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
