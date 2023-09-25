@@ -17,7 +17,27 @@ a, button {
 
 p {
   margin: 0; }
-
+table {
+  border-collapse: collapse;
+  width: 100%; 
+}
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd; 
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+td {
+  border: 1px solid #dddddd;
+  text-align: left; 
+  padding: 8px;
+}
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   padding-right: 0 !important;
   padding-left: 0 !important; }
